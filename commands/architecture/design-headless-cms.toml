@@ -1,0 +1,155 @@
+prompt = """
+# Design Headless CMS Architecture
+
+Design a robust, future-proof headless CMS architecture for the following context and requirements:
+
+{{args}}
+
+Your goal is to design a system that separates content management from presentation, supports multiple frontends (web, mobile, other channels), and is maintainable by a solo webdev/DevOps agency.
+
+---
+
+## 1. Problem & Context Clarification
+
+Before designing, restate and refine the problem:
+
+1. Summarize the business and product context.
+2. Identify primary content consumers (websites, apps, APIs, internal tools, etc.).
+3. Identify primary content authors/editors and their workflows.
+4. List key constraints:
+   - Budget and hosting limitations
+   - Existing stack (WordPress, Ghost, Astro, React, etc.)
+   - Performance and SEO requirements
+   - Security/compliance constraints (PII, payment, etc.)
+
+Explicitly call out any ambiguous or missing information and make reasonable assumptions.
+
+---
+
+## 2. Content Model & Domain Design
+
+Design the content model as if you were defining schemas in a headless CMS:
+
+1. **Content Types**
+   - List each content type (e.g. Page, Post, Product, Category, Author, Settings).
+   - For each type, define fields (with types), validation rules, and relationships.
+   - Separate user-facing content from configuration content (site settings, menus, feature flags).
+
+2. **Relationships & References**
+   - Describe one-to-many, many-to-many, and polymorphic relations (e.g. "content blocks").
+   - Explain how to model reusable blocks/components (hero sections, CTAs, pricing tables).
+
+3. **Localization & Versioning (if relevant)**
+   - How to model multiple locales.
+   - How to handle drafts, publishing, version history, and rollback.
+
+---
+
+## 3. Technology Choices & Tradeoffs
+
+Propose 1–3 concrete headless CMS stacks and compare them for this use case:
+
+- Self-hosted options (e.g. WordPress as headless, Ghost, Git-based CMS, Sanity-like stacks).
+- SaaS or API-first CMS options (if appropriate).
+- "Unconventional CMS" options (Notion, Google Sheets, Airtable, Git markdown, etc.) where they make sense.
+
+For each option, discuss:
+
+1. Operational complexity (hosting, backups, upgrades).
+2. Editor UX quality.
+3. API flexibility and performance.
+4. Cost, vendor lock-in, and long-term risk.
+5. Fit for a solo-operator agency.
+
+End with a clear recommendation and rationale.
+
+---
+
+## 4. API & Integration Architecture
+
+Design how the headless CMS exposes content and how frontends consume it.
+
+1. **API Style**
+   - REST vs GraphQL vs custom endpoints.
+   - Read vs write APIs (public vs private surfaces).
+
+2. **Frontends**
+   - How web frontends (Astro, React, etc.) will query content.
+   - Static generation vs server-side rendering vs hybrid (ISR, on-demand revalidation).
+   - Strategy for preview (draft) vs published content.
+
+3. **Caching & Performance**
+   - Edge/CDN caching strategy.
+   - API response caching (headers, TTL, invalidation triggers).
+   - Image optimization (CDN, transformations, formats).
+
+Provide diagrams as text (e.g. simple ASCII) showing:
+- Editors → CMS → APIs → Frontends → End Users
+
+---
+
+## 5. Security, Permissions & Governance
+
+Describe how you will secure the headless CMS:
+
+1. Authentication & authorization:
+   - Editor roles and permissions (admin, editor, author, etc.).
+   - API auth mechanisms for frontends (tokens, keys, IP allowlists).
+
+2. Exposure control:
+   - What is publicly exposed vs private.
+   - How to handle sensitive content and secrets.
+
+3. Audit & safety:
+   - Activity logs.
+   - Content approval workflows (if needed).
+   - Backup and restore strategy specific to content.
+
+---
+
+## 6. Operational Concerns & Dev Experience
+
+Design for long-term maintainability:
+
+1. **Environments**
+   - Local, staging, production environments.
+   - Content sync strategies between environments.
+
+2. **Deployment & CI/CD**
+   - How content schema changes are managed and migrated.
+   - How frontend deployments are triggered by content changes (webhooks, build hooks).
+
+3. **DX for Solo Dev**
+   - How to keep the setup simple enough to run alone.
+   - Scripts and tooling that minimize manual toil.
+
+---
+
+## 7. Migration Plan (If Replacing Existing CMS)
+
+If this design replaces an existing system (e.g. monolithic WordPress):
+
+1. Inventory current content types and URLs.
+2. Map legacy structures to the new headless model.
+3. Plan for:
+   - Data export and transformation.
+   - Redirects and URL continuity.
+   - SEO preservation (canonicals, sitemaps, metadata).
+   - Incremental migration vs big-bang.
+
+---
+
+## 8. Deliverables
+
+Output a **concise but complete architecture design** including:
+
+1. High-level overview (1–2 paragraphs).
+2. Recommended CMS stack and alternatives.
+3. Content model definitions.
+4. API and integration design (including caching).
+5. Security and permission model.
+6. Operational plan (environments, deployments, backups).
+7. Migration considerations (if relevant).
+
+Use clear headings and bullet points so this can be pasted into a technical spec or architecture document.
+"""

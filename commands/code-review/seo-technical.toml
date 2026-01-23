@@ -1,0 +1,152 @@
+prompt = """
+# Technical SEO Code Review
+
+Perform a technical SEO-focused review of the following codebase/pages/context:
+
+{{args}}
+
+You are evaluating from the perspective of modern search engines, crawlability, indexation, Core Web Vitals, and resilience during site changes (migrations, redesigns).
+
+---
+
+## 1. Context & Objectives
+
+1. Summarize what is being reviewed (stack, site type, main user journeys).
+2. Clarify SEO goals:
+   - Organic traffic growth?
+   - Preserving existing rankings?
+   - Launching a new property?
+3. Note any special constraints (e.g. multi-language, region-specific, heavy JS app).
+
+---
+
+## 2. URL Structure & Routing
+
+1. Assess URL patterns:
+   - Clean, human-readable, and stable.
+   - No obvious duplicate paths for same content.
+2. Check:
+   - Use of trailing slashes.
+   - Case consistency.
+   - Query parameters vs path segments.
+
+Identify problem patterns and suggest normalization rules.
+
+---
+
+## 3. HTML Head, Meta & Structured Data
+
+Review:
+
+1. `<title>` and meta description:
+   - Present, unique, and descriptive.
+   - Reasonable lengths and avoidance of duplication.
+2. Canonical tags:
+   - Correct self-referencing canonicals.
+   - Avoid conflicting or missing canonicals on key pages.
+3. Open Graph / Twitter tags:
+   - For click-through and social sharing.
+4. Structured data (schema.org):
+   - Where relevant (articles, products, breadcrumbs, etc.).
+   - Suggest simple, high-value schemas to add.
+
+Provide concrete examples and improved versions when patterns are clear.
+
+---
+
+## 4. Crawlability & Indexation
+
+1. Robots directives:
+   - `robots.txt` considerations (block vs allow).
+   - `meta robots` tags (`index`, `noindex`, `nofollow` usage).
+2. Pagination and faceted navigation:
+   - How lists and filters are implemented.
+   - Risk of crawl traps (infinite combinations via query params).
+3. Sitemaps:
+   - Existence and correctness of XML sitemaps (if applicable).
+   - What should/shouldn't be included.
+
+Call out high-risk sections that may waste crawl budget or lead to accidental deindexing.
+
+---
+
+## 5. Performance & Core Web Vitals
+
+At a high level, review performance-relevant code aspects:
+
+1. Critical render path:
+   - Blocking scripts/styles.
+   - Use of `defer`, `async`, and code splitting.
+2. Asset optimization:
+   - Images (sizes, formats, responsive handling).
+   - Fonts (loading strategy, subset vs full).
+3. Web Vitals alignment:
+   - Factors affecting LCP, CLS, FID/INP.
+
+Provide specific, technical suggestions tailored to the stack where possible.
+
+---
+
+## 6. JavaScript & SEO
+
+1. How dependent the content is on JS:
+   - Are key textual contents rendered server-side or client-only?
+   - Any known risks for bot rendering (heavy JS apps, hydration failures)?
+2. For SPAs/MPAs:
+   - Proper routing and unique URLs.
+   - Handling of 404s and redirects (HTTP vs client-side only).
+3. SSR/SSG/ISR:
+   - How the chosen strategy impacts SEO.
+   - Where pre-rendering should be enforced for important pages.
+
+Recommend adjustments to ensure reliably indexable content.
+
+---
+
+## 7. Internal Linking & Navigation
+
+1. Navigation structure:
+   - Logical hierarchy.
+   - Global vs local nav, breadcrumbs.
+2. Internal linking:
+   - Are key pages discoverable within few clicks?
+   - Use of descriptive anchor text vs generic "click here".
+3. Orphaned or hard-to-reach content:
+   - Identify likely trouble spots based on IA.
+
+---
+
+## 8. Migration & Change Safety (if relevant)
+
+If this is a redesign or migration:
+
+1. Check for:
+   - Old vs new URL parity.
+   - Redirect mappings.
+   - Consistent canonicalization.
+
+2. Suggest:
+   - Pre- and post-launch checks.
+   - Monitoring for 404s and traffic drops.
+
+---
+
+## 9. Output Format
+
+Provide:
+
+1. **Summary** – 3–7 bullets on the technical SEO state.
+2. **Issue List** – grouped by:
+   - URL & routing
+   - Meta & structured data
+   - Crawlability
+   - Performance / Web Vitals
+   - JS & rendering
+3. **Fix Recommendations** – prioritized into:
+   - High impact / high urgency
+   - Medium impact
+   - Nice-to-have
+4. **Quick Regression Checklist** – what to re-check after changes.
+
+Keep feedback technical, pragmatic, and as implementation-ready as possible.
+"""

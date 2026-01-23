@@ -1,0 +1,123 @@
+prompt = """
+# Write Client Handoff Document
+
+Create a client-facing handoff document for the following project or deliverable:
+
+{{args}}
+
+The document should help the client understand what they received, how to use it, how to get support, and what next steps are available.
+
+---
+
+## 1. Project Summary
+
+1. Briefly restate:
+   - Project name and scope.
+   - Main objectives and outcomes.
+2. Highlight key deliverables in plain language.
+3. Emphasize the business value (results, improvements, capabilities).
+
+This section should be understandable to non-technical stakeholders.
+
+---
+
+## 2. Deliverables Breakdown
+
+List and describe each deliverable:
+
+1. Websites/apps launched (URLs, environments).
+2. Systems or integrations implemented (e.g. CMS, analytics, automations).
+3. Assets provided (design, documentation, credentials handover where appropriate).
+
+For each deliverable, include:
+
+- What it is.
+- Where it lives.
+- How the client can access it.
+
+---
+
+## 3. How to Use & Operate
+
+Provide a practical guide for day-to-day use:
+
+1. For websites/CMS:
+   - How to log in and manage content.
+   - How to publish/update/delete pages/posts.
+2. For key workflows:
+   - How to perform core tasks (e.g. publish a blog post, update a product, send a newsletter).
+3. For automations:
+   - What automations exist.
+   - When they run and what they do.
+
+Keep this section focused on the client's most common tasks.
+
+---
+
+## 4. Maintenance & Responsibilities
+
+Clarify:
+
+1. What ongoing maintenance is recommended:
+   - Updates (WordPress/plugins, dependencies).
+   - Backups and monitoring.
+   - Security checks.
+2. Who is responsible:
+   - What you handle under existing agreements.
+   - What the client is responsible for (if applicable).
+3. Risks of neglecting maintenance, framed constructively.
+
+---
+
+## 5. Access & Credentials
+
+If relevant:
+
+1. List systems the client now has access to (without exposing real secrets in this template).
+2. Describe:
+   - Where credentials are stored/shared (password manager, encrypted document).
+   - Best practices for managing user accounts and 2FA.
+3. Recommend an access management approach (e.g. one owner account and separate user accounts).
+
+---
+
+## 6. Support & Next Steps
+
+1. Explain support options:
+   - How clients can request help (email, ticket, etc.).
+   - Response expectations (time windows, priorities).
+2. Suggest next steps:
+   - Optional improvements or phases (SEO, optimization, automation, etc.).
+   - Things to consider in the next 3–6 months.
+
+This is a gentle segue into ongoing or future work, not a hard pitch.
+
+---
+
+## 7. FAQs & Common Issues
+
+Include a short FAQ tailored to this project type:
+
+- "What happens if X breaks?"
+- "Can we change Y ourselves?"
+- "How do we add/remove users?"
+- "What should we avoid doing without checking with you?"
+
+Each answer should be brief, friendly, and clear.
+
+---
+
+## 8. Output Format
+
+Produce a client-ready document with these sections:
+
+1. Project Summary
+2. Deliverables
+3. How to Use & Operate
+4. Maintenance & Responsibilities
+5. Access & Credentials
+6. Support & Next Steps
+7. FAQs
+
+Write in clear, non-jargony language while still being precise.
+"""

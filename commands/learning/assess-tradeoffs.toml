@@ -1,0 +1,104 @@
+prompt = """
+# Assess Tradeoffs Between Options
+
+Help assess tradeoffs between the following options/approaches/technologies:
+
+{{args}}
+
+Your goal is to produce a **clear, opinionated comparison** that helps me (a solo webdev/DevOps operator) choose a path and understand what I'm giving up.
+
+---
+
+## 1. Clarify the Decision
+
+1. Restate what's being compared (Option A, Option B, etc.).
+2. Clarify the decision frame:
+   - Is this about a single project, or a long-term stack choice?
+   - Is this primarily about speed, cost, maintainability, performance, or something else?
+3. State an approximate time horizon:
+   - Short project vs multi-year investment.
+
+---
+
+## 2. Evaluation Criteria
+
+Define a short set of criteria particularly relevant for a solo agency:
+
+- Development speed.
+- Operational complexity.
+- Performance & SEO (if applicable).
+- Flexibility/extensibility.
+- Ecosystem & longevity.
+- Cost (tools + infra + time).
+- Learning curve.
+
+You can adjust/remove/add criteria if {{args}} suggests different priorities.
+
+---
+
+## 3. Option Profiles
+
+For each option:
+
+1. Describe what it is and how it would be used in this context.
+2. List its strengths.
+3. List its weaknesses or pain points.
+
+Avoid marketing language; focus on experienced-practitioner perspective.
+
+---
+
+## 4. Comparative Analysis
+
+Compare options against the evaluation criteria:
+
+1. For each criterion:
+   - How each option scores qualitatively (e.g. Strong / OK / Weak).
+   - Short explanation why.
+2. Highlight where differences are **meaningful** vs **minor**.
+
+Consider especially:
+
+- How each option behaves under scale or complexity.
+- How each impacts solo maintenance and incident response.
+
+---
+
+## 5. Recommendation & "If-Then" Guidance
+
+1. Provide a clear recommendation:
+   - What you would choose and why, given {{args}}.
+2. Add "If-then" guidance:
+   - "If X is more important than Y, choose Option A."
+   - "If you expect Z in the future, lean toward Option B."
+
+This should make the decision robust to slightly different constraints.
+
+---
+
+## 6. Risks & Reversibility
+
+For each option:
+
+1. Major risks or failure modes.
+2. How reversible the choice is:
+   - Can I easily migrate later?
+   - Will data or architecture decisions lock me in?
+
+Suggest patterns that preserve optionality where possible.
+
+---
+
+## 7. Output Format
+
+Produce:
+
+1. Short decision summary.
+2. Evaluation criteria list.
+3. Option profiles.
+4. Comparative analysis by criterion.
+5. Recommendation and "if-then" rules.
+6. Risks and reversibility notes.
+
+Be honest, concise, and biased toward what works well for a solo operator.
+"""

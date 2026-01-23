@@ -1,0 +1,110 @@
+prompt = """
+# Debug Database Issue
+
+You are debugging a database-related problem in the following context:
+
+{{args}}
+
+Assume a typical web app stack (e.g. MySQL/MariaDB/Postgres, or similar managed DB) backing websites/apps you operate as a solo dev/ops.
+
+---
+
+## 1. Problem & Scope
+
+1. Restate the issue:
+   - Connection errors, timeouts, slow queries, deadlocks, corrupted data, etc.
+2. Scope:
+   - All apps vs specific services.
+   - Read vs write operations.
+   - Production vs other environments.
+
+Identify whether the issue seems:
+- Connectivity-related.
+- Performance-related.
+- Data-integrity-related.
+- Configuration/limits-related.
+
+---
+
+## 2. Connectivity & Configuration
+
+1. Connection checks:
+   - Network reachability (host/port).
+   - Authentication (user, password, SSL, host-based restrictions).
+2. Pooling:
+   - App-level connection pool size and timeouts.
+   - Max connections on the DB side.
+
+Call out misalignments (e.g. app pool >> DB max connections) and quick fixes.
+
+---
+
+## 3. Resource Utilization & Health
+
+1. Server metrics:
+   - CPU, memory, disk IO, network.
+2. DB-specific metrics:
+   - Active connections, slow queries, lock waits.
+   - Buffer/cache hit rates (where applicable).
+3. Storage:
+   - Disk full or nearly full.
+   - Growing binary logs/transaction logs.
+
+Explain what you'd look for and how it maps to likely causes.
+
+---
+
+## 4. Slow Queries & Indexing
+
+1. Identify problematic queries:
+   - Slow query log or equivalent.
+   - Application logs with long-running operations.
+2. Query patterns:
+   - Missing indexes.
+   - Unbounded scans, N+1 patterns, repeated queries.
+3. Index strategy:
+   - Obvious indexes that would help.
+   - Danger of over-indexing write-heavy tables.
+
+Provide a simple approach to prioritizing query optimization for a solo operator.
+
+---
+
+## 5. Locks, Deadlocks & Contention
+
+1. Detecting locks:
+   - Current lock/transaction views.
+2. Deadlocks:
+   - Logs or diagnostics for deadlock reports.
+3. App-level patterns:
+   - Long transactions, wide locks, concurrency patterns causing contention.
+
+Suggest ways to mitigate (shorter transactions, better indexing, retry logic).
+
+---
+
+## 6. Data Integrity & Corruption
+
+1. Symptoms:
+   - Inconsistent reads.
+   - Corruption warnings in logs.
+2. Checks:
+   - DB integrity checks/repair tools (with caution).
+3. Backup & restore:
+   - Ensuring backups are recent and restorable before aggressive operations.
+
+Give safe, conservative advice for handling suspected corruption.
+
+---
+
+## 7. Output Format
+
+Provide:
+
+1. **Summary** – likely nature of the DB issue from {{args}}.
+2. **Diagnostic plan** – prioritized steps.
+3. **Probable root causes** – mapped to evidence to collect.
+4. **Remediation plan** – short-term mitigations and longer-term optimizations.
+
+Keep it practical and focused on what one person can realistically do.
+"""

@@ -1,0 +1,149 @@
+prompt = """
+# Design JAMstack Architecture
+
+Design a modern JAMstack (static-first) architecture for the following project:
+
+{{args}}
+
+Assume the solution will likely involve a static-site generator or meta-framework (e.g. Astro, Next, Nuxt), a headless CMS or data source, and a CDN/edge delivery layer.
+
+---
+
+## 1. Goals & Constraints
+
+1. Summarize the project's purpose and primary user journeys.
+2. Clarify what "JAMstack" should mean here:
+   - Pre-rendered static pages where possible.
+   - Client-side JS only where necessary.
+   - Reuse of serverless/edge functions as needed.
+3. Identify constraints:
+   - Hosting/budget limits.
+   - Performance targets (Core Web Vitals, TTFB).
+   - SEO and crawlability needs.
+   - Content update frequency and freshness requirements.
+
+Call out any assumptions you make.
+
+---
+
+## 2. Data & Content Sources
+
+Break down all sources of truth:
+
+1. CMS (WordPress/Ghost/Sanity/git-based/Notion/etc.).
+2. Product or business data (APIs, databases, spreadsheets).
+3. Configuration and feature flags.
+4. Third-party APIs (search, auth, payment, analytics).
+
+Explain for each:
+- How often the data changes.
+- Whether it can be safely pre-built or must be fetched at runtime.
+- Failure modes if the data source is down.
+
+---
+
+## 3. Rendering Strategy
+
+For each route type (marketing pages, blog, product listing, product detail, dashboard, etc.) choose:
+
+- **SSG** (static generation at build).
+- **ISR / on-demand revalidation**.
+- **SSR** (server-side on each request).
+- **Client-side only** (hydrated app sections).
+
+Explain your rendering strategy per route:
+
+1. Performance and SEO impact.
+2. Complexity for a solo operator.
+3. How cache invalidation works when content changes.
+
+---
+
+## 4. Frontend Architecture
+
+Design the frontend layers:
+
+1. Framework choice (Astro vs Next vs Nuxt vs vanilla with build tools) and why.
+2. Component model:
+   - Layout vs page vs section vs widget vs primitive.
+   - Reusable components for navigation, SEO meta, layouts.
+3. Partial hydration / islands:
+   - Identify interactive sections.
+   - Keep non-critical JS off the critical path.
+
+Include guidelines for:
+- Accessibility (a11y).
+- Internationalization if relevant.
+- Theming (dark mode, brand variants).
+
+---
+
+## 5. Delivery, CDN & Edge
+
+1. Choose a hosting/CDN platform (e.g. Netlify, Vercel, Cloudflare, self-hosted + CDN).
+2. Describe:
+   - How static assets are deployed and versioned.
+   - Caching strategy (HTML vs assets vs API responses).
+   - Edge functions use-cases (auth, localization, A/B testing, rewrites).
+
+3. Define:
+   - Cache-control policies.
+   - Invalidation and purge strategies.
+   - Handling of rollbacks.
+
+---
+
+## 6. Serverless / Backend Concerns
+
+For dynamic behavior that doesn't fit purely static:
+
+1. Identify serverless functions (contact forms, webhooks, scheduled jobs, image proxying).
+2. Design simple, stateless APIs for these functions.
+3. Discuss:
+   - Authentication for these endpoints.
+   - Rate-limiting and abuse prevention.
+   - Logging and observability.
+
+---
+
+## 7. Build, Deploy & Dev Experience
+
+1. Define the build pipeline:
+   - Triggers (git push, CMS webhooks, manual).
+   - Build steps (lint, test, build, deploy).
+
+2. Estimate build times and mitigation strategies:
+   - Incremental builds.
+   - Splitting sites into multiple projects where needed.
+
+3. Local dev experience:
+   - How to run the stack locally with minimal friction.
+   - Handling environment variables and secrets.
+
+---
+
+## 8. Monitoring, Errors & Recovery
+
+1. Monitoring stack (uptime, logs, performance).
+2. Error tracking for frontend and serverless functions.
+3. Incident response playbook for:
+   - Broken builds.
+   - CDN misconfigurations.
+   - Partial outages (e.g. CMS down but cached pages still live).
+
+---
+
+## 9. Deliverables
+
+Produce a **JAMstack architecture design** that includes:
+
+1. High-level overview of the architecture.
+2. Route-by-route rendering strategy.
+3. Data source and caching strategies.
+4. Frontend framework and component guidelines.
+5. CDN/edge and serverless design.
+6. Build and deployment pipeline outline.
+7. Operational and monitoring considerations.
+
+Use clear sections and bullet points so this can be pasted into an architecture doc or used as a blueprint for implementation.
+"""

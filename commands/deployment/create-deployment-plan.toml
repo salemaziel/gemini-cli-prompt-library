@@ -1,0 +1,119 @@
+prompt = """
+# Create Deployment Plan
+
+Create a deployment plan for the following project/system:
+
+{{args}}
+
+Assume I am a solo operator deploying web apps/sites/services and want a **repeatable, low-drama process**.
+
+---
+
+## 1. Context & Constraints
+
+1. Restate what is being deployed (stack, hosting, environments).
+2. Identify:
+   - Environments involved (dev, staging, production).
+   - Uptime requirements (is downtime acceptable? maintenance window?).
+   - Any client constraints (launch dates, coordination).
+
+---
+
+## 2. Deployment Objectives
+
+Clarify what the deployment plan must ensure:
+
+- Safety (minimal risk of breaking production).
+- Reproducibility.
+- Observability (ability to see what's happening).
+- Rollback capability.
+
+List 3–6 concrete objectives.
+
+---
+
+## 3. Pre-Deployment Checklist
+
+Define what must be true before deploying:
+
+1. Code:
+   - Tests passing (specify which).
+   - Linting/build checks.
+2. Infrastructure:
+   - Config and environment variables present.
+   - DB migrations reviewed.
+3. Operational:
+   - Backups taken (if relevant).
+   - Stakeholders notified (if needed).
+
+Present this as a checklist.
+
+---
+
+## 4. Deployment Steps
+
+Describe step-by-step:
+
+1. For each environment (if multi-stage), the deployment sequence.
+2. Exact order of actions, such as:
+   - Build artifacts.
+   - Run migrations.
+   - Deploy code/assets.
+   - Warm caches (if applicable).
+3. Where to pause for verification before proceeding.
+
+Keep steps atomic and clear.
+
+---
+
+## 5. Verification & Smoke Tests
+
+Define:
+
+1. Automated checks to run post-deploy (health endpoints, basic tests).
+2. Manual smoke tests:
+   - Critical pages/routes.
+   - Key flows (login, checkout, forms, admin).
+3. How to document results (simple log, ticket update, etc.).
+
+---
+
+## 6. Rollback Strategy
+
+Document a realistic rollback:
+
+1. Under what conditions to roll back.
+2. How to roll back:
+   - Previous build/version.
+   - DB migration rollback or alternative mitigation.
+3. Verification after rollback.
+
+Emphasize safety and simplicity over cleverness.
+
+---
+
+## 7. Monitoring During & After Deploy
+
+Describe:
+
+1. What to watch:
+   - Logs, metrics, uptime checks, error trackers.
+2. Time window of heightened vigilance after deploy.
+3. Any alerts that should be configured or temporarily adjusted.
+
+---
+
+## 8. Output Format
+
+Produce a deployment plan with:
+
+1. Context & Constraints
+2. Objectives
+3. Pre-Deployment Checklist
+4. Deployment Steps
+5. Verification & Smoke Tests
+6. Rollback Strategy
+7. Monitoring & Post-Deploy Checks
+
+Write it as a runbook that can be reused and slightly adapted per project.
+"""

@@ -1,0 +1,111 @@
+prompt = """
+# Create Test Plan
+
+Create a test plan for the following project/feature/system:
+
+{{args}}
+
+The plan should be realistic for a solo dev, focusing on **risk-based testing** rather than exhaustive coverage.
+
+---
+
+## 1. Context & Risk Profile
+
+1. Summarize what the system/feature does.
+2. Identify:
+   - Critical flows (user journeys that must not break).
+   - Areas of high complexity.
+   - Areas of high impact if they fail (data loss, payments, client visibility).
+
+---
+
+## 2. Test Objectives & Scope
+
+1. Define what this test plan aims to achieve:
+   - Confidence in key flows.
+   - Prevention of regressions in certain areas.
+2. Clarify what is **in scope** vs **out of scope** for this round of testing.
+
+---
+
+## 3. Test Types & Levels
+
+Decide which test types to use for this project:
+
+- Unit tests.
+- Integration tests.
+- End-to-end (E2E) tests.
+- Manual exploratory tests.
+- Non-functional tests (performance, a11y, basic security checks).
+
+For each chosen type, explain **why** it is relevant here.
+
+---
+
+## 4. Test Coverage Strategy
+
+Describe what to test at each level:
+
+1. Unit:
+   - Core pure logic, critical edge-case-heavy functions.
+2. Integration:
+   - API + DB, services + queues, CMS + frontend, etc.
+3. E2E:
+   - Key user journeys (signup, login, checkout, submission).
+4. Manual:
+   - Exploratory passes on new UI/flows.
+
+Link each area back to the risks it mitigates.
+
+---
+
+## 5. Test Cases & Scenarios
+
+Outline key test scenarios:
+
+1. For each main user flow:
+   - Happy path case.
+   - Important edge/error cases.
+2. For APIs and services:
+   - Success responses.
+   - Error conditions and timeouts.
+
+Keep descriptions high-level but concrete enough to convert to test code.
+
+---
+
+## 6. Environment & Data
+
+Explain:
+
+1. Which environments will be used (local, staging).
+2. Data strategy:
+   - Seed data vs factories vs fixtures.
+3. Isolation:
+   - How to avoid test data polluting production or each other.
+
+---
+
+## 7. Execution & Automation
+
+1. When tests are run:
+   - On commit, on PR, nightly, pre-release.
+2. Who runs what:
+   - Automated vs manual responsibilities.
+3. Tooling:
+   - Test runners/frameworks aligned with the current stack.
+
+---
+
+## 8. Output Format
+
+Produce:
+
+1. Summary of test goals and risk profile.
+2. List of test types and where they apply.
+3. Key test scenarios grouped by flow.
+4. Environment & data strategy.
+5. Execution plan (when/how tests are run).
+
+Aim for something short enough to use but structured enough to guide implementation.
+"""

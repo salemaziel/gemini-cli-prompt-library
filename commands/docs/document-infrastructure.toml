@@ -1,0 +1,124 @@
+prompt = """
+# Document Infrastructure
+
+Produce clear infrastructure documentation for the following environment, stack, or system:
+
+{{args}}
+
+Assume this is for you (solo operator) and possibly future collaborators. It should be **high-level enough** to understand the system quickly and **detailed enough** to perform basic operations and changes.
+
+---
+
+## 1. Overview
+
+1. Describe the purpose of this infrastructure (what it supports and why it exists).
+2. List main workloads (apps, sites, services) it runs.
+3. Note the hosting model (cloud provider, Proxmox, hybrid, etc.).
+
+---
+
+## 2. Components & Topology
+
+Document the major components:
+
+1. Compute:
+   - Servers/VMs/containers and their roles.
+2. Networking:
+   - VPC/VLANs/subnets, load balancers, gateways, VPNs.
+3. Storage:
+   - Databases, object storage, volumes.
+4. Edge/CDN:
+   - CDNs, DNS, WAFs, proxies.
+
+Provide a simple text topology diagram showing how traffic flows.
+
+---
+
+## 3. Environments
+
+Describe each environment (dev, staging, production, etc.):
+
+1. Purpose of each.
+2. Differences between them (config, resources, data).
+3. Any restrictions (e.g. "no experiments directly in production").
+
+---
+
+## 4. Provisioning & Configuration
+
+Explain how infrastructure is managed:
+
+1. Tools in use:
+   - Terraform, Ansible, shell scripts, provider consoles.
+2. Source of truth:
+   - Repos or directories where IaC lives.
+3. Apply process:
+   - How changes are proposed, reviewed, and applied.
+
+Include high-level steps to perform a safe change.
+
+---
+
+## 5. Access & Security
+
+1. Authentication & access patterns:
+   - Who has access and how (SSH, VPN, SSO, keys).
+2. Secrets management:
+   - Where secrets are stored and how they're injected.
+3. Security boundaries:
+   - DMZs, restricted networks, admin-only areas.
+
+---
+
+## 6. Operations & Maintenance
+
+Document:
+
+1. Routine tasks:
+   - Updates, reboots, certificate renewals, scaling, cleanup.
+2. Monitoring:
+   - Tools used (metrics, logs, uptime).
+   - Key dashboards/URLs.
+3. Backups:
+   - What is backed up, how often, and where.
+   - How to verify backups.
+
+---
+
+## 7. Incident & Recovery Basics
+
+Provide short guidance on:
+
+1. Typical incident types (server down, DB issues, high error rate).
+2. Where to look first (alerts, dashboards, logs).
+3. High-level recovery strategy:
+   - Rollbacks, failover, restore from backup (if applicable).
+
+This is not a full runbook, but a navigation guide.
+
+---
+
+## 8. Change History & Known Quirks
+
+1. Important past changes or migrations that affect current behavior.
+2. Known quirks and "gotchas":
+   - Things that look wrong but are intentional.
+   - Things that are fragile and need special care.
+
+---
+
+## 9. Output Format
+
+Produce infrastructure documentation with:
+
+1. Overview
+2. Components & Topology
+3. Environments
+4. Provisioning & Configuration
+5. Access & Security
+6. Operations & Maintenance
+7. Incident & Recovery Basics
+8. Change History & Known Quirks
+
+Write concisely, using bullets and headings that can live in a `infra/README.md` or Notion page.
+"""

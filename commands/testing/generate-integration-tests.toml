@@ -1,0 +1,100 @@
+prompt = """
+# Generate Integration Tests
+
+Design integration tests for the following system/module/endpoints/components:
+
+{{args}}
+
+Focus on tests that validate **realistic interactions between components** (e.g. API + DB, frontend + backend, service + external API).
+
+---
+
+## 1. Context & Boundaries
+
+1. Restate what is under test:
+   - Which components or boundaries are included.
+2. Clarify what is **inside** vs **outside** the integration test scope:
+   - Real DB vs test DB vs mocks.
+   - Real external APIs vs stubs.
+
+Make explicit assumptions where {{args}} is vague.
+
+---
+
+## 2. Critical Flows & Scenarios
+
+Identify the **core flows** that absolutely must work:
+
+1. Typical successful paths (happy paths).
+2. Critical edge cases and failure modes (e.g. invalid input, partial failures).
+3. Security/permission-related flows (if applicable).
+
+List them as high-level scenarios first.
+
+---
+
+## 3. Test Cases
+
+For each core flow, define concrete test cases:
+
+1. Name/description of the test.
+2. Pre-conditions (DB state, fixtures, config).
+3. Steps (requests/actions to perform).
+4. Expected outcomes:
+   - HTTP status codes or responses.
+   - DB state changes.
+   - Side effects (emails, events, logs).
+
+Focus on **behavior**, not implementation details.
+
+---
+
+## 4. Negative & Edge Cases
+
+Add tests for:
+
+1. Bad inputs (malformed, missing, out-of-range).
+2. Auth/authorization failures (unauthenticated, wrong role).
+3. External system errors:
+   - Timeouts, error responses, partial failures.
+
+Describe how the system is expected to behave (graceful degradation, clear errors).
+
+---
+
+## 5. Data & Fixtures Strategy
+
+Explain:
+
+1. How test data should be created:
+   - Seed datasets, factories, or fixtures.
+2. Isolation:
+   - How to avoid tests interfering with each other.
+3. Cleanup strategy:
+   - Reset DB between tests (transactions, truncate, etc.).
+
+Tailor suggestions to a typical web stack.
+
+---
+
+## 6. Implementation Notes
+
+Offer guidance on:
+
+1. Tools/frameworks that fit this scenario (e.g. Playwright, Cypress, Jest + supertest, etc., depending on stack).
+2. How to integrate tests into CI.
+3. How much coverage is "enough" for a solo operator (prioritize tests that protect the most valuable flows).
+
+---
+
+## 7. Output Format
+
+Produce:
+
+1. Short overview of integration test scope.
+2. List of test scenarios grouped by flow.
+3. Detailed test case definitions (in a form that can be turned into code).
+4. Notes on data/fixtures and tooling.
+
+Write test descriptions in a format easy to copy into test files.
+"""

@@ -1,0 +1,130 @@
+prompt = """
+# Frontend Framework Code Review
+
+Review the following frontend framework code (React, Vue, Astro islands, etc.) with a focus on correctness, maintainability, performance, and security:
+
+{{args}}
+
+Assume this code will be maintained long-term by a solo or very small team.
+
+---
+
+## 1. Context & Architecture Overview
+
+1. Summarize:
+   - Framework(s) used (React, Vue, Astro, etc.).
+   - Rendering mode (SSG, SSR, SPA, hybrid).
+   - High-level structure (monolith, multi-package, feature-based, etc.).
+2. Identify main concerns from the brief (if any): performance, DX, maintainability, etc.
+
+---
+
+## 2. Component & State Architecture
+
+1. Component structure:
+   - Are components small, focused, and reusable?
+   - Are responsibilities clearly separated (layout vs logic vs presentational)?
+2. State management:
+   - How local vs global vs server state is handled.
+   - Any unnecessary global state or prop drilling.
+   - Proper use of framework primitives (hooks, signals, stores, etc.).
+3. Data flow:
+   - Predictability and testability of data flow.
+   - Handling of loading/error/empty states.
+
+Provide concrete suggestions for restructuring where appropriate.
+
+---
+
+## 3. Performance & Rendering Behavior
+
+1. Rendering patterns:
+   - Avoidable re-renders.
+   - Heavy computations in render paths.
+2. Code splitting:
+   - Lazy loading of heavy components/routes.
+   - Using dynamic imports where appropriate.
+3. Lists & keys:
+   - Proper key usage in lists.
+   - Virtualization for large lists if needed.
+
+Call out specific patterns that will cause jank or wasted work.
+
+---
+
+## 4. Side Effects & Lifecycle Management
+
+1. Use of lifecycle hooks (effects, watchers, onMounted, etc.):
+   - Proper dependency management.
+   - Avoiding infinite loops and stale closures.
+2. Cleanup:
+   - Event listeners, timeouts/intervals, subscriptions properly cleaned up.
+3. Async behavior:
+   - Race conditions.
+   - Cancellation or stale response handling.
+
+Highlight any potential memory leaks or subtle bugs.
+
+---
+
+## 5. Accessibility & UX Considerations
+
+At a framework level:
+
+1. Reusable components:
+   - Do shared components (buttons, dialogs, menus, forms) encapsulate good a11y practices?
+2. Focus management:
+   - Navigation, modals, and dynamic content.
+3. Error messaging and loading states:
+   - UX for slow/failed network requests.
+
+Reference specific components or patterns where improvements are needed.
+
+---
+
+## 6. Security Concerns
+
+1. XSS risks:
+   - Any use of `dangerouslySetInnerHTML`, `v-html`, or similar.
+   - User-controlled content injected into DOM.
+2. Input handling:
+   - Client-side validation patterns.
+   - Exposure of secrets (API keys in frontend code, etc.).
+3. Routing & auth:
+   - Any obvious issues in guarded routes or role-based rendering.
+
+Call out specific high-risk spots first.
+
+---
+
+## 7. Code Style, Conventions & DX
+
+1. Consistency:
+   - Naming, file structure, hooks/composables patterns.
+2. Type safety (if applicable):
+   - Use of TypeScript or JSDoc.
+   - Any "any"-heavy or unsafe corners that will cause runtime issues.
+3. Reusability:
+   - Opportunities to extract hooks/composables/utilities from duplicated logic.
+
+Suggest simple refactors that increase clarity most for least effort.
+
+---
+
+## 8. Output Format
+
+Provide:
+
+1. **Summary** – overall assessment and top 3–5 issues.
+2. **Strengths** – what is already well done.
+3. **Issue List** – grouped by:
+   - Architecture & state
+   - Performance
+   - Lifecycle & side effects
+   - Accessibility
+   - Security
+   - Style & DX
+4. **Action Plan** – suggested order of improvements for a solo dev.
+
+Keep recommendations practical and incremental.
+"""

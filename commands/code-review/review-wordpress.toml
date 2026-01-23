@@ -1,0 +1,133 @@
+prompt = """
+# WordPress Code & Architecture Review
+
+Review the following WordPress implementation (theme, plugins, custom code, configuration) for quality, performance, security, and maintainability:
+
+{{args}}
+
+Assume this site is maintained by a solo webdev/DevOps agency and may host business-critical content.
+
+---
+
+## 1. Setup & Architecture Overview
+
+1. Summarize:
+   - Hosting environment (shared, VPS, managed WP, custom stack if known).
+   - Theme situation (custom theme, child theme, builder, off-the-shelf).
+   - Plugin landscape (approximate count and any heavy hitters).
+2. Identify whether this is:
+   - Blog/content site.
+   - Marketing brochure site.
+   - WooCommerce store.
+   - Web app built on WP.
+
+---
+
+## 2. Theme & Template Quality
+
+1. Template structure:
+   - Use of child themes vs direct edits to parent.
+   - Template hierarchy usage vs brute-force conditionals.
+2. Code quality:
+   - Proper use of WordPress APIs (loop, template tags).
+   - Avoiding mixed concerns (business logic buried in templates).
+3. Frontend integration:
+   - How assets are enqueued (no direct `<script>`/`<link>` dumps).
+   - Avoiding duplicate or conflicting frameworks (e.g. multiple jQuerys, Reacts).
+
+Provide suggestions for aligning with modern WP best practices.
+
+---
+
+## 3. Plugin Usage & Bloat
+
+1. Plugin inventory:
+   - Categories (SEO, security, builders, forms, cache, etc.).
+   - Obvious redundancies or overlapping functionality.
+2. Risk assessment:
+   - Outdated or abandoned plugins.
+   - Known risky categories (poorly coded builder plugins, nulled plugins, etc.).
+3. Performance impact:
+   - Plugins likely adding heavy DB queries or assets.
+
+Suggest consolidation, replacements, or removals where sensible.
+
+---
+
+## 4. Performance & Caching
+
+1. Caching:
+   - Use of page cache, object cache, and browser caching (if known/inferred).
+   - Conflicting cache plugins or misconfigurations.
+2. DB queries:
+   - Common performance pitfalls (unbounded queries, expensive meta queries).
+3. Assets:
+   - Handling of images, CSS/JS bundles.
+   - CDN usage (if appropriate).
+
+Provide a priority list of performance improvements, especially those doable quickly.
+
+---
+
+## 5. Security & Hardening
+
+1. Basic hygiene:
+   - Keeping core, themes, and plugins up to date.
+   - Avoiding editing core or shipping credentials in the codebase.
+2. Hardening:
+   - Limited admin exposure (e.g. `/wp-admin`, XML-RPC usage).
+   - Use of security plugins and whether they're configured sanely.
+3. Role & capability management:
+   - Admin vs editor vs custom roles.
+   - Avoiding giving admin to everyone.
+
+Highlight any critical concerns that need immediate attention.
+
+---
+
+## 6. Maintainability & Upgrade Path
+
+1. Customizations:
+   - Where custom code lives (mu-plugins, custom plugins, theme, snippets).
+   - Risk of breaking updates due to direct edits in core/parent themes.
+2. Structure:
+   - Reuse of patterns or ad-hoc hacks everywhere.
+   - Use of version control (if indicated).
+3. Upgrade strategy:
+   - How safe it is to update core/plugins/themes.
+   - Suggestions for refactors that reduce risk.
+
+---
+
+## 7. WooCommerce-Specific (if relevant)
+
+If WooCommerce is involved:
+
+1. Customizations:
+   - Template overrides.
+   - Custom checkout or cart flows.
+2. Performance:
+   - Heavy queries and product catalog considerations.
+3. Reliability:
+   - Payment gateways.
+   - Order data integrity.
+
+---
+
+## 8. Output Format
+
+Provide:
+
+1. **Summary** – overall assessment (healthy / needs work / high risk).
+2. **Strengths** – what's already good.
+3. **Issue List** – grouped by:
+   - Theme & templates
+   - Plugins
+   - Performance
+   - Security
+   - Maintainability
+   - WooCommerce (if applicable)
+4. **Action Plan** – prioritized recommendations for a solo operator.
+
+Focus on changes that reduce long-term pain and risk.
+"""

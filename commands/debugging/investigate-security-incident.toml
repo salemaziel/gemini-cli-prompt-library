@@ -1,0 +1,148 @@
+prompt = """
+# Investigate Security Incident
+
+You are investigating a suspected or confirmed security incident in the following context:
+
+{{args}}
+
+Assume you are a solo operator responsible for both incident response and long-term remediation. Focus on **containment, evidence preservation, and pragmatic next steps**.
+
+---
+
+## 1. Incident Description & Severity
+
+1. Restate the incident:
+   - What was observed (alerts, strange logs, defacement, data exfil suspicion, etc.)?
+2. Scope & impact (as currently understood):
+   - Which systems, environments, and data might be affected?
+3. Classify severity (low/medium/high/critical) and why.
+
+List knowns, unknowns, and assumptions.
+
+---
+
+## 2. Immediate Containment Strategy
+
+Outline options and tradeoffs:
+
+1. Containment actions:
+   - Isolating affected hosts/services.
+   - Revoking credentials/tokens.
+   - Temporarily disabling vulnerable features.
+2. Availability vs safety:
+   - Impact of shutting down vs staying online in restricted mode.
+3. Evidence preservation:
+   - Avoid actions that wipe logs or evidence.
+   - Snapshotting disks/VMs if possible.
+
+Provide a prioritized list of **immediate actions**.
+
+---
+
+## 3. Evidence Collection & Timeline
+
+1. Logs to review:
+   - Application logs.
+   - Web server/proxy logs.
+   - Auth/identity provider logs.
+   - System logs (SSH, sudo, etc.).
+2. Key data:
+   - Suspicious IPs, user agents, request patterns.
+   - Unusual login locations or times.
+   - Changes to accounts, permissions, or configurations.
+3. Timeline:
+   - Establish earliest known malicious activity.
+   - Correlate across systems (DB changes, deploys, config changes).
+
+Explain how to build a coherent narrative of what happened.
+
+---
+
+## 4. Attack Vector Analysis
+
+Based on the evidence, identify likely attack vectors:
+
+- Vulnerable plugin/theme or outdated dependency.
+- Exposed admin interface or weak credentials.
+- Injection/XSS leading to account takeover.
+- Misconfigured firewall/WAF or open ports.
+- Compromised credentials or API keys.
+
+For each plausible vector, describe:
+- What evidence supports it.
+- What checks confirm/deny it.
+
+---
+
+## 5. Impact Assessment
+
+Assess potential damage:
+
+1. Data:
+   - What sensitive data exists on the system?
+   - Signs of read/export vs modification/deletion.
+2. Accounts:
+   - Any new accounts created or permissions escalated?
+3. Integrity:
+   - Unauthorized changes to code or configuration.
+
+Describe how you would verify integrity (files, DB, deploy artifacts).
+
+---
+
+## 6. Eradication & Recovery
+
+1. Fix the root cause:
+   - Patch/update vulnerable components.
+   - Change configuration, close exposed ports, tighten access.
+2. Credential hygiene:
+   - Rotate passwords, API keys, tokens.
+   - Invalidate user sessions where appropriate.
+3. Clean-up:
+   - Remove backdoors, web shells, malicious code.
+   - Re-deploy from clean sources if needed.
+
+Outline **safe recovery approaches** (rebuild vs cleanse in place).
+
+---
+
+## 7. Communication & Notification
+
+1. Internal:
+   - How to document findings and actions.
+   - What minimal incident summary to capture.
+2. External (if applicable):
+   - When you might need to notify clients/users.
+   - What information is needed before making statements.
+
+Keep this high-level but practical.
+
+---
+
+## 8. Hardening & Long-Term Improvements
+
+1. Security baseline:
+   - Patching cadence.
+   - Access control hygiene.
+   - Minimum logging and monitoring.
+2. Preventive measures:
+   - WAF rules.
+   - 2FA and strong auth policies.
+   - Principle of least privilege.
+3. Playbooks:
+   - Turning this investigation into reusable incident response steps.
+
+---
+
+## 9. Output Format
+
+Provide:
+
+1. **Incident summary** – what likely happened and why it matters.
+2. **Containment plan** – immediate steps to limit damage.
+3. **Investigation plan** – specific evidence to gather.
+4. **Remediation plan** – fixes and recovery steps.
+5. **Hardening plan** – future safeguards.
+
+Be calm, structured, and realistic about what one person can execute.
+"""

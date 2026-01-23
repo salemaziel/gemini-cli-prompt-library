@@ -1,0 +1,106 @@
+prompt = """
+# Skill Gap Analysis
+
+Perform a skill gap analysis for me as a solo webdev/DevOps agency owner with respect to the following target capabilities or plans:
+
+{{args}}
+
+Your goal is to identify **which skills matter**, where I likely stand now, and what's worth investing in next (vs what can be safely ignored).
+
+---
+
+## 1. Target Capabilities & Context
+
+1. Restate the goals in clear terms:
+   - What I want to be able to do.
+   - What kinds of projects/clients I want to serve.
+2. Infer the **core capability areas** involved:
+   - e.g. frontend frameworks, CMS, infra, security, automation, sales/marketing, etc.
+
+This sets the frame for the analysis.
+
+---
+
+## 2. Capability Breakdown
+
+Define a small set of capability categories (5–10 max) relevant to {{args}}, such as:
+
+- Frontend engineering
+- CMS & content architecture
+- Backend/API design
+- Infrastructure & DevOps
+- Security & reliability
+- Automation & tooling
+- Business & sales
+- Client management & delivery
+
+For each category:
+
+1. Describe what "competent enough" looks like for a solo agency.
+2. Note what "advanced" would mean (optional, for context).
+
+---
+
+## 3. Likely Current Level (Inference-Based)
+
+Based on the fact that I'm running a webdev/infra agency:
+
+1. Infer my **probable strengths** (areas I'm already decent or strong at).
+2. Infer probable weaker areas or blind spots:
+   - Often-neglected topics for engineers (sales, positioning, deep security, etc.).
+
+Be explicit that this is inference-based, but useful for prioritization.
+
+---
+
+## 4. Gaps That Actually Matter
+
+From the above, identify:
+
+1. **High-impact gaps**:
+   - Skills that, if improved, would unlock better clients, higher rates, or lower operational pain.
+2. **Medium-impact gaps**:
+   - Nice to have, beneficial but not urgent.
+3. **Low-impact or optional**:
+   - Interesting but not worth prioritizing now.
+
+Tie each gap back to specific situations (e.g. "losing out on more complex infra retainers", "spending too long on manual ops tasks", etc.).
+
+---
+
+## 5. Recommended Focus Areas (Short List)
+
+Propose a **short, ordered list (3–5 items)** of focus areas for the next 3–6 months.
+
+For each:
+
+1. What to learn or improve.
+2. Why it matters (impact).
+3. How deep to go (baseline vs advanced).
+
+Avoid suggesting more than I could reasonably do.
+
+---
+
+## 6. Next Steps & Learning Hooks
+
+For each recommended focus area, suggest:
+
+1. Types of learning activities (projects, reading, experiments).
+2. Opportunities to tie learning directly to current or upcoming client work.
+3. Minimal ongoing practice to keep the skill from decaying.
+
+---
+
+## 7. Output Format
+
+Produce:
+
+1. Summary of target goals.
+2. Capability breakdown (with short descriptions).
+3. Analysis of likely current strengths vs weaknesses.
+4. High/medium/low-impact gaps.
+5. Recommended focus areas and next steps.
+
+Keep it concise and directly actionable.
+"""

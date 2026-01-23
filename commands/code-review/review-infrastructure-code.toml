@@ -1,0 +1,123 @@
+prompt = """
+# Infrastructure-as-Code Review (Terraform / Ansible / CI/CD)
+
+Review the following infrastructure-as-code and related configuration (Terraform, Ansible, CI/CD pipelines, shell scripts) for correctness, safety, maintainability, and cost-awareness:
+
+{{args}}
+
+Assume a solo operator is responsible for deploying and maintaining this infrastructure.
+
+---
+
+## 1. Context & Scope
+
+1. Summarize:
+   - Target environment (cloud provider, on-prem/Proxmox, hybrid).
+   - Main services provisioned (servers, databases, networks, load balancers, etc.).
+   - Tools in use (Terraform modules, Ansible roles, pipeline tools).
+2. Clarify:
+   - Whether this is production, staging, or internal tooling.
+   - Desired level of automation vs manual control.
+
+---
+
+## 2. Structure & Modularity
+
+1. Terraform:
+   - How modules are structured (root modules, shared modules).
+   - Use of workspaces or per-environment directories.
+   - Variable and output organization.
+2. Ansible:
+   - Roles vs ad-hoc playbooks.
+   - Inventory management and group vars.
+3. CI/CD:
+   - Pipeline stages and separation (build, test, deploy).
+
+Suggest improvements in organization that will help long-term.
+
+---
+
+## 3. Idempotence & Reproducibility
+
+1. Terraform:
+   - Avoidance of `local-exec` hacks where not needed.
+   - Use of data sources vs hard-coded values.
+2. Ansible:
+   - Tasks written idempotently.
+   - Use of handlers and notifications.
+3. Pipelines:
+   - Re-running jobs should not leave systems in a broken or inconsistent state.
+
+Call out any obviously non-idempotent patterns.
+
+---
+
+## 4. Security & Secrets Management
+
+1. Secrets:
+   - How secrets are handled (env vars, vaults, secret managers, inline values).
+   - Any indication of secrets in code or version control.
+2. Permissions:
+   - IAM roles/policies or user permissions (if visible).
+   - Principle of least privilege vs over-broad access.
+3. Network security:
+   - Firewalls/security groups.
+   - Exposure of services to the public internet.
+
+Highlight critical issues where a misstep could expose infrastructure.
+
+---
+
+## 5. Reliability & Recovery
+
+1. Backups:
+   - Presence of backup strategies in code (snapshots, DB backups, offsite copies).
+2. High availability:
+   - Redundancy of critical components (load balancers, multiple zones, etc.) where appropriate.
+3. Disaster recovery:
+   - How you would rebuild the environment from scratch using this code.
+
+If there are obvious gaps, call them out and suggest patterns.
+
+---
+
+## 6. Cost & Efficiency
+
+1. Resource sizing:
+   - Over-provisioned instances or services.
+2. Unused resources:
+   - Obvious "zombie" resources or always-on environments not needed.
+3. Autoscaling and schedules:
+   - Opportunities to scale down at night or during low load.
+
+Provide a few targeted suggestions to reduce recurring costs.
+
+---
+
+## 7. Observability & Compliance
+
+1. Monitoring:
+   - Metrics, logs, alerts definitions (if present).
+2. Standardization:
+   - Labels/tags for resources (owner, environment, cost center).
+3. Compliance:
+   - Any obvious gaps with basic security baselines.
+
+---
+
+## 8. Output Format
+
+Provide:
+
+1. **Summary** – overall assessment of infra code (safe, risky, over-complex, etc.).
+2. **Strengths** – what is already well-structured.
+3. **Issue List** – grouped by:
+   - Structure & modularity
+   - Security
+   - Reliability & recovery
+   - Cost & efficiency
+   - Observability
+4. **Action Plan** – prioritized improvements suitable for a solo operator.
+
+Focus on changes that reduce operational risk and cognitive load.
+"""

@@ -1,0 +1,145 @@
+prompt = """
+# Write Technical Specification
+
+Write a technical specification for implementing the following feature/system:
+
+{{args}}
+
+The spec should bridge between a PRD/idea and concrete implementation details. It is for a solo engineer or very small team that will both design and implement the solution.
+
+---
+
+## 1. Summary & Context
+
+1. Briefly describe what is being built.
+2. Reference the higher-level goal (PRD, project objective).
+3. Clarify the environment:
+   - Tech stack (frontend, backend, infra).
+   - Relevant existing systems.
+
+---
+
+## 2. Requirements Recap
+
+Summarize the key requirements this spec addresses:
+
+1. Functional requirements (short list).
+2. Non-functional requirements that materially impact design (performance, security, etc.).
+3. Explicit constraints (legacy systems, hosting, cost limits).
+
+This should be a distilled recap, not a full PRD.
+
+---
+
+## 3. High-Level Architecture
+
+Describe the overall design:
+
+1. Components/services involved.
+2. Interactions between them (request flows, data flows).
+3. Where this fits in the existing architecture.
+
+Use simple text diagrams or bullet-point flows.
+
+---
+
+## 4. Data Model & Schemas
+
+Define:
+
+1. New or modified data entities (DB tables, documents, content types).
+2. Fields, types, constraints, and relationships.
+3. Migration considerations:
+   - How existing data is affected.
+   - Backward compatibility/staged rollout if needed.
+
+Include enough detail that implementation can be done without guessing.
+
+---
+
+## 5. API & Interface Design
+
+If APIs are involved:
+
+1. Endpoints (paths, methods) or GraphQL operations.
+2. Request/response formats (including error shapes).
+3. Auth and authorization requirements.
+4. Rate limits or usage constraints (if relevant).
+
+If UI is involved:
+
+1. Main screens/components.
+2. State transitions and major interactions.
+
+---
+
+## 6. Logic, Algorithms & Edge Cases
+
+Describe:
+
+1. Core business logic and rules.
+2. Important algorithms or processing steps.
+3. Edge cases and how they should be handled.
+
+Call out any tricky parts where future you will be happy to see extra detail.
+
+---
+
+## 7. Security, Privacy & Compliance
+
+1. How data is protected in transit and at rest.
+2. Access control decisions (who can do what).
+3. Any logging of sensitive operations.
+4. Potential abuse vectors and mitigations.
+
+---
+
+## 8. Performance & Scaling Considerations
+
+1. Expected load and usage patterns.
+2. Strategies to avoid obvious bottlenecks.
+3. Caching, pagination, batching or chunking where needed.
+4. Graceful degradation if under heavy load.
+
+---
+
+## 9. Testing & Validation Plan
+
+Outline:
+
+1. Unit-level testing focus (key modules, edge cases).
+2. Integration and end-to-end flows to verify.
+3. Manual QA checks (key paths, negative cases).
+4. Observability:
+   - Metrics and logs to confirm system health.
+
+---
+
+## 10. Rollout & Migration Plan
+
+If the feature changes existing behavior:
+
+1. Deployment strategy (big-bang vs phased).
+2. Feature flags or configuration toggles.
+3. Rollback strategy.
+4. Data migration steps (before, during, after).
+
+---
+
+## 11. Output Format
+
+Produce a technical spec with these sections:
+
+1. Summary & Context
+2. Requirements Recap
+3. High-Level Architecture
+4. Data Model & Schemas
+5. API/UI Design
+6. Logic & Edge Cases
+7. Security & Privacy
+8. Performance & Scaling
+9. Testing & Validation
+10. Rollout & Migration
+
+Use clear headings and concise paragraphs/bullets suitable for a repo `SPEC.md`.
+"""

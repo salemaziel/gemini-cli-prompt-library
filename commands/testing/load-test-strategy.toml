@@ -1,0 +1,109 @@
+prompt = """
+# Load Test Strategy
+
+Design a lightweight load/performance test strategy for the following system or endpoint(s):
+
+{{args}}
+
+Assume you are a solo operator and want to **catch obvious performance problems** and capacity limits without building an enterprise-grade performance lab.
+
+---
+
+## 1. Performance Goals & Constraints
+
+1. Restate what is being tested (API, site, checkout flow, etc.).
+2. Define:
+   - Expected normal traffic.
+   - Expected peak traffic (launch, campaigns).
+   - Any latency or throughput goals that matter.
+
+If specifics are missing, make reasonable assumptions and state them.
+
+---
+
+## 2. Critical Paths to Test
+
+Identify:
+
+1. Which routes/endpoints/pages are most important to load test.
+2. Which operations are most resource intensive (DB-heavy, CPU-heavy, external API reliant).
+
+Prioritize a small set of high-value targets.
+
+---
+
+## 3. Test Scenarios
+
+Define a few test scenarios:
+
+1. Baseline:
+   - Low to moderate load to confirm basic stability.
+2. Peak:
+   - Simulated high load close to expected peak.
+3. Stress:
+   - Load beyond expected peak to see where it fails (optional but useful).
+4. Soak:
+   - Moderate load for longer duration to detect leaks or gradual degradation (if relevant).
+
+For each scenario, specify:
+- Approximate concurrency and request rate.
+- Duration.
+- What success looks like (latency, error rates).
+
+---
+
+## 4. Tooling & Setup
+
+Recommend simple tools suitable for a solo dev (e.g. k6, artillery, locust, etc., depending on context).
+
+For the chosen approach:
+
+1. How to define test scripts (flows, payloads, auth).
+2. Where to run tests:
+   - Local, CI, or dedicated test environment.
+3. Precautions:
+   - Avoid load-testing directly against critical production systems without care.
+
+---
+
+## 5. Metrics & Observability
+
+Describe what to monitor during tests:
+
+1. From the load-testing tool:
+   - Latency percentiles.
+   - Error rate.
+   - Throughput.
+2. From the system:
+   - CPU, memory, DB metrics, cache hit rates.
+   - Any relevant app-level metrics.
+
+Explain how to interpret results (e.g. "If p95 latency exceeds X, this is a problem").
+
+---
+
+## 6. Tuning & Iteration
+
+For likely bottlenecks:
+
+1. Suggest tuning levers:
+   - Caching, DB indexes, connection pools, worker processes, CDN configuration.
+2. Explain:
+   - How to re-run tests after changes.
+   - How to compare test runs.
+
+---
+
+## 7. Output Format
+
+Provide:
+
+1. Summary of performance goals.
+2. List of endpoints/flows to test.
+3. Test scenarios (baseline, peak, stress, soak as needed).
+4. Tooling recommendations and setup notes.
+5. Metrics to monitor and basic interpretation.
+6. Suggestions for follow-up/tuning.
+
+Keep it lean and actionable.
+"""

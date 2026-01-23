@@ -1,0 +1,115 @@
+prompt = """
+# Design Learning Plan for Framework/Technology
+
+Create a focused learning plan to become productive with the following framework/technology:
+
+{{args}}
+
+Assume I already have general webdev/DevOps skills but need a **practical path** to using this tool confidently in real client projects.
+
+---
+
+## 1. Current Skill Baseline & Target Level
+
+1. Infer my likely existing skills (e.g. JS, HTML/CSS, Linux, basic infra).
+2. Define the **target proficiency**:
+   - "Project-capable" (can ship real client work).
+   - Not "framework guru".
+
+Briefly describe what "good enough" looks like for this tool in my context.
+
+---
+
+## 2. Key Concepts & Mental Models
+
+Identify the core ideas I must understand:
+
+1. The framework's mental model (how it thinks about UI/data/infra/etc.).
+2. Essential concepts and primitives:
+   - e.g. for frontend: components, routing, state, data fetching, rendering.
+   - for infra: resources, modules, state, provisioning, idempotence.
+3. Common pitfalls and "gotchas" for newcomers.
+
+This becomes the conceptual checklist for my learning.
+
+---
+
+## 3. Minimal Learning Roadmap
+
+Propose a staged roadmap:
+
+1. Stage 1 – Orientation (1–2 sessions):
+   - High-level overview and key docs.
+   - "Hello world" or tiny example aligned with my typical use case.
+2. Stage 2 – Core Skills:
+   - Specific topics and examples to cover.
+   - Rough sequence that builds on prior knowledge.
+3. Stage 3 – Project-Level Competence:
+   - A small but realistic project idea.
+   - Features to include that mirror real client demands.
+
+For each stage, keep it small and focused.
+
+---
+
+## 4. Hands-On Exercises
+
+Define concrete exercises:
+
+1. 2–4 tiny exercises to internalize basics.
+2. 1 small project (or 2 micro-projects) tied to my business:
+   - e.g. marketing site, blog, small dashboard, automation.
+
+Each exercise should have a clear "done" condition and what I should learn from it.
+
+---
+
+## 5. Learning Resources & Strategy
+
+Suggest a **short list** of resource types (not long catalogs):
+
+1. Official docs sections to read in order.
+2. One or two high-quality tutorials/guides (if relevant).
+3. How to mix reading and building for this tool.
+
+Explain how to avoid getting stuck in tutorial hell.
+
+---
+
+## 6. Integration with Existing Stack
+
+Explain:
+
+1. How this framework fits with systems I likely already use (WordPress, Astro, Proxmox, Terraform, etc.).
+2. Where it can **replace** existing tools vs where it should **augment** them.
+3. What kind of "bridge projects" make sense (e.g. integrate into existing WP, front a headless CMS, etc.).
+
+---
+
+## 7. Common Failure Modes & Warnings
+
+List a few specific "don't do this" patterns:
+
+- Overbuilding for small client sites.
+- Ignoring performance or SEO implications.
+- Tying projects too tightly to experimental features.
+
+Briefly explain how to avoid each one.
+
+---
+
+## 8. Output Format
+
+Provide:
+
+1. A short **overview** of the learning goal.
+2. Sections:
+   - Core Concepts
+   - Learning Roadmap (Stages 1–3)
+   - Exercises & Project Idea(s)
+   - Recommended Resources
+   - Integration with Existing Stack
+   - Common Pitfalls
+
+Write so it can be pasted into a personal learning doc or Notion page.
+"""

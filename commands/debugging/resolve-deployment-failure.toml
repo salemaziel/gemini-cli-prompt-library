@@ -1,0 +1,118 @@
+prompt = """
+# Resolve Deployment Failure
+
+You are debugging a failed deployment or broken post-deploy state in the following context:
+
+{{args}}
+
+Assume you are a solo operator using some CI/CD or scripted deployment process (Git-based, pipeline-based, or manual but repeatable).
+
+---
+
+## 1. Clarify the Failure
+
+1. Restate:
+   - What was being deployed (app, site, infra change)?
+   - What "failure" means here (pipeline failed, site broken after success, partial deploy).
+2. Scope:
+   - Is production impacted?
+   - Are other environments affected (staging, dev)?
+
+Distinguish between **deployment pipeline failure** and **successful deploy that broke runtime behavior**.
+
+---
+
+## 2. Pipeline-Level Diagnostics
+
+If the pipeline itself failed:
+
+1. Logs:
+   - Identify the failing step and error messages.
+   - Check for environment differences (CI vs local).
+2. Common causes:
+   - Missing env vars or secrets.
+   - Dependency install failures.
+   - Tests failing only in CI (timing issues, environment specifics).
+3. Repro:
+   - How to reproduce locally (if possible).
+   - Which parts are CI-only and need mock/fake resources.
+
+Outline a step-by-step way to narrow down the failing stage.
+
+---
+
+## 3. Runtime/Post-Deploy Diagnostics
+
+If the deploy "succeeded" but the app/site is broken:
+
+1. Compare before vs after:
+   - Which parts of the system changed (code, config, infra)?
+   - Rollback state vs current state.
+2. Logs & metrics:
+   - New errors or spikes after deploy.
+   - Resource usage changes.
+
+Identify whether the issue is more likely:
+- Code bug.
+- Config/env mismatch.
+- Infra change (e.g. network, DNS, certificates).
+
+---
+
+## 4. Configuration & Environment Checks
+
+1. Env vars and secrets:
+   - Missing, misnamed, or mismatched between environments.
+2. Schema & migrations:
+   - DB migrations run or not.
+   - Mismatch between code expecting new schema and old DB.
+3. Feature flags and toggles:
+   - Flags enabled in one environment but not another.
+
+Provide concrete checks and likely misconfiguration patterns.
+
+---
+
+## 5. Rollback Strategy
+
+Define a safe rollback approach:
+
+1. Conditions:
+   - When to roll back vs fix forward.
+2. How:
+   - Roll back to previous build/version.
+   - Revert infra changes where applicable.
+3. Verification:
+   - Confirm system is healthy again after rollback.
+   - Ensure logs/metrics return to normal.
+
+Highlight the importance of **one change at a time** during incidents.
+
+---
+
+## 6. Root Cause & Process Improvements
+
+Once stabilized:
+
+1. Identify root cause with evidence:
+   - Misconfigured pipeline step.
+   - Missing migration, env var, secret, or permission.
+   - Test coverage gaps.
+2. Improve the process:
+   - Pre-deploy checks (health checks, smoke tests).
+   - Post-deploy verification steps.
+   - Better error surfacing (pipeline logs, notifications).
+
+---
+
+## 7. Output Format
+
+Provide:
+
+1. **Summary** – your understanding of the deployment failure from {{args}}.
+2. **Diagnosis Plan** – ordered list of investigations.
+3. **Resolution Plan** – actionable steps (including rollback options).
+4. **Prevention Plan** – pipeline and process improvements for future deployments.
+
+Write it in a way that can be pasted into a deployment runbook or incident doc.
+"""

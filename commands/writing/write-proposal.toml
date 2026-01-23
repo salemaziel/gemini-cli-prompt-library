@@ -1,0 +1,149 @@
+prompt = """
+# Write Project Proposal
+
+Write a clear, client-facing project proposal for the following opportunity:
+
+{{args}}
+
+Assume this is from a solo webdev/DevOps agency. The proposal should be **persuasive but grounded**, with realistic scope and timelines.
+
+---
+
+## 1. Executive Summary
+
+1. Briefly restate the client's situation and goals.
+2. Summarize the proposed solution in 2–4 sentences.
+3. Highlight the primary outcomes/benefits for the client.
+
+This should be readable as a standalone snapshot.
+
+---
+
+## 2. Project Objectives
+
+List 3–6 concrete objectives, such as:
+
+- Improve X metric.
+- Enable Y capability.
+- Reduce Z pain.
+
+Use language that connects technical work to business value.
+
+---
+
+## 3. Scope of Work
+
+Break down the work into phases or workstreams:
+
+1. Phase/Section name (e.g. Discovery, Implementation, Launch, Hardening).
+2. For each:
+   - Tasks and deliverables.
+   - What is included.
+   - What is explicitly **out of scope** (to avoid scope creep).
+
+Keep descriptions concrete and easy for non-technical stakeholders to understand.
+
+---
+
+## 4. Approach & Methodology
+
+Describe how you will work:
+
+1. Overall approach (e.g. iterative, milestone-based).
+2. Key practices:
+   - Environment strategy (staging vs production).
+   - Testing and quality assurance.
+   - Communication cadence and tools.
+3. Any client responsibilities (content, approvals, access).
+
+Make it clear you have a mature, repeatable process.
+
+---
+
+## 5. Timeline & Milestones
+
+Provide a realistic high-level timeline:
+
+1. Duration estimate (weeks/months).
+2. Milestones with approximate dates or relative timings.
+3. Dependencies that can affect schedule (content, approvals, 3rd-party vendors).
+
+Focus on sequencing and expectations, not fixed guarantees.
+
+---
+
+## 6. Pricing & Payment Terms
+
+Describe:
+
+1. Pricing model:
+   - Fixed fee, retainer, time & materials, or hybrid.
+2. What is included in the quoted price:
+   - Number of iterations, revisions, or support window.
+3. Payment schedule:
+   - Deposits, milestone payments, final payment.
+
+Use simple, transparent language.
+
+---
+
+## 7. Assumptions & Dependencies
+
+List important assumptions:
+
+- Access to existing systems or accounts.
+- Availability of client stakeholders.
+- Use of specific tools, platforms, or providers.
+
+Call out external dependencies that could impact cost/timeline.
+
+---
+
+## 8. Risks & Mitigations
+
+Show that you've thought about risk:
+
+1. Identify a few key risks (technical, content, organizational).
+2. For each, provide a short mitigation strategy.
+
+Keep this concise but credible.
+
+---
+
+## 9. Maintenance & Ongoing Support
+
+Clarify what happens after launch:
+
+1. Launch warranty or bug-fix period (if any).
+2. Options for ongoing support:
+   - Maintenance plan, retainer, as-needed hourly, etc.
+3. Client's responsibilities if they don't opt into ongoing support.
+
+---
+
+## 10. Call to Action
+
+End with:
+
+1. Simple instructions for next steps (approve, sign, pay deposit, schedule kickoff).
+2. A short, confident closing paragraph.
+
+---
+
+## 11. Output Format
+
+Produce a client-ready proposal document with these sections:
+
+1. Executive Summary
+2. Objectives
+3. Scope of Work
+4. Approach & Methodology
+5. Timeline & Milestones
+6. Pricing & Payment Terms
+7. Assumptions & Dependencies
+8. Risks & Mitigations
+9. Maintenance & Ongoing Support
+10. Next Steps
+
+Write in clear, professional language, not overly formal or buzzwordy.
+"""

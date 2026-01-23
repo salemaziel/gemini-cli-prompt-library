@@ -1,0 +1,107 @@
+prompt = """
+# Write Client Case Study
+
+Write a client case study based on the following project/context:
+
+{{args}}
+
+Assume this is for a solo webdev/DevOps agency website or portfolio. The case study should be **concrete, outcome-focused, and non-hypey**.
+
+---
+
+## 1. Overview & Client Context
+
+1. Briefly describe:
+   - Who the client is (industry, size).
+   - Their situation before the project.
+2. State the main challenge in 1–2 sentences.
+
+Write in a way that respects client privacy (use pseudonyms or generic descriptors if needed).
+
+---
+
+## 2. Challenges
+
+Describe the key challenges in more detail:
+
+1. Business challenges (leads, conversions, operations).
+2. Technical challenges (performance, maintenance, security, legacy systems).
+3. Constraints (budget, timeline, team size).
+
+Keep this grounded and specific.
+
+---
+
+## 3. Approach & Solution
+
+Explain how you approached the problem:
+
+1. Your strategy or plan.
+2. Key design/architecture decisions (at a high level).
+3. Technologies, platforms, and tools used (brief mention).
+
+Emphasize how your choices aligned with the client's constraints.
+
+---
+
+## 4. Implementation Highlights
+
+Share the most interesting aspects of the implementation:
+
+1. 2–4 concrete highlights:
+   - Performance improvements.
+   - Clever integrations.
+   - Automation or reliability wins.
+2. Before/after comparisons where possible (qualitative or quantitative).
+
+Avoid deep technical jargon; keep it understandable to business readers.
+
+---
+
+## 5. Results & Impact
+
+Describe the outcomes:
+
+1. Quantitative results if available (traffic, conversions, speed metrics, downtime reductions).
+2. Qualitative results (client feedback, smoother workflows, less stress).
+3. Timeframe (how quickly results appeared).
+
+Be honest and avoid overclaiming.
+
+---
+
+## 6. Client Quote (Optional / Fabricated Placeholder)
+
+Include a short, plausible testimonial-style quote (as a placeholder if real quote is not provided), e.g.:
+
+- How it felt to work with you.
+- What changed for them.
+
+Make clear in tone that this can be replaced by a real client quote later.
+
+---
+
+## 7. Callout Boxes (Optional)
+
+Suggest 2–3 short callouts that could be highlighted visually:
+
+- "Page load time reduced by X%"
+- "Automated backups and monitoring put in place"
+- "Zero downtime during migration"
+
+---
+
+## 8. Output Format
+
+Produce a case study with:
+
+1. Client Overview
+2. Challenges
+3. Approach & Solution
+4. Implementation Highlights
+5. Results & Impact
+6. (Optional) Client Quote
+7. (Optional) Callouts
+
+Write in a friendly, professional tone suitable for a public portfolio page.
+"""

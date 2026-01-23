@@ -1,0 +1,143 @@
+prompt = """
+# Design Migration Strategy
+
+Design a safe, realistic migration strategy for the following scenario:
+
+{{args}}
+
+Assume you are a solo webdev/DevOps operator responsible for moving from a current system (legacy CMS/app/infra) to a new architecture with minimal downtime and no data loss.
+
+---
+
+## 1. Current vs Target State
+
+1. Describe the **current system**:
+   - Tech stack, hosting, databases, CMS.
+   - Traffic patterns and critical paths (login, checkout, lead forms, etc.).
+   - Known pain points and risks.
+
+2. Describe the **target system**:
+   - New stack, hosting, architecture.
+   - Expected improvements (performance, maintainability, cost).
+
+3. Explicitly list:
+   - What must remain unchanged (e.g. URLs, SEO, user data).
+   - What can be changed (design, IA, minor URL changes with redirects).
+
+---
+
+## 2. Migration Risks & Constraints
+
+Identify risks across:
+
+- Data integrity (loss, duplication, inconsistency).
+- Uptime and downtime tolerances.
+- SEO (broken links, lost rankings, canonical issues).
+- Integrations (payments, email, third-party APIs).
+- Resource constraints (you are one person).
+
+For each risk, note severity and likelihood.
+
+---
+
+## 3. Data & Content Migration Plan
+
+1. Inventory all data:
+   - Content types (posts, pages, products, users, media, settings).
+   - Source of truth for each.
+   - Volume and size considerations (esp. media).
+
+2. Design migration steps:
+   - Export format(s).
+   - Transformation steps (scripts, tools, mapping).
+   - Import process into the new system.
+
+3. Plan for:
+   - One-time bulk migration.
+   - Delta sync / incremental updates near cutover.
+   - Validation checks (spot checks, automated consistency checks).
+
+---
+
+## 4. URL & SEO Preservation
+
+1. Map old URLs to new URLs:
+   - 1:1 mappings whenever possible.
+   - Redirect rules for changed paths (301s).
+   - Handling of removed content (410s or meaningful fallbacks).
+
+2. Describe:
+   - How you'll manage sitemaps (old vs new).
+   - Update of canonical tags, hreflang, meta tags.
+   - Monitoring for 404 spikes after launch.
+
+---
+
+## 5. Phased Rollout Strategy
+
+Design a rollout that minimizes risk:
+
+1. Staging and UAT:
+   - How to set up a staging environment.
+   - Testing plan (functional, performance, SEO checks).
+
+2. Cutover strategies (choose and justify):
+   - Big-bang switch (for small/simple sites).
+   - Gradual rollout by subdomain, path, or feature.
+   - Blue/green or canary-style for higher-risk systems.
+
+3. Rollback plan:
+   - Under what conditions you roll back.
+   - How to revert DNS, deployment, and data changes.
+   - How to avoid partial migrations that leave data corrupted.
+
+---
+
+## 6. Operational & Communication Plan
+
+1. Monitoring during and after migration:
+   - What you will watch (errors, logs, uptime, performance, SEO).
+   - Time window of heightened monitoring.
+
+2. Communication:
+   - What (if anything) you tell end users.
+   - What you tell clients/stakeholders (status updates, maintenance windows).
+
+3. Documentation:
+   - Where you'll record migration scripts, steps, and lessons learned.
+
+---
+
+## 7. Timeline & Checklist
+
+Provide:
+
+1. A realistic timeline broken into phases:
+   - Discovery and planning.
+   - Implementation.
+   - Dry runs / rehearsals.
+   - Final cutover.
+   - Post-migration hardening.
+
+2. A checklist (bulleted) that can be turned into tasks, including:
+   - Pre-migration backups.
+   - Verification of restore procedures.
+   - Final sanity checks before DNS cutover.
+   - Post-launch validation steps.
+
+---
+
+## 8. Output Format
+
+Output a migration strategy document with sections:
+
+1. Current vs target architecture.
+2. Risks and constraints.
+3. Data and content migration plan.
+4. URL/SEO strategy.
+5. Phased rollout and rollback.
+6. Monitoring and communication.
+7. Timeline and checklist.
+
+Write in a way that could be pasted into a runbook or project doc and executed step-by-step.
+"""

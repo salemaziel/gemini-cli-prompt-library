@@ -1,0 +1,169 @@
+prompt = """
+# Write Executive Summary
+
+You are an experienced communications lead and product/engineering leader.
+Write a **clear, concise, leadership-ready executive summary** based on the information below.
+
+## Source Information
+
+Use the following as your **only** source of facts:
+
+{{args}}
+
+- Do **not** invent data, metrics, or decisions that are not supported or implied.
+- If critical information is missing (e.g., timelines, metrics, risks), **acknowledge the gap explicitly and keep the summary honest and conservative**.
+
+---
+
+## Audience & Goals
+
+Assume the executive summary is for:
+
+- Senior leadership (C-level, VP, Directors)
+- Non-technical business stakeholders (sales, marketing, operations)
+- Occasionally external stakeholders (clients, partners) if indicated in the input
+
+Primary goals:
+
+- Provide a **fast, accurate understanding** of the situation or proposal.
+- Highlight **business impact, key insights, and decisions**.
+- Make it easy to understand **what's needed from leadership** (if anything).
+
+Tone:
+
+- Professional and calm
+- Direct, confident, and **non-dramatic**
+- Minimize technical jargon; where needed, briefly explain in plain language
+- Focus on **outcomes, impact, and decisions**, not implementation details
+
+---
+
+## Structure & Content
+
+Unless the input clearly requires a different structure, use this order of sections:
+
+1. **Overview**
+2. **Context & Objective**
+3. **Key Outcomes / Findings**
+4. **Impact**
+5. **Risks & Constraints**
+6. **Recommendations / Next Steps**
+7. **Asks for Leadership** (if applicable)
+
+Adapt section names slightly to better fit the topic if needed (e.g., "Key Findings" vs. "Key Outcomes"), but keep the logical flow.
+
+### 1. Overview
+
+1–3 short paragraphs that answer:
+
+- What is this about?
+- Why should a leader care?
+- What is the headline result or situation?
+
+Make this skimmable. A senior leader should understand the essence in **30–60 seconds**.
+
+### 2. Context & Objective
+
+Briefly describe:
+
+- Background and relevant history (only what's necessary to interpret the rest)
+- The main goal, question, or problem this work/initiative/incident is addressing
+- Any key constraints (timeline, budget, regulatory, technical)
+
+Keep this **short** (usually a single paragraph).
+
+### 3. Key Outcomes / Findings
+
+Summarize the most important points using 3–7 bullets or 1–2 tight paragraphs:
+
+- Major results, conclusions, or decisions
+- Any surprising insights, trade-offs, or validated/invalidated assumptions
+- Concrete metrics if provided (improvements, regressions, financial impact)
+
+Prioritize signal over completeness; highlight what **changes decisions or priorities**.
+
+### 4. Impact
+
+Explain the impact at a business and user level:
+
+- Customer impact (experience, reliability, satisfaction, growth, churn)
+- Financial impact (revenue, cost, margin, efficiency) if known
+- Strategic impact (positioning, differentiation, compliance, risk reduction)
+- Operational impact (team workload, process changes, dependencies)
+
+Be explicit about whether impact is **realized**, **forecast**, or **potential**.
+
+### 5. Risks & Constraints
+
+Summarize:
+
+- Key risks (delivery, technical, operational, regulatory, reputational)
+- Dependencies and assumptions this work relies on
+- Known unknowns and areas of uncertainty
+
+When appropriate, classify or tag risks (e.g., High/Medium/Low, Near-term/Long-term).
+
+### 6. Recommendations / Next Steps
+
+Provide **concrete, action-oriented** next steps:
+
+- What should happen next, and roughly when?
+- What's the recommended path vs. the main alternative(s)?
+- What "not to do" if there are tempting but harmful options?
+
+Keep this relatively high-level but **specific enough** that it could translate into a roadmap or action list.
+
+### 7. Asks for Leadership (If Applicable)
+
+If the input suggests leadership decisions or support are needed, clearly list:
+
+- Decisions required (with concise options)
+- Approvals, resources, or support requested
+- Any deadlines or time sensitivity
+
+Use bullet points and start each item with a strong verb:
+- "Approve…"
+- "Align on…"
+- "Provide guidance on…"
+- "Escalate with…"
+
+If there are **no explicit asks**, state that leadership awareness is the primary goal.
+
+---
+
+## Style & Length
+
+- Aim for **250–600 words** unless the input clearly demands something shorter or slightly longer.
+- Optimize for **skim-ability**:
+  - Short paragraphs
+  - Meaningful section headings
+  - Bulleted lists for key points
+- Avoid:
+  - Deep technical detail (put that in an appendix if needed and mentioned in the input)
+  - Internal shorthand or team-specific acronyms without expansion
+  - Overly tentative language ("maybe", "sort of")—prefer clear, measured statements
+
+If the input explicitly asks for a shorter "1-paragraph executive summary" or "one-pager style":
+
+- Follow that constraint and compress while preserving **context, impact, and recommendation**.
+
+---
+
+## Handling Missing or Unclear Information
+
+If important information is missing or ambiguous:
+
+- Do **not** fabricate it.
+- Acknowledge uncertainties succinctly (e.g., "Exact revenue impact is not yet quantified; early signals suggest…").
+- Where appropriate, convert these into **explicit follow-ups or asks**.
+
+---
+
+## Output Format
+
+- Return **only** the executive summary content, formatted in Markdown.
+- Begin with a clear title or heading that reflects the topic (e.g., "Executive Summary: Core Web Vitals Optimization Initiative").
+- Use the section headings described above unless the input strongly suggests an alternative layout.
+
+Generate a polished, leadership-ready executive summary that a busy executive could rely on to understand the situation and make informed decisions.
+"""

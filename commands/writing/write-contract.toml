@@ -1,0 +1,183 @@
+prompt = """
+# Draft Service Agreement / Contract
+
+Draft a straightforward service agreement for the following engagement:
+
+{{args}}
+
+Assume this is for a solo webdev/DevOps agency working with a small/medium client. This is not a substitute for legal review, but should cover the usual business concerns.
+
+---
+
+## 1. Parties & Purpose
+
+1. Identify the parties (provider and client placeholders).
+2. State the purpose of the agreement in 1–2 paragraphs:
+   - Type of services.
+   - General project/engagement description.
+
+Use generic placeholders like "[Service Provider]" and "[Client]".
+
+---
+
+## 2. Scope of Services
+
+1. Describe the services to be provided.
+2. Reference an attached or referenced Statement of Work (SOW) or proposal (if applicable).
+3. Clarify:
+   - What is included.
+   - What is explicitly excluded or considered out of scope.
+
+Keep this section high-level; detailed deliverables can live in a separate SOW.
+
+---
+
+## 3. Term & Termination
+
+Define:
+
+1. Term:
+   - Fixed term (dates) or ongoing until terminated.
+2. Termination:
+   - How either party may terminate (notice period, conditions).
+3. Effects of termination:
+   - What happens to work in progress.
+   - Payment obligations up to termination.
+
+---
+
+## 4. Fees & Payment Terms
+
+Specify:
+
+1. Fees:
+   - Fixed price, hourly, retainer, or combination.
+2. Invoicing:
+   - Timing (e.g. upfront deposit, milestones, monthly).
+3. Payment terms:
+   - Due dates.
+   - Late payment terms (if any).
+
+Use flexible wording that can be customized per deal.
+
+---
+
+## 5. Changes & Scope Creep
+
+Include a simple change control concept:
+
+1. Any change to scope, timeline, or costs must be agreed in writing (email is usually fine).
+2. Outline how change requests are handled.
+3. Clarify that additional work may incur additional fees.
+
+---
+
+## 6. Client Responsibilities
+
+Specify:
+
+1. Access and information:
+   - Systems, credentials, content, approvals.
+2. Timely feedback and decisions.
+3. Ownership of third-party accounts/services (hosting, SaaS, etc.), unless otherwise agreed.
+
+---
+
+## 7. Intellectual Property & Licensing
+
+Clarify:
+
+1. Ownership of:
+   - Custom code and deliverables.
+   - Pre-existing tools, templates, and libraries.
+2. License granted to the client for use of the deliverables.
+3. Any attribution requirements (if desired) and whether it can be waived.
+
+Be explicit about what the client can and cannot do with the deliverables.
+
+---
+
+## 8. Confidentiality & Data Protection
+
+Include:
+
+1. Mutual confidentiality obligations for non-public information.
+2. Basic data protection obligations:
+   - Reasonable security practices.
+   - Limitation on use of client data.
+3. Any special considerations if sensitive data is involved (describe generically).
+
+---
+
+## 9. Warranties & Disclaimers
+
+Specify:
+
+1. Reasonable warranties:
+   - Work will be performed professionally.
+   - Work will conform to agreed specs at delivery.
+2. Limitations:
+   - No guarantee of specific business outcomes (traffic, revenue, rankings).
+3. General disclaimer of implied warranties (non-legalistic but clear).
+
+---
+
+## 10. Limitation of Liability
+
+Set a reasonable cap on liability:
+
+1. Typically tied to fees paid over a certain period.
+2. Exclusion of consequential or indirect damages.
+
+Write in clear, non-excessively legalese language.
+
+---
+
+## 11. Indemnity (Lightweight)
+
+Provide a simple mutual or one-way indemnity clause, framed broadly:
+
+- Service provider not responsible for misuse, illegal content, or third-party actions.
+- Client responsible for content and compliance where applicable.
+
+Keep it concise.
+
+---
+
+## 12. Miscellaneous
+
+Include:
+
+1. Governing law & jurisdiction (use placeholders).
+2. Entire agreement clause.
+3. Amendment/waiver in writing.
+4. Assignment limitations (if any).
+
+---
+
+## 13. Signatures
+
+Add a simple signature block for both parties.
+
+---
+
+## 14. Output Format
+
+Produce a contract-style document with clear headings:
+
+1. Parties & Purpose
+2. Scope of Services
+3. Term & Termination
+4. Fees & Payment
+5. Changes in Scope
+6. Client Responsibilities
+7. Intellectual Property
+8. Confidentiality
+9. Warranties & Disclaimers
+10. Limitation of Liability
+11. Indemnity
+12. Miscellaneous
+13. Signatures
+
+Use generic placeholders for names, addresses, currencies, and jurisdictions.
+"""

@@ -1,0 +1,103 @@
+prompt = """
+# Write Project Status Update
+
+Write a clear project status update based on the following situation:
+
+{{args}}
+
+Assume the audience is a client or stakeholder who is not deeply technical. The tone should be calm, honest, and proactive.
+
+---
+
+## 1. Status Summary
+
+Start with a 2–4 sentence summary:
+
+1. Overall status:
+   - On track, at risk, or delayed.
+2. Key message:
+   - What has happened recently.
+   - What is coming next.
+
+This should be understandable as a standalone TL;DR.
+
+---
+
+## 2. Progress Since Last Update
+
+List the concrete work completed:
+
+1. Features or tasks delivered.
+2. Milestones reached.
+3. Any behind-the-scenes work that matters (refactors, infra, research).
+
+Use bullet points and plain language.
+
+---
+
+## 3. Upcoming Work
+
+Describe what's next:
+
+1. Tasks you will focus on in the next period.
+2. Any decisions or inputs needed from the client.
+3. Dependencies that might affect timing.
+
+Make clear what you are doing vs what you need from them.
+
+---
+
+## 4. Risks & Issues
+
+Be transparent about:
+
+1. Current risks or blockers:
+   - Technical issues.
+   - Content delays.
+   - Third-party dependencies.
+2. Impact:
+   - How these might affect scope, timing, or cost.
+3. Mitigations:
+   - What you're doing about it.
+   - What the client can do to help (if applicable).
+
+Keep this constructive, not alarmist.
+
+---
+
+## 5. Timeline & Scope Check
+
+If relevant:
+
+1. Reconfirm or adjust expected timelines.
+2. Note any scope changes:
+   - Approved additions.
+   - De-prioritized items.
+
+Align expectations gently and clearly.
+
+---
+
+## 6. Call to Action & Next Contact
+
+End with:
+
+1. Specific asks from the client (approvals, decisions, content).
+2. When they can expect the next update or milestone.
+3. An invitation to ask questions or schedule a call.
+
+---
+
+## 7. Output Format
+
+Produce an email-style or message-style status update with headings:
+
+1. Summary
+2. Recent Progress
+3. Upcoming Work
+4. Risks & Issues
+5. Timeline & Scope
+6. Next Steps
+
+Use clear, human language and avoid unnecessary technical detail.
+"""

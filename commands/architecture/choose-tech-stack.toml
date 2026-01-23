@@ -1,0 +1,122 @@
+prompt = """
+# Choose Tech Stack
+
+Act as an experienced solution architect helping a solo webdev/DevOps agency choose an appropriate tech stack for the following project:
+
+{{args}}
+
+Your goal is to recommend 1–2 primary stack options, with clear tradeoffs, explicitly optimized for **solo ownership**, maintainability, and business reality.
+
+---
+
+## 1. Clarify Requirements & Constraints
+
+1. Restate the project brief in your own words.
+2. Identify:
+   - Functional requirements (features, integrations, content types).
+   - Non-functional requirements (performance, SEO, uptime, security).
+   - Team constraints (solo operator, time, skillset).
+   - Budget and hosting constraints.
+   - Longevity / expected lifespan of the project.
+
+3. Explicitly list the **top 3 priorities** (e.g. speed to market, performance, editorial UX, cost).
+
+---
+
+## 2. Candidate Stack Families
+
+Consider relevant families such as:
+
+- Static / JAMstack (Astro, Next/SSG, Nuxt).
+- Headless WordPress or Ghost + frontend.
+- Traditional WordPress (for simpler projects).
+- Node-based full-stack frameworks.
+- Git-based / file-based CMS with static builds.
+- Other platforms if they strongly fit the brief.
+
+For each **candidate family** that makes sense:
+
+1. Describe the architecture at a high level.
+2. Discuss fit for:
+   - SEO and performance.
+   - Content/editor workflows.
+   - Customization and extensibility.
+   - Dev and ops complexity for one person.
+
+---
+
+## 3. Evaluation Criteria Matrix
+
+Build a simple evaluation matrix (in prose or a small table) comparing 2–4 shortlisted stacks across:
+
+- Development speed.
+- Operational simplicity.
+- Performance / Core Web Vitals.
+- SEO friendliness.
+- Editor experience.
+- Ecosystem maturity and libraries.
+- Cost (hosting + tools).
+- Risk and lock-in.
+- Future maintainability for a solo agency.
+
+Use qualitative ratings (e.g. High/Medium/Low) and brief commentary.
+
+---
+
+## 4. Concrete Recommendations
+
+1. Recommend **one primary stack**.
+2. Offer up to **one alternate fallback** for different constraints.
+
+For each recommendation, specify:
+
+- Frontend technology and build mode.
+- CMS/data source(s).
+- Hosting and deployment platform.
+- Key supporting tools (monitoring, error tracking, CI/CD).
+
+Explain *why* this is the best choice for the given context, especially from the perspective of:
+
+- Solo maintenance and on-call burden.
+- Ability to reuse across multiple client projects.
+- Avoiding tech novelty for its own sake.
+
+---
+
+## 5. Risk & Anti-Pattern Check
+
+List key risks and anti-patterns to avoid:
+
+- Over-engineering (too many services for a simple site).
+- Under-engineering (no backups, no monitoring).
+- Niche or immature tech that could be hard to support long term.
+- Frameworks that fight SEO or accessibility requirements.
+
+For each risk, propose a mitigation or alternative.
+
+---
+
+## 6. Implementation Next Steps
+
+Provide a short, actionable outline of:
+
+1. Initial project setup steps for the chosen stack.
+2. Early decisions to lock in (repo layout, env management, CI).
+3. Points where future you might want to reassess (traffic growth, new features).
+
+---
+
+## 7. Output Format
+
+Output a concise decision document with sections:
+
+1. Summary recommendation.
+2. Requirements and constraints.
+3. Candidate stacks considered.
+4. Evaluation matrix.
+5. Final choice and justification.
+6. Risks and mitigations.
+7. Next steps.
+
+Write it so it can be dropped directly into a `DECISION_RECORD.md` or architecture note.
+"""

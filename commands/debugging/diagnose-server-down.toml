@@ -1,0 +1,158 @@
+prompt = """
+# Diagnose Server Down Incident
+
+You are on-call, diagnosing why a server or service appears to be down or unreachable in the following context:
+
+{{args}}
+
+Assume you are a solo operator with shell access and control over DNS, network, and hosting configuration (or can request changes).
+
+---
+
+## 1. Clarify the Situation
+
+Start by restating the incident in your own words:
+
+1. What exactly is "down"?
+   - Whole server?
+   - One service/site?
+   - Admin access only?
+2. How was it detected?
+   - Monitoring alert?
+   - Client report?
+   - Manual check?
+3. Scope:
+   - Affects all users or certain regions/ISPs?
+   - Affects production only or other environments too?
+
+List what is known vs unknown, and call out any assumptions.
+
+---
+
+## 2. Basic Reachability Checks
+
+Outline a step-by-step diagnostic plan from the outside in:
+
+1. DNS:
+   - Check domain resolution (A/AAAA/CNAME).
+   - Confirm DNS records are correct and not expired/changed unintentionally.
+2. Network:
+   - Ping/traceroute (where appropriate).
+   - Check for packet loss or strange routing.
+3. TCP connectivity:
+   - Port reachability (e.g. HTTP/HTTPS, SSH, database ports if relevant).
+   - Firewall/security group rules that might block access.
+
+Clearly separate "likely client-side/network issues" from "likely server-side issues".
+
+---
+
+## 3. Server Health & Resource Checks
+
+Once you assume you can reach the host (or via console):
+
+1. Host status:
+   - CPU, memory, disk usage.
+   - Swap usage and OOM risks.
+2. Processes:
+   - Is the web server/service process running?
+   - Any runaway processes consuming resources?
+3. System-level issues:
+   - Disk full (especially logs, `/tmp`, `/var`).
+   - Permission problems, file descriptor limits, inodes.
+
+Propose specific commands or checks (describe them in text, don't just dump command lists blindly).
+
+---
+
+## 4. Application & Service-Level Diagnosis
+
+Investigate the specific service:
+
+1. Web server / app server:
+   - Status of Nginx/Apache/Caddy/Node/etc.
+   - Misconfigured virtual hosts, broken config reloads.
+2. Application:
+   - Recent deploys/config changes.
+   - Crash loops, misconfigured env vars, missing dependencies.
+3. Dependencies:
+   - Database availability.
+   - External services (auth, payment, API gateways).
+
+Highlight common failure modes and how to rule them in/out.
+
+---
+
+## 5. Logs & Error Signals
+
+Describe a structured approach to logs:
+
+1. Where to look:
+   - System logs (journal/syslog).
+   - Web/app server logs.
+   - Application logs (if separate).
+2. What to look for:
+   - Repeated errors.
+   - Recent spikes in error rates before downtime.
+   - Config parse errors or permission issues.
+3. Correlation:
+   - Align log timestamps with the time of incident detection.
+
+Explain how you'd shortlist the most probable root causes based on log evidence.
+
+---
+
+## 6. External Factors
+
+Consider:
+
+1. Hosting provider issues:
+   - Platform-wide incidents or outages.
+   - Rate limiting, DDoS protection, or WAF blocks.
+2. Network / DDoS:
+   - Suspicious spikes in traffic.
+   - IP blocks or geofencing.
+
+Call out what you'd check in provider dashboards or status pages.
+
+---
+
+## 7. Triage & Immediate Mitigations
+
+Provide a decision tree for fast triage:
+
+1. If the outage is severe:
+   - What is the fastest safe workaround? (e.g. restart service, roll back deploy, failover).
+2. If only some routes/services are down:
+   - Possible quick splits or temporary disabling of non-critical features.
+3. Always:
+   - Avoid making multiple big changes at once during an incident.
+   - Document what you changed.
+
+---
+
+## 8. Root Cause Analysis & Prevention
+
+Once service is restored:
+
+1. Identify root cause candidates.
+2. Validate root cause with evidence (not guesses).
+3. Suggest prevention:
+   - Monitoring and alert improvements.
+   - Config hardening.
+   - Deployment safety checks or health checks.
+
+---
+
+## 9. Output Format
+
+Provide:
+
+1. **Incident understanding** – short summary of what is likely going on (based on {{args}}).
+2. **Step-by-step diagnostic plan** – ordered list of checks.
+3. **Probable root causes** – ranked by likelihood with rationale.
+4. **Recommended mitigations** – immediate and long-term actions.
+5. **Post-incident follow-up** – logging, monitoring, and process improvements.
+
+Write succinctly but with enough detail that this can be used as a runbook during a real incident.
+"""

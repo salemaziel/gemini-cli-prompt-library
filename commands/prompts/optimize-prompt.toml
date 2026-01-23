@@ -1,0 +1,85 @@
+prompt = """
+# Optimize Existing Prompt
+
+Help optimize the following prompt for clarity, reliability, and reusability:
+
+{{args}}
+
+Treat the prompt as something I'll use regularly in my solo agency work.
+
+---
+
+## 1. Understand the Intent
+
+1. Restate what the prompt is trying to achieve.
+2. Identify:
+   - Primary output(s) desired.
+   - Hidden or implicit constraints (tone, audience, stack, etc.).
+3. Call out any ambiguity in the current wording.
+
+---
+
+## 2. Analyze Weaknesses
+
+Review the prompt and identify:
+
+1. Vague instructions.
+2. Conflicting requirements.
+3. Missing context or constraints.
+4. Overly long or noisy parts that don't add value.
+
+Explain why each of these might cause bad or inconsistent outputs.
+
+---
+
+## 3. Improve Structure
+
+Propose a clearer structure for the prompt:
+
+1. Logical sections (e.g. role, context, inputs, constraints, output format).
+2. Ordering:
+   - What should come first to orient the model.
+   - Where to specify style and format.
+3. How to highlight the most important constraints.
+
+Describe this structure before rewriting anything.
+
+---
+
+## 4. Refined Prompt Draft
+
+Write an improved version of the prompt that:
+
+1. Clearly states the goal and role.
+2. Includes placeholders for variable content (e.g. `{{args}}`, `{{project_context}}`).
+3. Specifies:
+   - Constraints (length, tone, stack, etc.).
+   - Output format (sections, headings, code blocks).
+
+Keep it as short as possible while still being robust.
+
+---
+
+## 5. Variants & Extensions
+
+Suggest:
+
+1. One "short" variant for quick use.
+2. Optional flags/parameters I can toggle (e.g. include/exclude extra detail, business vs technical focus).
+3. How to adapt the prompt to similar but slightly different tasks.
+
+You can describe these variants instead of fully writing them out, except for the short variant which should be concrete.
+
+---
+
+## 6. Output Format
+
+Provide:
+
+1. Brief analysis of the original prompt's intent and issues.
+2. A structured description of the improved prompt.
+3. The refined main prompt text.
+4. A compact "short" variant.
+
+Write everything in a way that's easy to paste into a `.toml` string.
+"""

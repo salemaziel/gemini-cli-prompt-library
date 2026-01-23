@@ -1,0 +1,1 @@
+/home/pc/Public/repos/gemini-cli-prompt-library/GEMINI.md

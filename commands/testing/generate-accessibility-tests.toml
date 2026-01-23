@@ -1,0 +1,96 @@
+prompt = """
+# Generate Accessibility Test Plan
+
+Design an accessibility (a11y) test plan for the following UI/pages/components:
+
+{{args}}
+
+The goal is to define a **pragmatic mix** of automated and manual tests that a solo developer can realistically maintain.
+
+---
+
+## 1. Scope & Priorities
+
+1. Restate what's in scope (pages, flows, components).
+2. Identify priority areas:
+   - High-traffic pages.
+   - Critical flows (checkout, signup, contact, dashboards).
+3. Note any regulatory or contractual requirements (if relevant).
+
+---
+
+## 2. Automated A11y Checks
+
+Design automated tests using appropriate tools (e.g. axe, Playwright/Cypress plugins):
+
+1. What to check:
+   - Basic WCAG violations (contrast, ARIA misuse, missing labels, etc.).
+   - Page structure issues (headings, landmarks).
+2. Where to run them:
+   - Key routes/pages.
+   - Certain component states (modals open, forms with errors).
+3. How to integrate:
+   - Into CI (blocking vs non-blocking).
+   - Local dev workflow (command or script).
+
+Describe test groups and what each group guards against.
+
+---
+
+## 3. Manual Testing Flows
+
+Define minimal manual tests:
+
+1. Keyboard-only navigation:
+   - Can users navigate and operate core flows via keyboard?
+2. Screen reader checks:
+   - Navigate by headings and links.
+   - Test form interactions and error messages.
+3. Visual checks:
+   - Obvious contrast problems.
+   - Focus indicators.
+
+List specific steps to perform for a short manual pass.
+
+---
+
+## 4. Component-Level A11y Checks
+
+For reusable components (buttons, dialogs, menus, tabs, etc.):
+
+1. Identify components that need dedicated a11y patterns.
+2. Define tests to ensure:
+   - Proper roles, states, and attributes.
+   - Correct keyboard interactions.
+   - Focus management and announcements (if applicable).
+
+Focus on components that are widely reused.
+
+---
+
+## 5. Regression & Change Management
+
+Explain how to keep accessibility from regressing:
+
+1. When to run test suites:
+   - Before releases, on changed routes, periodically.
+2. What to do when automated checks fail:
+   - Triage and prioritize fixes.
+   - Avoid ignoring or permanently disabling checks.
+
+---
+
+## 6. Output Format
+
+Provide:
+
+1. Summary of a11y test scope.
+2. Automated test plan:
+   - Tools, target pages, and CI integration ideas.
+3. Manual test checklist:
+   - Concrete steps to follow.
+4. Component-specific a11y checks.
+5. Suggested cadence (when and how often to run tests).
+
+Write it so it can live as a `a11y-testing.md` or doc.
+"""

@@ -1,0 +1,156 @@
+prompt = """
+# Accessibility Code Review (A11y)
+
+Perform a thorough accessibility code review for the following context and code/resources:
+
+{{args}}
+
+You are reviewing from the perspective of modern accessibility standards (WCAG 2.1/2.2 AA), practical screen-reader behavior, keyboard users, and low-vision/low-motor users. Focus on *real-world* usability and not just checklists.
+
+---
+
+## 1. Context & Assumptions
+
+1. Briefly restate what you're reviewing (page/app/component, tech stack, user flows).
+2. Note any assumptions you must make (e.g. design system, target devices, locales).
+3. Call out whether this is:
+   - marketing/content site
+   - web app / dashboard
+   - e-commerce
+   - or something else
+
+---
+
+## 2. High-Level A11y Health Check
+
+Provide a quick, opinionated overview:
+
+- Overall accessibility health (e.g. "reasonably solid but missing X/Y", "high risk in these areas").
+- Biggest *classes* of issues (e.g. semantics, focus, color contrast, ARIA misuse, keyboard traps).
+- Immediate red flags that would block launch for users with disabilities.
+
+---
+
+## 3. Semantics & Structure
+
+Review how the DOM is structured for assistive tech:
+
+1. Headings:
+   - Proper use of `<h1>–<h6>` hierarchy.
+   - One primary `<h1>` per page (or deliberate deviation with rationale).
+2. Landmarks:
+   - Use of `<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>`.
+   - ARIA landmarks (if native semantics are missing).
+3. Lists & tables:
+   - Correct use of `<ul>`, `<ol>`, `<li>`.
+   - For data tables, use `<th>`, `scope`, and captions appropriately.
+4. Forms:
+   - Labels bound to inputs.
+   - Grouping (e.g. `<fieldset>`, `<legend>`).
+   - Explicitly call out missing labels, placeholder-only inputs, or visual-only cues.
+
+Provide concrete examples using short code snippets when helpful.
+
+---
+
+## 4. Keyboard Navigation & Focus Management
+
+Evaluate how the experience works **without a mouse**:
+
+1. Tab order:
+   - Is it logical and predictable?
+   - Any elements skipped or unreachable?
+2. Focus styling:
+   - Is there a visible focus indicator on interactive elements?
+   - Are default outlines incorrectly removed?
+3. Focus traps and modals:
+   - Can you enter and exit dialogs, menus, and overlays with keyboard only?
+   - Is focus returned to a sensible place after dialog close/actions?
+4. Custom widgets:
+   - Are custom components (dropdowns, tabs, carousels, sliders) keyboard accessible with expected keys?
+
+List specific issues and recommended fixes.
+
+---
+
+## 5. Color, Contrast & Visual Clarity
+
+1. Color contrast:
+   - Check text vs background against AA standards.
+   - Call out any likely violations (buttons, links, small text).
+2. Color as the only indicator:
+   - Are states conveyed solely by color (error, success, selection)?
+   - Suggest additional cues (icons, text, patterns).
+3. Focus/hover states:
+   - Ensure they are visually discernible and not color-only where possible.
+
+Provide suggestions that are technical ("change token X", "update Tailwind class Y") when you can infer them.
+
+---
+
+## 6. Images, Media & Non-Text Content
+
+1. Images:
+   - Proper use of `alt` text.
+   - Empty `alt` for decorative images.
+   - Avoiding text baked into images where possible.
+2. Icons:
+   - How icon-only controls are labeled (ARIA, sr-only text).
+3. Video/audio:
+   - Captions, transcripts, and controls.
+   - Autoplay behavior and how to disable/avoid it.
+
+List concrete changes (add alt text, adjust markup, etc).
+
+---
+
+## 7. ARIA Usage
+
+Review ARIA *only where needed*:
+
+1. Identify any ARIA roles/attributes in the code.
+2. Call out:
+   - Misused or redundant ARIA where native semantics would suffice.
+   - Missing ARIA where custom widgets need it.
+3. Recommend:
+   - Minimal, correct ARIA usage.
+   - Replacing ARIA hacks with more semantic HTML when possible.
+
+---
+
+## 8. Forms, Errors & Validation UX
+
+1. How errors are announced:
+   - Are validation messages tied to inputs (e.g. `aria-describedby`)?
+   - Are error summaries used where appropriate?
+2. Required fields:
+   - How required vs optional is communicated.
+3. Live validation:
+   - How changes and success states are announced to assistive tech.
+
+Provide examples of improved patterns.
+
+---
+
+## 9. Testing & Tooling Suggestions
+
+Recommend a small, pragmatic toolkit for this project:
+
+- Screen reader(s) to test with.
+- Browser dev tools / extensions.
+- Automated checkers (with caveats).
+- Simple manual test flows (e.g. "tab through the whole page", "use screen reader to navigate by headings/links").
+
+---
+
+## 10. Output Format
+
+Provide:
+
+1. **Summary** – 3–5 bullet points of the most critical issues and wins.
+2. **Issue List** – grouped by category (structure, keyboard, contrast, ARIA, forms).
+3. **Suggested Fixes** – concise, technical recommendations.
+4. **Quick Test Plan** – a short checklist for a regression test after fixes.
+
+Be direct and opinionated; prioritize issues by user impact, not theoretical perfection.
+"""

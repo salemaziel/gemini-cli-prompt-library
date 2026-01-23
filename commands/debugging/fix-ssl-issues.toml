@@ -1,0 +1,113 @@
+prompt = """
+# Fix SSL/TLS Issues
+
+You are diagnosing and fixing SSL/TLS-related issues for a site or service in the following context:
+
+{{args}}
+
+The goal is to safely restore a valid, trusted HTTPS experience without breaking existing traffic or creating downtime.
+
+---
+
+## 1. Clarify the SSL Problem
+
+1. Restate the problem:
+   - Browser warnings (insecure, certificate expired, hostname mismatch, mixed content, etc.).
+   - CLI errors (TLS handshake failures, protocol mismatches).
+2. Scope:
+   - One domain or multiple subdomains?
+   - Affecting all users or certain clients/regions?
+
+Identify the likely class of SSL problem (certificate, chain, protocol, config, content).
+
+---
+
+## 2. Certificate & Chain Diagnosis
+
+1. Certificate validity:
+   - Expiry date.
+   - Issuer and type (Let's Encrypt, commercial, self-signed).
+2. Hostname & SANs:
+   - Does the certificate cover the domain(s) in use (including `www`, subdomains, wildcard)?
+3. Chain of trust:
+   - Intermediate certificates present and ordered correctly.
+   - Any known issues with outdated roots.
+
+Describe how to verify this (conceptually; don't just list raw commands).
+
+---
+
+## 3. Server & TLS Configuration
+
+1. Web server / proxy:
+   - Nginx/Apache/Caddy/other: how TLS is configured for this vhost/site.
+   - Correct certificate/key paths, and matching key/cert.
+2. Protocols & ciphers:
+   - Supported TLS versions.
+   - Use of deprecated protocols (SSLv3, TLS 1.0/1.1) vs recommended modern config.
+3. SNI & multiple sites:
+   - Virtual hosts with different certificates.
+   - Possible SNI misconfiguration causing wrong cert presentation.
+
+Call out configuration anti-patterns and propose safer defaults.
+
+---
+
+## 4. ACME / Certificate Automation (if applicable)
+
+If Let's Encrypt or similar is used:
+
+1. How certs are requested:
+   - HTTP-01, DNS-01, or other challenges.
+2. Renewal:
+   - Cron/timers or built-in renewal (certbot, acme.sh, Caddy, etc.).
+   - Common renewal failure modes (firewall, DNS, changed HTTP routing).
+3. Multi-environment setups:
+   - Staging vs production certs.
+   - Impact of proxies/CDN (Cloudflare, etc.) on challenges.
+
+Suggest robust automation patterns to avoid future expirations.
+
+---
+
+## 5. Mixed Content & Frontend Issues
+
+If the page loads but shows "not fully secure":
+
+1. Identify mixed-content sources:
+   - HTTP-loaded scripts, images, iframes, fonts.
+2. Configuration/path issues:
+   - Hardcoded `http://` URLs.
+   - CDN or asset hosts not using HTTPS.
+3. Fixes:
+   - Update asset URLs to protocol-relative or `https://`.
+   - Use of rewrites/redirects only as a last resort if code changes are hard.
+
+Provide example patterns for fixing mixed content cleanly.
+
+---
+
+## 6. Redirects & HSTS
+
+1. HTTP→HTTPS redirects:
+   - Ensure single redirect hop.
+   - Avoid redirect loops between proxies and origin.
+2. HSTS:
+   - Whether to enable, and at what max-age.
+   - Risks when misconfigured.
+
+Explain safe rollout steps for redirects and HSTS, especially if the setup is complex (CDN + origin).
+
+---
+
+## 7. Output Format
+
+Provide:
+
+1. **Summary of likely SSL issue(s)** – based on {{args}}.
+2. **Diagnostic checklist** – ordered steps to pinpoint the root cause.
+3. **Fix plan** – concrete configuration and/or code changes.
+4. **Future-proofing** – automation and monitoring recommendations to avoid recurrences.
+
+Keep it practical and prioritise minimal-downtime solutions.
+"""

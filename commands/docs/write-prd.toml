@@ -1,0 +1,121 @@
+prompt = """
+# Write Product Requirements Document (PRD)
+
+Write a Product Requirements Document for the following feature, product, or project:
+
+{{args}}
+
+Assume a solo or very small team will execute this; the PRD should be **clear, focused, and realistic** rather than corporate-fluffy.
+
+---
+
+## 1. Overview & Problem Statement
+
+1. Describe the problem this project solves.
+2. Clarify who the users are and what pain they experience.
+3. State a concise project goal ("We will…").
+
+Keep this section short and sharp.
+
+---
+
+## 2. Objectives & Success Metrics
+
+1. List 3–5 concrete objectives (e.g. "Increase lead submissions by X%", "Reduce manual work for Y by Z hours/week").
+2. Define measurable success criteria where possible.
+3. Call out any explicit non-goals (things *not* in scope).
+
+---
+
+## 3. User Stories & Use Cases
+
+Describe how users will interact with the solution:
+
+1. User stories in the form:
+   - "As a [type of user], I want [goal] so that [reason]."
+2. Group stories by flow or persona.
+3. Highlight which stories are **must-have**, **nice-to-have**, or **future**.
+
+Focus on clarity over quantity.
+
+---
+
+## 4. Functional Requirements
+
+Translate user stories into specific behaviors:
+
+1. For each major feature:
+   - What inputs it accepts.
+   - What it does.
+   - What outputs/results it produces.
+2. Edge cases and constraints where relevant.
+3. Admin/operational requirements (logging, admin settings, etc.).
+
+Write in implementation-agnostic terms, but concrete enough to build from.
+
+---
+
+## 5. Non-Functional Requirements
+
+Specify:
+
+1. Performance expectations (response times, page load targets).
+2. Reliability/availability expectations (if any).
+3. Security and privacy requirements (auth levels, data handling).
+4. Compatibility (browsers, devices, locales).
+5. Maintainability and operational considerations (ease of updates, monitoring, backups).
+
+Prioritize only what matters for this project.
+
+---
+
+## 6. Scope, Phasing & Tradeoffs
+
+1. MVP scope:
+   - Which requirements will be delivered in the first iteration.
+2. Later phases:
+   - Reasonable follow-ups (Phase 2/3).
+3. Tradeoffs:
+   - What you're explicitly choosing not to do now (and why).
+
+This section should help prevent scope creep.
+
+---
+
+## 7. Dependencies & Risks
+
+1. Dependencies:
+   - External services, APIs, libraries, other projects.
+2. Risks:
+   - Technical risks.
+   - Product/UX risks.
+   - Operational risks.
+3. Mitigations:
+   - How you will reduce or monitor each risk.
+
+---
+
+## 8. Acceptance Criteria
+
+Define what must be true to consider the project "done":
+
+1. Checklists tied to key functionalities.
+2. Any demo or sign-off requirements (even if it's just you reviewing).
+
+---
+
+## 9. Output Format
+
+Produce a PRD with the following sections:
+
+1. Overview & Problem Statement
+2. Objectives & Success Metrics
+3. User Stories & Use Cases
+4. Functional Requirements
+5. Non-Functional Requirements
+6. Scope & Phasing
+7. Dependencies & Risks
+8. Acceptance Criteria
+
+Write in concise, practical language tailored to a small team/solo builder.
+"""

@@ -1,0 +1,133 @@
+prompt = """
+# Evaluate New Tool or Technology
+
+Evaluate the following tool/technology/service for potential use in my solo webdev/DevOps agency:
+
+{{args}}
+
+Your goal is to provide a **pragmatic, opinionated assessment** focused on real-world tradeoffs, learning curve, maintenance burden, and ROI for a solo operator.
+
+---
+
+## 1. Context & Use Case
+
+1. Restate what the tool is and what problem it claims to solve.
+2. Infer or clarify the likely use case(s) for me:
+   - Web development? CMS? DevOps? Monitoring? Automation? Business operations?
+3. Identify which existing pain points it might address (based on {{args}}).
+
+Call out any assumptions you are making.
+
+---
+
+## 2. Capabilities & Fit
+
+Describe the tool's main capabilities:
+
+1. Core features and strengths.
+2. Where it fits in a typical stack/workflow.
+3. What types of projects or clients it suits best.
+
+Focus on how this aligns (or doesn't) with a solo webdev/infra agency's reality.
+
+---
+
+## 3. Tradeoffs & Limitations
+
+Provide a candid view of downsides:
+
+1. Complexity:
+   - How hard it is to adopt, configure, and maintain.
+2. Lock-in:
+   - Degree of vendor or ecosystem lock-in.
+3. Limitations:
+   - Known constraints, rough edges, missing features for my use cases.
+
+Be explicit about "sharp edges" that might hurt later.
+
+---
+
+## 4. Learning Curve & Skill Overlap
+
+Assess:
+
+1. Learning curve:
+   - How long it might reasonably take to become productive.
+2. Skill overlap:
+   - How much this leverages skills I likely already have (webdev, Linux, networking, etc.).
+3. Opportunity cost:
+   - Alternative skills or tools that might be more valuable to invest time into.
+
+---
+
+## 5. Operational Impact
+
+Evaluate long-term operational implications:
+
+1. Maintenance tasks:
+   - Updates, migrations, backups, monitoring, upgrades.
+2. Failure modes:
+   - What breaks when it fails.
+   - How easy it is to debug under pressure.
+3. Solo-operator burden:
+   - Whether this reduces or increases cognitive load over time.
+
+---
+
+## 6. Cost & ROI
+
+Estimate:
+
+1. Direct costs:
+   - Licensing, hosting, and any required add-ons.
+2. Indirect costs:
+   - Time spent learning, integrating, and supporting.
+3. ROI:
+   - Where it might save time, reduce risk, or unlock better projects/clients.
+
+Where possible, give example scenarios (small brochure site, multi-site client, higher-complexity infra, etc.).
+
+---
+
+## 7. Comparison & Alternatives
+
+1. Identify 1–3 realistic alternatives (including "do nothing / stick with current stack").
+2. Compare them briefly on:
+   - Complexity
+   - Cost
+   - Durability
+   - Fit for my typical client work
+
+Highlight when "use what I already know" is the correct move.
+
+---
+
+## 8. Recommendation & Actionable Next Steps
+
+Provide a clear recommendation:
+
+1. ✅ Adopt, 🚫 Avoid, or 🤔 Evaluate later.
+2. If adopt:
+   - Suggest a **small pilot project** or experiment.
+   - Outline first steps (docs to read, example to build, risks to test).
+3. If avoid or defer:
+   - Explain why.
+   - Suggest what would need to change (stack, client mix, tool maturity) for it to become attractive.
+
+---
+
+## 9. Output Format
+
+Produce:
+
+1. Summary (1–2 paragraphs).
+2. Sections:
+   - Capabilities & Fit
+   - Tradeoffs & Limitations
+   - Learning Curve & Operational Impact
+   - Cost & ROI
+   - Alternatives
+   - Recommendation & Next Steps
+
+Be opinionated, concise, and grounded in solo-operator practicality.
+"""

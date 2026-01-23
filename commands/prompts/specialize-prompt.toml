@@ -1,0 +1,77 @@
+prompt = """
+# Specialize Prompt for Use Case
+
+Take a general-purpose prompt or idea and specialize it for the following use case:
+
+{{args}}
+
+Assume I want a **tuned, reusable version** of this prompt that fits my solo webdev/DevOps agency workflows.
+
+---
+
+## 1. Clarify Base Prompt & Target Use Case
+
+1. Restate what the base/generic prompt is about (if provided).
+2. Restate the target use case in your own words:
+   - Type of project/client.
+   - Type of output.
+   - Constraints that matter.
+
+---
+
+## 2. Identify Specialization Dimensions
+
+List the main dimensions where specialization is needed, such as:
+
+- Tech stack (Astro, WordPress, Proxmox, etc.).
+- Audience (client vs internal).
+- Tone (consultative vs technical).
+- Depth (high-level vs implementation detail).
+- Risk/safety (production-ready vs exploratory).
+
+---
+
+## 3. Adaptation Plan
+
+For each dimension:
+
+1. Explain how the prompt should be adjusted:
+   - What to emphasize.
+   - What to remove.
+   - What to rephrase.
+2. Note any additional context or variables needed (e.g. `{{stack}}`, `{{client_type}}`, `{{risk_tolerance}}`).
+
+---
+
+## 4. Specialized Prompt Draft
+
+Write a specialized version of the prompt that:
+
+1. Embeds the relevant assumptions (e.g. typical stacks, solo operator constraints).
+2. Provides clear placeholders for per-project details.
+3. Specifies the expected output structure.
+
+Keep the wording tight but expressive enough to cover the niche.
+
+---
+
+## 5. Usage Notes
+
+Explain:
+
+1. When to use this specialized prompt vs the generic one.
+2. What inputs I should always provide for best results.
+3. Optional tweaks I can make for different sub-scenarios (e.g. new build vs rescue project).
+
+---
+
+## 6. Output Format
+
+Provide:
+
+1. Short description of the specialization.
+2. List of specialization dimensions and decisions.
+3. The specialized prompt text.
+
+Write so the specialized prompt can be dropped directly into a `.toml` file.
+"""

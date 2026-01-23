@@ -1,0 +1,116 @@
+prompt = """
+# Cross-Browser & Cross-Device Code Review
+
+Review the following front-end codebase/components/pages for cross-browser and cross-device robustness:
+
+{{args}}
+
+Assume target support includes at least modern Chromium-based browsers, Safari, and Firefox on both desktop and mobile. If older/legacy browsers are required, infer or note that explicitly.
+
+---
+
+## 1. Context & Support Matrix
+
+1. Summarize what is being reviewed (site/app type, tech stack).
+2. Infer or list a **support matrix**:
+   - Browsers (Chrome, Firefox, Safari, Edge).
+   - Platforms (Windows, macOS, iOS, Android).
+   - Any known constraints (e.g. kiosk mode, in-app webviews).
+
+Highlight any mismatches you see between likely users and the obvious implementation choices.
+
+---
+
+## 2. HTML & CSS Robustness
+
+1. Layout strategies:
+   - Use of grid, flexbox, absolute positioning.
+   - Any reliance on non-standard or very new CSS features without fallbacks.
+2. Vendor-specific quirks:
+   - WebKit/Safari issues (e.g. `-webkit-fill-available`, fixed position issues).
+   - Firefox-specific differences.
+3. Feature support:
+   - Use of modern features (subgrid, container queries, `:has`) and whether fallbacks are present.
+4. CSS resets and normalization:
+   - Presence of sane defaults and consistent box sizing.
+
+Call out areas where layout is likely brittle in one or more browsers and suggest more robust patterns.
+
+---
+
+## 3. JavaScript & Browser APIs
+
+1. Use of browser APIs:
+   - IntersectionObserver, ResizeObserver, Web Animations, etc.
+   - Check whether their support profile aligns with the support matrix.
+2. Polyfills:
+   - Are polyfills or fallbacks present where needed?
+   - Are they targeted or global (to avoid unnecessary bloat)?
+3. ES features:
+   - Use of modern syntax (optional chaining, nullish coalescing, etc.).
+   - Whether the build pipeline transpiles appropriately for target environments.
+
+Point out high-risk usages and suggest polyfills or alternative patterns as needed.
+
+---
+
+## 4. Responsive & Device-Specific Concerns
+
+1. Breakpoints and responsive behavior:
+   - How layouts adapt across viewport sizes.
+   - Risky assumptions (hover-only interactions on mobile, tiny hit targets).
+2. Touch vs pointer:
+   - Components that rely on hover/drag in ways that may fail on touch devices.
+3. Orientation/viewport quirks:
+   - Full-height components on mobile Safari.
+   - Safe areas and notches.
+
+Highlight where the implementation likely breaks or degrades badly on certain devices.
+
+---
+
+## 5. Fonts, Media & Rendering
+
+1. Font loading:
+   - Use of `font-display` and loading strategies.
+   - Impact on CLS and rendering differences across browsers.
+2. Media:
+   - Modern image/video formats and fallbacks.
+   - `<picture>` usage for responsive images.
+3. Rendering differences:
+   - Any CSS that may behave differently (e.g. `backdrop-filter`, advanced filters, blend modes).
+
+Suggest practical fallbacks where fancy effects are used.
+
+---
+
+## 6. Testing Strategy & Tooling
+
+Recommend a lean testing approach:
+
+1. Manual test matrix:
+   - Which browser/device pairs to test for this project.
+   - Key flows to check (forms, nav, modals, scrolling, media).
+2. Automated aids:
+   - Visual regression testing options (if appropriate).
+   - Browserstack/Playwright or similar, if justified.
+
+Focus on what a solo dev can actually sustain.
+
+---
+
+## 7. Output Format
+
+Provide:
+
+1. **Summary** – high-level assessment of cross-browser robustness.
+2. **Issue List** – grouped by:
+   - Layout & CSS
+   - JS & APIs
+   - Responsive/device issues
+   - Fonts/media
+3. **Concrete Fixes** – specific, actionable recommendations.
+4. **Suggested Test Matrix** – minimal set of browsers/devices and flows to cover.
+
+Be realistic about effort vs risk, and prioritize issues accordingly.
+"""

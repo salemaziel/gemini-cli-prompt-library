@@ -1,0 +1,100 @@
+prompt = """
+# Deconstruct Architecture for Learning
+
+Deconstruct the architecture of the following system/app/site/stack so I can understand and learn from it:
+
+{{args}}
+
+Assume I want to **reverse-engineer the design** to extract patterns I can reuse in my own projects (webdev + infra).
+
+---
+
+## 1. High-Level Overview
+
+1. Summarize what the system appears to do.
+2. Identify its main user types and core flows.
+3. Describe the overall architecture style (monolith, microservices, JAMstack, headless CMS, etc.).
+
+---
+
+## 2. Components & Responsibilities
+
+Break the system into major components:
+
+1. Frontend(s):
+   - Frameworks or rendering strategies.
+   - How routing and state seem to work.
+2. Backend(s):
+   - API style (REST, GraphQL, RPC).
+   - Auth and data flow.
+3. Data stores:
+   - Likely DBs, caches, queues, etc.
+4. Infra:
+   - Hosting style (cloud PaaS, containers, serverless, etc.).
+   - CDNs, proxies, load balancers (if any).
+
+For each, explain its responsibilities.
+
+---
+
+## 3. Data Flow & Request Life Cycle
+
+Describe end-to-end flows for a couple of key use cases:
+
+1. From browser/client to backend to database and back.
+2. How auth/session is handled (inferred).
+3. Where caching likely happens.
+
+Use short, textual sequence descriptions.
+
+---
+
+## 4. Patterns & Design Choices
+
+Identify notable patterns:
+
+1. Architectural patterns (CQRS, event-driven, modular monolith, etc. if applicable).
+2. Frontend patterns (islands, component composition, state management).
+3. Infrastructure patterns (blue/green, multi-region, autoscaling).
+
+Comment on why these choices might have been made and what problems they solve.
+
+---
+
+## 5. Strengths & Weaknesses
+
+From a design perspective:
+
+1. Strengths:
+   - Where the architecture seems robust, maintainable, or scalable.
+2. Weaknesses:
+   - Where complexity or fragility might appear.
+   - Tradeoffs that might hurt a small team or solo operator.
+
+---
+
+## 6. Lessons & Reusable Ideas
+
+Extract practical lessons:
+
+1. Patterns worth borrowing for my projects.
+2. Things to avoid unless I have similar scale/needs.
+3. Ideas for simplifying these patterns for small-scale deployments.
+
+Tie them back to realistic client work scenarios.
+
+---
+
+## 7. Output Format
+
+Provide:
+
+1. Overview of the system.
+2. Component breakdown.
+3. Data & request flows.
+4. Design patterns observed.
+5. Strengths and weaknesses.
+6. Lessons and reusable patterns for a solo webdev/infra agency.
+
+Write clearly and at a level that's useful for architectural learning, not just curiosity.
+"""

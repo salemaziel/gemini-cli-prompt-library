@@ -1,0 +1,110 @@
+prompt = """
+# Write Standard Operating Procedure (SOP)
+
+Create a clear Standard Operating Procedure (SOP) for the following recurring process or responsibility:
+
+{{args}}
+
+The SOP should be usable by your future self or a contractor, and support consistent, repeatable execution.
+
+---
+
+## 1. Overview & Purpose
+
+1. Describe the purpose of the SOP in 2–4 sentences.
+2. Explain why this process exists and what success looks like.
+3. Clarify how often it is performed (daily, weekly, monthly, per project, per incident, etc.).
+
+---
+
+## 2. Roles & Responsibilities
+
+1. Define the primary responsible role (e.g. "Solo operator", "Tech", "Account manager").
+2. List any supporting roles or stakeholders.
+3. Note who needs to be informed when the SOP is executed (and how).
+
+---
+
+## 3. Inputs & Outputs
+
+List:
+
+1. Inputs:
+   - Information, tools, accounts, or resources needed before starting.
+2. Outputs:
+   - Concrete deliverables or states (e.g. "production backups verified", "client status email sent", "reports generated").
+
+Be explicit so it's easy to tell when the SOP is complete.
+
+---
+
+## 4. Prerequisites & Tools
+
+1. Required access (accounts, permissions).
+2. Required tools (CLI utilities, dashboards, docs, templates).
+3. Any preconditions (e.g. "All services operational", "Latest data synced").
+
+---
+
+## 5. Procedure (Step-by-Step)
+
+Write a **numbered list** of steps to perform the SOP.
+
+For each step:
+
+1. Describe the action clearly.
+2. Include references to where (URL, system, tool).
+3. Mention what to record or update (e.g. "Update log in Notion/TickTick with date and result").
+
+Group steps into subsections if the SOP is long (e.g. "Preparation", "Execution", "Follow-up").
+
+---
+
+## 6. Quality Checks & Acceptance Criteria
+
+Define how to verify that the SOP was executed correctly:
+
+1. Checks to perform (e.g. "Verify logs show X", "Load page Y and confirm Z").
+2. Criteria for success vs failure.
+3. What to do if checks fail.
+
+This turns the SOP into a self-contained checklist.
+
+---
+
+## 7. Exceptions & Escalation
+
+1. Describe common exceptions or failure modes.
+2. For each:
+   - How to recognize it.
+   - What initial steps to take.
+   - When to stop and escalate or create a separate incident task.
+3. Note who to contact and via what channels (if applicable).
+
+---
+
+## 8. Record Keeping
+
+Indicate:
+
+1. What should be logged after each run (date, executor, results, anomalies).
+2. Where to store this record (e.g. Notion DB, shared doc, ticket system).
+3. Any KPIs or metrics associated with this SOP.
+
+---
+
+## 9. Output Format
+
+Produce an SOP with clear headings:
+
+1. Overview & Purpose
+2. Roles & Responsibilities
+3. Inputs & Outputs
+4. Prerequisites & Tools
+5. Procedure
+6. Quality Checks & Acceptance Criteria
+7. Exceptions & Escalation
+8. Record Keeping
+
+Write in straightforward, actionable language suitable for repeat use.
+"""

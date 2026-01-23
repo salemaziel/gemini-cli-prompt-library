@@ -1,0 +1,115 @@
+prompt = """
+# Debug Networking Issue
+
+You are debugging a networking-related issue in the following context:
+
+{{args}}
+
+The goal is to determine whether the problem is DNS, routing, firewall, proxy, load balancer, or application-level, and propose a clear, ordered diagnostic plan.
+
+---
+
+## 1. Problem & Scope
+
+1. Restate the issue:
+   - Connection timeouts, intermittent failures, slow responses, incorrect responses, etc.
+2. Scope:
+   - Single host/service vs many.
+   - Specific clients/regions/ISPs vs all.
+   - Specific ports/protocols or everything.
+
+Identify whether this looks like:
+- Reachability issue.
+- Latency/throughput problem.
+- Path/route misconfiguration.
+- Load balancer/proxy misbehavior.
+
+---
+
+## 2. DNS & Name Resolution
+
+1. DNS checks:
+   - Does the hostname resolve to expected IP(s)?
+   - TTL and propagation behaviour.
+2. Split-horizon or internal DNS:
+   - Are internal and external clients seeing different answers?
+3. Common issues:
+   - Old records pointing to retired IPs.
+   - CNAME chains or ALIAS misconfigurations.
+
+Propose specific checks and common fixes.
+
+---
+
+## 3. Connectivity & Routing
+
+1. Basic connectivity:
+   - Ping/ICMP if allowed (or equivalent).
+   - Traceroute/path tracing to understand hops.
+2. Routing tables and gateways:
+   - Incorrect default route or missing routes.
+   - Asymmetric routing or blackhole situations.
+3. VPNs and overlays:
+   - Tunnels interfering with reachability.
+   - Network segments not peered correctly.
+
+Explain how to decide whether the issue is on client side, server side, or in-between.
+
+---
+
+## 4. Firewalls, Security Groups & ACLs
+
+1. Host firewalls:
+   - Local iptables/nftables/Windows firewall rules.
+2. Network firewalls / security groups:
+   - Cloud SGs, NACLs, hardware firewalls.
+3. WAF or application-level filters:
+   - Blocking certain paths, methods, or IP ranges.
+
+Describe a methodical way to check whether traffic is being blocked vs dropped vs rate limited.
+
+---
+
+## 5. Load Balancers, Proxies & Reverse Proxies
+
+1. Load balancer configuration:
+   - Target health checks.
+   - Port/protocol mismatches.
+   - Sticky sessions vs stateless behaviour.
+2. Reverse proxies:
+   - Nginx/HAProxy/Caddy, etc. misrouting.
+   - Host headers, upstream timeouts, header size limits.
+3. CDN involvement:
+   - Cache vs origin errors.
+   - Edge vs origin misconfigurations.
+
+Provide a high-level checklist tailored to the symptoms in {{args}}.
+
+---
+
+## 6. Application-Level Networking Issues
+
+1. Application listening:
+   - Is the app bound to the correct interface/port?
+   - IPv4 vs IPv6 binding issues.
+2. Timeouts and resource exhaustion:
+   - Connection pools.
+   - Max clients/worker limits.
+3. TLS negotiation problems:
+   - Protocol/cipher issues showing up as "network" failures at higher levels.
+
+Differentiate between true network problems and app-level issues masquerading as such.
+
+---
+
+## 7. Output Format
+
+Provide:
+
+1. **Summary** – what class of networking issue this most likely is.
+2. **Diagnostic plan** – ordered steps from simple to complex.
+3. **Probable causes** – mapped to checks.
+4. **Remediation suggestions** – concrete config changes or structural fixes.
+
+Write this as a concise runbook for your future self.
+"""

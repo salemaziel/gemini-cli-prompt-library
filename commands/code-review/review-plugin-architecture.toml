@@ -1,0 +1,122 @@
+prompt = """
+# WordPress Plugin Architecture Review
+
+Review the following WordPress plugin code/architecture for correctness, security, performance, and maintainability:
+
+{{args}}
+
+Assume this plugin is intended for production use on client sites, potentially across many environments.
+
+---
+
+## 1. Plugin Purpose & Scope
+
+1. Summarize what the plugin does.
+2. Clarify:
+   - Intended audience (internal use, client sites, public release).
+   - Scope boundaries (what it *shouldn't* do).
+3. Call out any scope creep you see.
+
+---
+
+## 2. Structure & Bootstrapping
+
+1. File/folder structure:
+   - Separation of concerns (core logic, admin UI, public UI, assets).
+   - Use of classes/namespaces vs global functions.
+2. Initialization:
+   - How the plugin is loaded (main file, autoloading, hooks).
+   - Use of `plugins_loaded`, `init`, etc. appropriately.
+3. Configuration:
+   - Options storage.
+   - Sensible defaults and safe fallbacks.
+
+Suggest improvements in organization and lifecycle where needed.
+
+---
+
+## 3. Hooks, Actions & Filters
+
+1. Hook usage:
+   - Clear mapping of functionality to hooks.
+   - Priority usage and potential conflicts with other plugins/themes.
+2. Extensibility:
+   - Does the plugin expose its own actions/filters for extension?
+   - Are they named and documented sensibly?
+
+Point out places where custom actions/filters would help long-term.
+
+---
+
+## 4. Database & Data Handling
+
+1. Data storage:
+   - Options vs post meta vs custom tables; are choices appropriate?
+   - Proper use of `$wpdb` if custom SQL is used.
+2. Sanitization & escaping:
+   - Inputs sanitized on write.
+   - Data escaped on output (`esc_html`, `esc_attr`, `wp_kses`, etc.).
+3. Migrations:
+   - Handling of schema changes or version upgrades.
+
+Highlight any unsafe patterns or missing migrations.
+
+---
+
+## 5. Security Review
+
+1. Nonces and permissions:
+   - Use of nonces for forms and actions.
+   - Capability checks (`current_user_can`) before privileged operations.
+2. XSS and SQL injection:
+   - Any raw output or query composition that looks dangerous.
+3. File operations:
+   - Uploads and filesystem access.
+   - Validation of file types and paths.
+
+Call out **critical** issues first (those that could lead to site compromise).
+
+---
+
+## 6. Performance & Footprint
+
+1. Hooks and queries:
+   - Heavy operations on global hooks like `init`, `wp_head`, etc.
+2. Asset loading:
+   - Only loading scripts/styles when needed.
+   - Avoiding global asset pollution on all admin screens or all front pages.
+3. Scalability:
+   - Behavior on large sites (many posts/users).
+
+Provide concrete suggestions for reducing footprint without sacrificing functionality.
+
+---
+
+## 7. Admin UX & Developer Experience
+
+1. Admin UI:
+   - Clarity of settings pages.
+   - Use of native WP UI patterns where possible.
+2. Errors & logging:
+   - How failures are surfaced (silent fails vs logs vs admin notices).
+3. Developer usage:
+   - How easy it is for other devs to understand and extend the plugin.
+
+---
+
+## 8. Output Format
+
+Provide:
+
+1. **Summary** – overall plugin health.
+2. **Strengths** – solid parts of the architecture.
+3. **Issue List** – grouped by:
+   - Structure & lifecycle
+   - Data & DB
+   - Security
+   - Performance
+   - UX & DX
+4. **Suggested Refactors** – prioritized changes for a safer, cleaner plugin.
+
+Focus on changes that improve safety and maintainability on client sites.
+"""

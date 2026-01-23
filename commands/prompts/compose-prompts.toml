@@ -1,0 +1,97 @@
+prompt = """
+# Design Prompt Composition Pattern
+
+Design a pattern for composing multiple prompts together to handle the following complex task:
+
+{{args}}
+
+The idea is to define **reusable building blocks** (sub-prompts) and how they fit together.
+
+---
+
+## 1. Clarify the Complex Task
+
+1. Restate the overall task in your own words.
+2. Identify why a single prompt is insufficient:
+   - Multiple outputs.
+   - Different modes (analysis, generation, critique).
+   - Need for iteration.
+
+---
+
+## 2. Identify Sub-Tasks
+
+Break the task into sub-tasks, such as:
+
+- Requirement clarification.
+- Context gathering.
+- Draft generation.
+- Review/critique.
+- Refactoring/cleanup.
+- Formatting and packaging.
+
+For each sub-task, describe the goal of that step.
+
+---
+
+## 3. Define Sub-Prompt Responsibilities
+
+For each sub-task:
+
+1. Describe what the sub-prompt should focus on.
+2. Specify:
+   - What inputs it needs.
+   - What kind of output it should produce (format, sections).
+3. Describe how strict or flexible it should be about style/constraints.
+
+Do not fully write the prompts; define their roles and interfaces.
+
+---
+
+## 4. Composition Flow
+
+Explain:
+
+1. The order in which sub-prompts should be used.
+2. Where human input/editing is expected between steps.
+3. How outputs from one step feed into the next.
+
+Include any loops (e.g. repeat critique/revision until criteria met).
+
+---
+
+## 5. Standard Interfaces & Placeholders
+
+Define:
+
+1. Common placeholders/variables (e.g. `{{args}}`, `{{context}}`, `{{draft}}`, `{{constraints}}`).
+2. Standard output shapes that make composition easier (e.g. headings, numbered lists, JSON-like structures).
+
+This allows sub-prompts to be combined without ad-hoc glue.
+
+---
+
+## 6. Example Instantiation
+
+Describe (in brief):
+
+1. A concrete example of using this composition pattern for a specific task in my work.
+2. How each sub-prompt would be called in that example.
+3. What the final combined output looks like.
+
+You can describe rather than fully write every sub-prompt.
+
+---
+
+## 7. Output Format
+
+Provide:
+
+1. Short description of the pattern.
+2. List of sub-tasks and their responsibilities.
+3. Composition flow description.
+4. Standard interfaces/placeholders.
+5. One example of how to apply this in practice.
+
+Write this as pattern documentation I can refer back to when designing new prompt chains.
+"""

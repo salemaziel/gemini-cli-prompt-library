@@ -1,0 +1,144 @@
+prompt = """
+# Troubleshoot WordPress Issue
+
+You are troubleshooting a WordPress-related problem in the following context:
+
+{{args}}
+
+The goal is to systematically isolate the cause (theme, plugin, config, hosting, custom code) and propose safe, reproducible steps a solo operator can execute.
+
+---
+
+## 1. Problem Clarification
+
+1. Restate the issue in plain language:
+   - What exactly is broken? (front-end, admin, login, specific feature, white screen of death, etc.)
+2. Scope:
+   - One page, many pages, admin only, all users?
+3. Timing:
+   - When it started and what changed just before (updates, new plugins, config, deploys).
+
+Identify key unknowns and assumptions.
+
+---
+
+## 2. Quick Triage & Safety
+
+Outline quick checks before deeper surgery:
+
+1. Backups:
+   - Confirm presence of recent backups (DB + files).
+   - Recommend making a fresh backup or snapshot before changing anything.
+2. Maintenance mode:
+   - When it's appropriate to enable a maintenance/holding page.
+3. Logs:
+   - Enable/inspect `WP_DEBUG`, `WP_DEBUG_LOG`, and server logs.
+
+---
+
+## 3. Reproduce & Isolate
+
+Provide a structured approach:
+
+1. Reproduction steps:
+   - Minimal steps to reliably trigger the issue.
+2. Theme vs plugin isolation:
+   - Switching to a default theme (e.g. Twenty Twenty-Three) in staging.
+   - Deactivating all plugins, then reactivating in batches.
+3. Environment split:
+   - If possible, replicate on staging or a local copy.
+   - Differences between environments (PHP version, extensions, caching).
+
+Highlight safe ways to test without breaking production when possible.
+
+---
+
+## 4. Configuration & Environment Checks
+
+1. PHP:
+   - Version compatibility with WP core and plugins.
+   - Memory limits, execution time, file upload limits.
+2. Database:
+   - Connectivity, charset/collation issues, table corruption signs.
+3. File system:
+   - Permissions on `wp-content`, uploads, and theme/plugin directories.
+   - Disk space and inode usage.
+
+Call out common misconfigurations and how to fix them.
+
+---
+
+## 5. Common WordPress Failure Modes
+
+Tailor to the symptoms in {{args}}, but consider:
+
+1. White screen / fatal errors:
+   - Fatal PHP errors in theme/plugin/custom code.
+   - Incompatible updates.
+2. 404s / permalink issues:
+   - .htaccess / rewrite problems.
+   - Flushing permalinks.
+3. Login/admin issues:
+   - Cookie/domain issues.
+   - Conflicting security or login plugins.
+4. Performance / timeouts:
+   - Heavy queries, slow plugins, external blocking calls.
+
+For the given case, map symptoms to probable causes.
+
+---
+
+## 6. WooCommerce & Builder-Specific Issues (if applicable)
+
+If WooCommerce or page builders are involved:
+
+1. WooCommerce:
+   - Checkout/cart failing, payment gateway errors.
+   - Template overrides out of sync with plugin version.
+2. Builders:
+   - Shortcodes/blocks not rendering.
+   - Conflicts between builder and theme.
+
+Describe checks and rollback strategies specific to these.
+
+---
+
+## 7. Proposed Fix Path
+
+Provide a practical, ordered path:
+
+1. Safest checks and fixes first (config, cache, permalinks).
+2. Plugin/theme isolation and rollbacks.
+3. Code-level fixes for custom snippets or child theme changes.
+
+For each step, describe:
+- What to do.
+- What outcome confirms/denies a suspected cause.
+
+---
+
+## 8. Hardening & Prevention
+
+Once the issue is understood:
+
+1. Recommendations for:
+   - Update strategy (staging first, backups before updates).
+   - Plugin/theme selection and pruning.
+   - Monitoring for errors and uptime.
+2. Documentation:
+   - Keeping a simple change log of updates and custom changes.
+
+---
+
+## 9. Output Format
+
+Provide:
+
+1. **Summary of the issue** – your understanding from {{args}}.
+2. **Most likely causes** – ranked with rationale.
+3. **Step-by-step troubleshooting plan** – ordered actions.
+4. **Fix recommendations** – what to change/rollback.
+5. **Prevention tips** – how to avoid similar problems.
+
+Write it as if you're handing a calm, clear runbook to your future self at 2am.
+"""

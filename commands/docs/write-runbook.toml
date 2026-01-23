@@ -1,0 +1,131 @@
+prompt = """
+# Write Operations Runbook
+
+Write a clear, actionable runbook for the following operational task, system, or incident type:
+
+{{args}}
+
+The runbook should be optimized for a solo operator under time pressure. It must be **practical**, **step-by-step**, and include enough context that someone coming back months later can still follow it.
+
+---
+
+## 1. Purpose & Scope
+
+Start with a short, explicit description:
+
+1. What this runbook is for (task/incident type).
+2. When it should be used (triggers, symptoms, conditions).
+3. What it does **not** cover (out-of-scope situations).
+
+Keep this to a few concise paragraphs.
+
+---
+
+## 2. Preconditions & Assumptions
+
+List:
+
+1. Required access and tools:
+   - Accounts, permissions, VPN, CLI tools, dashboards, etc.
+2. Required knowledge (if any):
+   - Basic familiarity with a service, framework, or environment.
+3. Assumptions:
+   - Environment state (e.g. "production is deployed via CI X", "backups run nightly").
+
+Make it obvious what must be true before starting.
+
+---
+
+## 3. High-Level Overview
+
+Provide a brief architectural/flow overview:
+
+1. What systems are involved.
+2. How they interact at a high level.
+3. How this runbook's steps fit into that picture.
+
+Use simple bullets or short text diagrams; keep it minimal but clarifying.
+
+---
+
+## 4. Step-by-Step Procedure
+
+Write a **numbered, linear set of steps** to execute the runbook safely.
+
+For each step:
+
+1. Describe **what** to do.
+2. Describe **why** it's being done (1 sentence).
+3. Describe **how to verify success** (logs, dashboards, URLs, command outputs).
+4. Include **branching** where needed:
+   - "If X, then go to step N; if Y, go to step M."
+
+If there are destructive steps (e.g. restarts, rollbacks), clearly label them and include extra confirmation checks.
+
+---
+
+## 5. Validation & Checks
+
+After the main steps, define how to confirm success:
+
+1. Health checks:
+   - URLs to visit, commands to run, dashboards to check.
+2. Functional checks:
+   - Key user flows to test manually.
+3. Monitoring:
+   - Metrics/logs that should return to normal ranges.
+
+Include thresholds or examples when possible.
+
+---
+
+## 6. Rollback / Abort Plan
+
+If things go wrong:
+
+1. Describe how to revert changes made by this runbook (roll back deploy, config, infra).
+2. Specify what conditions mean you should **stop** and escalate or reconsider.
+3. Detail any data or state that must be checked before and after rollback.
+
+Make rollback as scripted and low-stress as possible.
+
+---
+
+## 7. Troubleshooting Notes
+
+Add a short section of common problems and their responses:
+
+1. "If you see error X in logs, it usually means Y; try Z."
+2. Known edge cases or timing issues.
+3. Known limitations or flaky tools.
+
+This is a place to capture institutional memory.
+
+---
+
+## 8. References & Links
+
+List any relevant:
+
+- Dashboards.
+- Docs and specs.
+- External services status pages.
+- Related runbooks (e.g. "See also: deployment runbook").
+
+---
+
+## 9. Output Format
+
+Produce a complete runbook with the following sections:
+
+1. Purpose and Scope
+2. Preconditions and Assumptions
+3. High-Level Overview
+4. Step-by-Step Procedure
+5. Validation and Checks
+6. Rollback / Abort Plan
+7. Troubleshooting Notes
+8. References
+
+Write in concise, imperative language. Assume this may be read during a stressful incident.
+"""

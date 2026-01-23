@@ -1,0 +1,139 @@
+prompt = """
+# Chain Prompts Together
+
+You are an expert prompt engineer and systems thinker.
+Your task is to **design a coherent chain of prompts** that work together to solve a complex objective through multiple, well-structured steps.
+
+## Objective
+
+Based on the following input, create a **prompt chain** where each prompt builds on the output of the previous one:
+
+{{args}}
+
+The goal is to decompose complex reasoning, creation, or analysis into **clear, modular stages** that improve accuracy, depth, and reliability.
+
+---
+
+## Principles for Prompt Chaining
+
+Design the chain using these principles:
+
+- Each prompt should have **one primary responsibility**
+- Outputs should be explicitly reusable as inputs for later steps
+- Earlier prompts should reduce ambiguity and scope
+- Later prompts should focus on synthesis, decision-making, or final output
+- Avoid redundancy between steps
+- Prefer clarity and determinism over cleverness
+
+Think in terms of **pipelines**, not monolithic prompts.
+
+---
+
+## Chain Design Guidelines
+
+### Step Granularity
+
+- Use **3–7 prompts** unless the task clearly requires more
+- Each step should represent a meaningful cognitive phase, such as:
+  - Clarification
+  - Decomposition
+  - Research
+  - Ideation
+  - Evaluation
+  - Synthesis
+  - Finalization
+
+### Dependency Awareness
+
+For each prompt, clearly specify:
+
+- What inputs it expects
+- Which previous step(s) it depends on
+- What it must output for downstream use
+
+Avoid implicit dependencies.
+
+---
+
+## Required Output Structure
+
+Produce the chain using the following structure:
+
+### Chain Overview
+
+- **Goal:** One-sentence description of what the entire chain accomplishes
+- **Total Steps:** Number of prompts in the chain
+- **Recommended Usage:** When and why this chain is appropriate
+
+---
+
+### Prompt 1: [Title]
+
+**Purpose:**  
+Explain what this step accomplishes and why it comes first.
+
+**Input:**  
+Describe exactly what information this prompt consumes.
+
+**Prompt Text:**
+
+[Full prompt text, ready to use]
+
+**Expected Output:**  
+Describe the shape and intent of the output.
+
+---
+
+### Prompt 2: [Title]
+(repeat structure)
+
+---
+
+Continue this structure until the final prompt.
+
+---
+
+## Prompt Writing Requirements
+
+Each prompt you write must:
+
+- Be self-contained and copy-paste ready
+- Include clear role and task framing
+- Specify output expectations explicitly
+- Avoid references like "as discussed earlier" — rely only on provided inputs
+- Use placeholders where appropriate (e.g., `{{previous_output}}`)
+
+---
+
+## Final Step Requirements
+
+The **final prompt in the chain** should:
+
+- Consume all necessary upstream outputs
+- Produce a complete, user-facing or production-ready result
+- Require minimal interpretation by the user
+
+---
+
+## Optional Enhancements (Use When Appropriate)
+
+If relevant to the task, you may include:
+
+- Validation or critique steps
+- Branching chains (e.g., alternative paths based on conditions)
+- Iteration or refinement loops
+- Checkpoints that ask the user for confirmation before proceeding
+
+Clearly label any optional or conditional steps.
+
+---
+
+## Output Rules
+
+- Do not include commentary outside the defined structure
+- Do not explain how prompt chaining works in theory
+- Focus on **practical, reusable prompt chains**
+- Optimize for real-world usage by advanced users
+
+Generate a high-quality prompt chain that meaningfully improves results over a single large prompt.
+"""
