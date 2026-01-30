@@ -17,7 +17,7 @@ Implement form validation logic for:
 - **Submit:** Disable button or show error on click?
 
 ### 3. Handling
-- `react-hook-form` / `veelite`.
+- `react-hook-form` / `VeeValidate`.
 - Handling async validation (e.g., username taken).
 
 ## Output
