@@ -10,7 +10,7 @@ Generate firewall rules and configuration for:
 - **Service:** Web Server, Database, Custom App.
 
 ## Rules Strategy
-- **Default Policy:** Deny Incomming, Allow Outgoing.
+- **Default Policy:** Deny Incoming, Allow Outgoing.
 - **Allow Specific Ports:**
     - SSH (22) - Ideally restricted to specific IPs.
     - HTTP/HTTPS (80/443).
