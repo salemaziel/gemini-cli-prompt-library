@@ -1,0 +1,29 @@
+prompt = """
+# Design Business System Architecture
+
+Design the integration architecture for business systems:
+
+{{args}}
+
+## Integration Points
+
+### 1. Core Systems
+- **CRM:** Salesforce, HubSpot.
+- **ERP:** SAP, NetSuite.
+- **Billing:** Stripe, Chargebee.
+
+### 2. Data Flow
+- **Sync Direction:** One-way vs Bi-directional.
+- **Frequency:** Real-time (Webhook) vs Batch (Nightly job).
+
+### 3. Middleware
+- ESB (Enterprise Service Bus) or iPaaS (Mulesoft, Zapier).
+- Custom API Gateway.
+
+### 4. Data Consistency
+- Handling conflicts.
+- Source of Truth definition.
+
+## Output
+Provide a data flow diagram description and integration strategy.
+"""

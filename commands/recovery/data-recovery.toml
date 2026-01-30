@@ -1,0 +1,24 @@
+prompt = """
+# Data Recovery Plan
+
+Create a plan to attempt data recovery for:
+
+{{args}}
+
+## Scenarios
+
+### 1. Accidental Deletion (Soft Delete)
+- Check "Bin" or "Archive" flags in DB.
+- Check Application Audit logs for the data.
+
+### 2. Database Corruption / Dropped Table
+- Point-in-Time Recovery (PITR) from transaction logs (WAL/Binlog).
+- Restore from nightly backup to a *separate* instance and export missing data.
+
+### 3. Filesystem Loss
+- `extundelete` or similar tools (Stop writing to disk immediately!).
+- Cloud Provider Snapshots (EBS Snapshot).
+
+## Output
+Provide specific technical commands/steps for the recovery attempt.
+"""

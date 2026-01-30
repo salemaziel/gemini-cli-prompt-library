@@ -1,0 +1,29 @@
+prompt = """
+# Component Design
+
+Design a reusable UI component for:
+
+{{args}}
+
+## Design Specs
+
+### 1. Interface (Props/Inputs)
+- What data does it need?
+- Configuration props (variant, size, disabled).
+- Event callbacks (onClick, onChange).
+
+### 2. Structure
+- Breakdown of sub-components.
+- Slot usage for content injection.
+
+### 3. State
+- Internal state (isOpen, isHovered).
+- Controlled vs Uncontrolled state.
+
+### 4. Styles
+- Scoped styling (CSS Modules, Tailwind).
+- Responsive behavior.
+
+## Output
+Provide the component code (React/Vue/Svelte) and usage example.
+"""

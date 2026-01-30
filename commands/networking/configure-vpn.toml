@@ -1,0 +1,26 @@
+prompt = """
+# Configure VPN
+
+Configure a VPN server for secure remote access:
+
+{{args}}
+
+## Options
+
+### 1. WireGuard
+- Modern, fast, simple.
+- Key-based authentication.
+
+### 2. OpenVPN
+- Legacy standard, highly configurable.
+- Certificate-based.
+
+## Setup Steps
+- Install software (e.g., `pivpn` wrapper or manual install).
+- Generate server/client keys.
+- Configure IP forwarding (sysctl).
+- Configure firewall (UDP port).
+
+## Output
+Provide the installation commands and client config file example.
+"""

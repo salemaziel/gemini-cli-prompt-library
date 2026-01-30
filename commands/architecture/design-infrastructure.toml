@@ -1,0 +1,30 @@
+prompt = """
+# Design Cloud Infrastructure
+
+Design the cloud infrastructure architecture for:
+
+{{args}}
+
+## Architecture Components
+
+### 1. Network (VPC)
+- Public vs Private Subnets.
+- NAT Gateways / Internet Gateways.
+- Bastion Hosts / VPN.
+
+### 2. Compute
+- VM (EC2) vs Container (Fargate/GKE) vs Serverless (Lambda).
+- Auto-scaling groups.
+
+### 3. Storage & Database
+- Managed Relational DB (RDS).
+- NoSQL (DynamoDB).
+- Object Storage (S3).
+
+### 4. Security
+- IAM Roles/Policies.
+- Security Groups / Firewalls.
+
+## Output
+Provide an architectural diagram description (Draw.io/Mermaid) and component list.
+"""

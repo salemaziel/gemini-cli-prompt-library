@@ -1,0 +1,29 @@
+prompt = """
+# CDN Optimization
+
+Create a plan to optimize CDN usage for:
+
+{{args}}
+
+## Optimization Areas
+
+### 1. Caching Policy
+- **Cache-Control Headers:** Max-age, immutable, stale-while-revalidate.
+- **Cache Keys:** What parameters vary the cache? (Query strings, Headers).
+
+### 2. Performance Features
+- **Compression:** Brotli / Gzip.
+- **HTTP/2 or HTTP/3 (QUIC):** Ensure it's enabled.
+- **TLS Optimization:** OCSP Stapling, TLS 1.3.
+
+### 3. Security
+- **WAF:** Web Application Firewall rules at the edge.
+- **DDoS Protection:** Rate limiting.
+
+### 4. Cost Control
+- Origin Shield / Tiered Caching.
+- Bandwidth optimization.
+
+## Output
+Provide specific configuration recommendations for the chosen CDN provider (Cloudflare, AWS CloudFront, Fastly).
+"""

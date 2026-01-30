@@ -1,0 +1,31 @@
+prompt = """
+# Repository Setup
+
+Create a checklist and configuration for setting up a new repository for:
+
+{{args}}
+
+## Components
+
+### 1. Git Configuration
+- Initialize repo.
+- `.gitignore`: Language specific ignores (node_modules, .env, __pycache__).
+
+### 2. Documentation
+- `README.md`: Project overview and setup.
+- `CONTRIBUTING.md`: Guidelines for contributors.
+- `LICENSE`: Open source license file.
+
+### 3. Tooling
+- `.editorconfig`: Consistent coding styles between editors.
+- Linters/Formatters config (Eslint, Prettier, Ruff).
+- Pre-commit hooks (husky).
+
+### 4. GitHub/GitLab Settings
+- Issue templates.
+- Pull Request templates.
+- Branch protection rules.
+
+## Output
+Provide the file contents and setup commands.
+"""

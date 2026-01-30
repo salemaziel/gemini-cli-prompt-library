@@ -1,0 +1,28 @@
+prompt = """
+# Handling Difficult Client Situations
+
+Provide a strategy and script for handling the following difficult client situation:
+
+{{args}}
+
+## Analysis
+1.  **Identify the Core Issue:** Is it missed deadlines, quality perception, communication breakdown, or budget mismatch?
+2.  **Assess Emotion vs. Fact:** Separate the client's emotional reaction from the factual problems.
+3.  **Determine the Goal:** What is the desired outcome? (De-escalation, boundary setting, firing the client, getting paid?)
+
+## Strategy
+- **De-escalation:** Techniques to lower the temperature.
+- **Fact-Based Communication:** Referencing contracts, previous agreements, or logs.
+- **Empathy:** Showing you understand their perspective without necessarily agreeing.
+- **Options:** Presenting 2-3 paths forward rather than a binary "yes/no".
+
+## Draft Communication (Email/Script)
+- **Subject Line:** Clear and professional.
+- **Opening:** Neutral and professional.
+- **The "No" (if applicable):** Deliver bad news clearly but kindly ("The Sandwich Method").
+- **The Solution:** Focus on how to resolve the impasse.
+- **Closing:** Reiterate commitment to success.
+
+## Tone
+- Calm, firm, professional, and empathetic. Never defensive or aggressive.
+"""

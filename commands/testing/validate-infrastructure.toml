@@ -1,0 +1,29 @@
+prompt = """
+# Validate Infrastructure
+
+Create a test plan or script to validate the infrastructure setup:
+
+{{args}}
+
+## Validation Tests
+
+### 1. Reachability
+- Can we ping the server?
+- Is the load balancer forwarding traffic?
+
+### 2. Security Groups / Firewall
+- **Positive Test:** Can we SSH from the VPN IP?
+- **Negative Test:** Can we SSH from 0.0.0.0/0 (Should Fail)?
+- Is Port 80 open? Is Port 3306 blocked from public?
+
+### 3. Service Health
+- HTTP 200 OK on health check endpoints.
+- Database connection successful.
+
+### 4. Configuration
+- Verify SSL certificate validity.
+- Verify correct environment variables are set.
+
+## Output
+Provide a script (Bash/Python) or Terratest code to automate this verification.
+"""

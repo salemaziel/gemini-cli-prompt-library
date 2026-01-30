@@ -1,0 +1,30 @@
+prompt = """
+# A/B Test Plan
+
+Create an A/B test plan for:
+
+{{args}}
+
+## Experiment Design
+
+### 1. Hypothesis
+- "If we change [Variable], then [Result] will happen, because [Reason]."
+
+### 2. Variables
+- **Control (A):** The current version.
+- **Variant (B):** The modified version.
+- **Changes:** Specific text, color, layout, or logic changes.
+
+### 3. Metrics
+- **Primary Metric:** Conversion Rate, Click-Through Rate (CTR).
+- **Secondary Metrics:** Bounce Rate, Average Order Value (AOV).
+- **Guardrail Metrics:** Load time, Error rate (ensure we don't break things).
+
+### 4. Audience & Duration
+- Target audience (All users, Mobile only?).
+- Sample size calculation (How many users needed for statistical significance?).
+- Estimated duration.
+
+## Output
+Produce a structured experiment document ready for implementation.
+"""

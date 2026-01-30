@@ -1,0 +1,26 @@
+prompt = """
+# Local SEO Strategy
+
+Develop a Local SEO strategy for:
+
+{{args}}
+
+## Strategy Components
+
+### 1. Google Business Profile (GBP)
+- Optimization (Categories, Description, Photos).
+- Posting strategy (Updates, Offers).
+- Review generation management.
+
+### 2. On-Page Signals
+- NAP (Name, Address, Phone) consistency.
+- Local Schema Markup.
+- Location pages (if multi-location).
+
+### 3. Off-Page
+- **Citations:** Directory listings (Yelp, YellowPages).
+- **Local Links:** Chamber of Commerce, Sponsorships.
+
+## Output
+Provide a checklist and roadmap for improving local visibility.
+"""

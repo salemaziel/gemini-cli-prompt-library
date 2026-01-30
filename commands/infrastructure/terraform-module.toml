@@ -1,0 +1,32 @@
+prompt = """
+# Terraform Module
+
+Create a Terraform module for:
+
+{{args}}
+
+## Module Structure
+
+### 1. Resources (`main.tf`)
+- Define the cloud resources (AWS EC2, S3, Azure VM, GCP Compute).
+- Follow least privilege for IAM roles.
+
+### 2. Variables (`variables.tf`)
+- Make the module reusable with input variables (region, instance_type, tags).
+- Provide descriptions and default values.
+
+### 3. Outputs (`outputs.tf`)
+- Export useful values (Instance IDs, IPs, DNS names).
+
+### 4. Versions (`versions.tf`)
+- Pin provider versions.
+- Define terraform version constraints.
+
+## Best Practices
+- Use `snake_case` for names.
+- Tag all resources.
+- Use remote state (mention usage).
+
+## Output
+Provide the Terraform HCL code.
+"""

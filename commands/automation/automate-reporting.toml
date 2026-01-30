@@ -1,0 +1,24 @@
+prompt = """
+# Automate Reporting
+
+Create a script to generate and send automated reports for:
+
+{{args}}
+
+## Script Logic
+
+### 1. Data Retrieval
+- Connect to Database or API.
+- Execute query for the time period (Yesterday, Last Week).
+
+### 2. Formatting
+- Convert data to CSV, Excel, or HTML table.
+- Generate charts (matplotlib) if needed.
+
+### 3. Delivery
+- Send via SMTP (Email) with attachment.
+- Post to Slack channel.
+
+## Output
+Provide the Python/Node.js script.
+"""

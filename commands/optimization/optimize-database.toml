@@ -1,0 +1,31 @@
+prompt = """
+# Optimize Database Performance
+
+Analyze and optimize the database performance for:
+
+{{args}}
+
+## Optimization Steps
+
+### 1. Query Analysis
+- **Slow Query Log:** Identify queries taking > X ms.
+- **EXPLAIN ANALYZE:** Understand the query execution plan.
+- N+1 Query detection.
+
+### 2. Indexing
+- Add missing indexes for WHERE, JOIN, and ORDER BY clauses.
+- Remove unused or duplicate indexes (write penalty).
+- Composite indexes for multi-column queries.
+
+### 3. Schema & Config
+- **Normalization vs Denormalization:** When to duplicate data for read speed.
+- Connection Pooling settings.
+- Buffer pool size / Cache configuration.
+
+### 4. Maintenance
+- VACUUM / Analyze (Postgres).
+- Defragmentation.
+
+## Output
+Provide specific SQL commands to analyze and fix performance issues.
+"""

@@ -1,0 +1,29 @@
+prompt = """
+# DNS Configuration
+
+Configure DNS records for a domain:
+
+{{args}}
+
+## Record Types
+
+### 1. A Record
+- Map Domain -> IPv4 Address.
+
+### 2. CNAME Record
+- Map Domain -> Domain (Alias).
+
+### 3. MX Record
+- Mail Exchange (Email routing).
+
+### 4. TXT Record
+- Verification (Google, Facebook).
+- SPF/DKIM/DMARC (Email security).
+
+## Best Practices
+- TTL (Time To Live) settings.
+- Wildcard records (*.example.com).
+
+## Output
+Provide the list of records to add to the DNS provider.
+"""

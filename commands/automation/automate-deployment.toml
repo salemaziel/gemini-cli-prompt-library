@@ -1,0 +1,27 @@
+prompt = """
+# Automate Deployment
+
+Create an automated deployment script/pipeline for:
+
+{{args}}
+
+## Pipeline Steps
+
+### 1. Preparation
+- Checkout code.
+- Install dependencies.
+- Build assets (compile, minify).
+
+### 2. Transfer
+- Rsync to server OR
+- Push Docker image to registry.
+
+### 3. Activation
+- **SSH:** Pull latest code/image.
+- **Migration:** Run DB migrations.
+- **Restart:** Reload PM2/Systemd/K8s deployment.
+- **Verify:** Health check endpoint.
+
+## Output
+Provide the deployment script (Bash, Ansible, or GH Action).
+"""

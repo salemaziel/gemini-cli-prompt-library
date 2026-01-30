@@ -1,0 +1,17 @@
+prompt = """
+# Proxmox Configuration
+
+Provide configuration steps or advice for Proxmox VE setup regarding:
+
+{{args}}
+
+## Topics Covered
+- **Storage:** ZFS vs LVM, resizing disks, mounting ISOs.
+- **Networking:** Linux Bridges, VLANs, Bonded interfaces.
+- **VM/LXC Management:** Creating templates, resource allocation (CPU/RAM balloons).
+- **High Availability (HA):** Clustering setup, fencing.
+- **Backups:** Proxmox Backup Server (PBS) integration, vzdump.
+
+## Output
+Provide specific commands (qm, pct, pvesh) or GUI walkthrough steps.
+"""

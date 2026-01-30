@@ -1,0 +1,25 @@
+prompt = """
+# Sales Pitch Script
+
+Write a sales pitch script/outline for:
+
+{{args}}
+
+## Pitch Structure (AIDA)
+
+### 1. Attention
+- Hook the prospect with a startling stat or relatable problem.
+
+### 2. Interest
+- Explain how the problem affects their business (agitate the pain).
+
+### 3. Desire
+- Introduce your solution as the magic pill.
+- Show social proof.
+
+### 4. Action
+- Clear Call to Action (CTA). "Can we schedule a demo?"
+
+## Output
+Provide a script for a Cold Call, Email, or Meeting presentation.
+"""

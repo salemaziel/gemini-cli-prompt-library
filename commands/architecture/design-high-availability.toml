@@ -1,0 +1,28 @@
+prompt = """
+# Design High Availability (HA)
+
+Design a High Availability and Fault Tolerant architecture for:
+
+{{args}}
+
+## HA Strategies
+
+### 1. Redundancy
+- **N+1:** Have at least one more component than needed.
+- **Multi-AZ:** Deploy across multiple Availability Zones within a region.
+- **Multi-Region:** Active-Active or Active-Passive geo-redundancy.
+
+### 2. Load Balancing
+- Distribute traffic across healthy instances.
+- Health checks.
+
+### 3. Database HA
+- Read Replicas.
+- Automatic Failover (Multi-AZ RDS).
+
+### 4. State Management
+- Stateless application servers (Store session in Redis).
+
+## Output
+Provide an architectural diagram description focusing on redundancy and failover.
+"""

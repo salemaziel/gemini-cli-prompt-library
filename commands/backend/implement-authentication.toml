@@ -1,0 +1,27 @@
+prompt = """
+# Implement Authentication
+
+Design an authentication system for:
+
+{{args}}
+
+## Approach
+
+### 1. Strategy Selection
+- **JWT (Stateless):** Good for microservices/mobile. Needs refresh token rotation.
+- **Session-Based (Stateful):** Secure HttpOnly cookies. Good for traditional web apps.
+- **OAuth2 / SSO:** Login with Google/GitHub.
+
+### 2. Implementation Details
+- **Password Hashing:** Use Argon2 or Bcrypt (never plain text!).
+- **Flows:** Registration, Login, Logout, Password Reset, Email Verification.
+- **Middleware:** Protecting routes (`isAuthenticated`).
+
+### 3. Security Best Practices
+- CSRF protection.
+- Rate limiting on login endpoints.
+- Secure cookie attributes (HttpOnly, Secure, SameSite).
+
+## Output
+Provide the code structure, key functions, and security configuration.
+"""

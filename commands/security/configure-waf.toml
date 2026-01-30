@@ -1,0 +1,27 @@
+prompt = """
+# Configure WAF (Web Application Firewall)
+
+Configure WAF rules for:
+
+{{args}}
+
+## Rule Categories
+
+### 1. OWASP Top 10
+- Block SQL Injection (SQLi) patterns.
+- Block Cross-Site Scripting (XSS) patterns.
+
+### 2. Rate Limiting
+- Block IPs requesting > 100 req/min.
+- Protect Login/Reset Password endpoints.
+
+### 3. Bot Protection
+- Challenge/Captcha for suspected bots.
+- Block bad user-agents.
+
+### 4. Geo-Blocking
+- Block traffic from countries where you do no business.
+
+## Output
+Provide the rule configuration logic (Cloudflare/AWS WAF).
+"""

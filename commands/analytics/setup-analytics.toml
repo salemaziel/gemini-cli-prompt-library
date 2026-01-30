@@ -1,0 +1,30 @@
+prompt = """
+# Analytics Setup Guide
+
+Create a setup guide for implementing analytics on:
+
+{{args}}
+
+## Implementation Steps
+
+### 1. Tool Selection
+- Google Analytics 4 (GA4) vs. Privacy-focused (Plausible, Fathom) vs. Product Analytics (Mixpanel, Amplitude).
+
+### 2. Installation
+- **Snippet:** Where to place the JS code (Head vs Body).
+- **Tag Manager:** Benefits of using GTM.
+- **SPA Considerations:** Handling virtual pageviews in React/Vue/Angular.
+
+### 3. Configuration
+- **Property Settings:** Timezone, Currency.
+- **Cross-domain tracking:** If multiple subdomains exist.
+- **Internal Traffic Filter:** Excluding developer/office IP addresses.
+- **Data Retention Settings.**
+
+### 4. Privacy Compliance
+- GDPR/CCPA considerations.
+- Cookie Consent banner integration.
+
+## Output
+Provide the code snippets and step-by-step configuration instructions.
+"""

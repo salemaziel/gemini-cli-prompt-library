@@ -1,0 +1,27 @@
+prompt = """
+# WordPress Plugin Development
+
+Create a plan/code for a WordPress Plugin:
+
+{{args}}
+
+## Structure
+
+### 1. Header
+- Plugin Name, Description, Version, Author.
+
+### 2. Hooks
+- **Actions:** Do something at a specific point (`init`, `wp_head`).
+- **Filters:** Modify data before it is used (`the_content`, `body_class`).
+
+### 3. Data
+- **Custom Post Types (CPT):** `register_post_type`.
+- **Custom Fields (Meta):** `add_post_meta`, `get_post_meta`.
+- **Database:** `global $wpdb` (Use prepared statements!).
+
+### 4. Admin UI
+- Settings API vs Custom Admin Pages.
+
+## Output
+Provide the plugin boilerplate or specific function code.
+"""

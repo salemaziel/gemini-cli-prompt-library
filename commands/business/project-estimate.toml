@@ -1,0 +1,25 @@
+prompt = """
+# Project Estimation
+
+Create a project cost and timeline estimate for:
+
+{{args}}
+
+## Estimation Method
+
+### 1. Breakdown (WBS)
+- Break project into Phases -> Features -> Tasks.
+- Estimate hours for each Task (Optimistic, Pessimistic, Most Likely).
+
+### 2. Costs
+- **Development:** Hours * Hourly Rate.
+- **Infrastructure:** Hosting, Licenses, 3rd Party APIs.
+- **Contingency:** Add 10-20% buffer for unknowns.
+
+### 3. Timeline
+- Calculate critical path.
+- Account for non-coding time (Meetings, QA, Project Management).
+
+## Output
+Provide a detailed line-item estimate table.
+"""

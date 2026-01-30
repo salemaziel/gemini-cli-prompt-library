@@ -1,0 +1,25 @@
+prompt = """
+# Responsive Layout Implementation
+
+Create the HTML/CSS for a responsive layout described as:
+
+{{args}}
+
+## Requirements
+
+### 1. Breakpoints
+- **Mobile:** < 768px (Single column).
+- **Tablet:** 768px - 1024px (Two column).
+- **Desktop:** > 1024px (Multi-column / Max width).
+
+### 2. Techniques
+- Use **CSS Grid** for main layout.
+- Use **Flexbox** for alignment within components.
+- Use fluid units (%, rem, vw/vh) instead of fixed pixels where appropriate.
+
+### 3. Mobile-First Approach
+- Write base styles for mobile, use `min-width` media queries for larger screens.
+
+## Output
+Provide the HTML structure and CSS (or Tailwind classes).
+"""

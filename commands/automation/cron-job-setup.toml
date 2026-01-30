@@ -1,0 +1,21 @@
+prompt = """
+# Cron Job Setup
+
+Create the Cron job configuration for:
+
+{{args}}
+
+## Requirements
+
+### 1. Schedule
+- Define the timing (Every minute, Daily at midnight, Weekly).
+- Syntax: `* * * * *` (Minute Hour Day Month Weekday).
+
+### 2. Command
+- Full path to interpreter (`/usr/bin/python3`).
+- Full path to script.
+- Redirect output for logging (`>> /var/log/myjob.log 2>&1`).
+
+## Output
+Provide the exact Crontab line and explanation.
+"""

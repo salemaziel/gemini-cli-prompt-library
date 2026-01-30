@@ -1,0 +1,25 @@
+prompt = """
+# Competitor Analysis
+
+Conduct a SWOT analysis of competitors for:
+
+{{args}}
+
+## Framework
+
+### 1. Identify Competitors
+- Direct (Same product).
+- Indirect (Different product, same problem solved).
+
+### 2. SWOT
+- **Strengths:** What do they do well?
+- **Weaknesses:** Where are they failing? (Check reviews).
+- **Opportunities:** Gaps they are missing.
+- **Threats:** Market shifts.
+
+### 3. Feature Comparison
+- Matrix of features/pricing.
+
+## Output
+Provide a detailed analysis report.
+"""

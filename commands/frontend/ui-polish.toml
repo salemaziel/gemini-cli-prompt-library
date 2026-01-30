@@ -1,0 +1,26 @@
+prompt = """
+# UI Polish
+
+Suggest UI polish and micro-interactions for:
+
+{{args}}
+
+## Polish Checklist
+
+### 1. Visual Hierarchy
+- Spacing consistency (8pt grid).
+- Typography scale (contrast between H1 and p).
+- Shadows/Depth (elevation).
+
+### 2. Feedback
+- Hover states for all interactables.
+- Active/Focus states.
+- Loading skeletons instead of spinners.
+
+### 3. Transitions
+- Smooth color changes.
+- Elements entering/leaving DOM.
+
+## Output
+Provide specific CSS/Design recommendations to elevate the look and feel.
+"""

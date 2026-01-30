@@ -1,0 +1,28 @@
+prompt = """
+# Error Handling Strategy
+
+Design a global error handling strategy for:
+
+{{args}}
+
+## Requirements
+
+### 1. Custom Error Classes
+- Extend the base Error class.
+- Types: `ValidationError` (400), `AuthenticationError` (401), `NotFoundError` (404), `DatabaseError` (500).
+
+### 2. Centralized Handler
+- Middleware to catch all errors.
+- Format the response consistently: `{ "error": { "code": "...", "message": "..." } }`.
+- Hide stack traces in production!
+
+### 3. Reporting
+- Log the error with full stack trace and context.
+- Send critical errors to Sentry/Bugsnag.
+
+### 4. Process Exit
+- When to restart the process (uncaught exceptions).
+
+## Output
+Provide the code for the Error classes and the global middleware/handler.
+"""

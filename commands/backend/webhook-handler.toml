@@ -1,0 +1,28 @@
+prompt = """
+# Webhook Handler Implementation
+
+Create a secure and robust webhook handler for:
+
+{{args}}
+
+## Requirements
+
+### 1. Security (Crucial)
+- **Signature Verification:** Verify the payload signature (HMAC) to ensure it comes from the trusted source (Stripe, GitHub, etc.).
+- **Timing Attacks:** Use constant-time comparison for signatures.
+
+### 2. Idempotency
+- Handle the same event being delivered multiple times.
+- Check event ID against a processed log before executing actions.
+
+### 3. Asynchronous Processing
+- **Ack Fast:** Return `200 OK` immediately after verification.
+- **Process Later:** Push the workload to a background queue to avoid timeout.
+
+### 4. Error Handling
+- What happens if the processing fails? (Retry logic).
+- Logging payload for debugging.
+
+## Output
+Provide the code (Controller/Route handler) implementing these patterns.
+"""

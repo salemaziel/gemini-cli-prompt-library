@@ -1,0 +1,24 @@
+prompt = """
+# Headless CMS Integration
+
+Design the integration between a Frontend and a Headless CMS:
+
+{{args}}
+
+## Architecture
+
+### 1. Data Fetching
+- **REST vs GraphQL:** Which API to use?
+- **Build time (SSG):** Fetch content during build (e.g., `getStaticProps`).
+- **Runtime (SSR/CSR):** Fetch content on request.
+
+### 2. Content Modeling
+- Define the schema in the CMS (Hero section, Feature list).
+- Map to frontend components.
+
+### 3. Previews
+- How to handle draft content previews in the frontend app.
+
+## Output
+Provide the code (e.g., Next.js fetch logic) and type definitions.
+"""

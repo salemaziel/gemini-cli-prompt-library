@@ -1,0 +1,21 @@
+prompt = """
+# Rollback Strategy (Deployment)
+
+Define the rollback strategy for this specific deployment:
+
+{{args}}
+
+## Triggers
+- What error rate triggers a rollback?
+- What latency threshold triggers a rollback?
+
+## Mechanisms
+- **Automated:** CI/CD detects failure and reverts.
+- **Manual:** "Break glass" procedure.
+
+## Database
+- How to handle DB migrations that ran? (Down migrations?).
+
+## Output
+Provide the rollback protocol.
+"""

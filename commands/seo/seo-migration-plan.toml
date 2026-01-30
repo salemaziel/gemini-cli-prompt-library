@@ -1,0 +1,29 @@
+prompt = """
+# SEO Migration Plan
+
+Create a plan for an SEO-safe website migration/redesign for:
+
+{{args}}
+
+## Migration Checklist
+
+### 1. Preparation
+- Crawl current site (Screaming Frog) to map all URLs.
+- Benchmark current rankings/traffic.
+
+### 2. Redirect Mapping (Crucial)
+- Map Old URLs -> New URLs (301 Redirects).
+- Avoid redirect chains.
+
+### 3. Technical Checks
+- Update `robots.txt`.
+- Submit new `sitemap.xml`.
+- Check Canonical tags.
+
+### 4. Post-Launch
+- Monitor 404 errors in Search Console.
+- Verify analytics tracking.
+
+## Output
+Provide a step-by-step migration protocol.
+"""

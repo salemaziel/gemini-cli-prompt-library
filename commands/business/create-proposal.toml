@@ -1,0 +1,31 @@
+prompt = """
+# Create Business Proposal
+
+Draft a formal business proposal for:
+
+{{args}}
+
+## Proposal Structure
+
+### 1. Problem Statement
+- Demonstrate understanding of the client's pain points.
+
+### 2. Proposed Solution
+- High-level overview of the approach.
+- Key deliverables.
+
+### 3. Methodology / Process
+- How we work (Agile, Weekly sprints).
+- Communication plan.
+
+### 4. Investment (Pricing)
+- Options (Basic, Standard, Premium).
+- Payment schedule.
+
+### 5. Why Us?
+- Relevant case studies / testimonials.
+- Team expertise.
+
+## Output
+Provide the proposal text suitable for a PDF or document.
+"""

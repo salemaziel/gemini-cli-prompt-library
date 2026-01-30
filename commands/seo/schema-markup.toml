@@ -1,0 +1,24 @@
+prompt = """
+# Generate Schema Markup
+
+Generate JSON-LD Schema Markup for:
+
+{{args}}
+
+## Schema Types
+
+### 1. Organization
+- Logo, Social profiles, Contact info.
+
+### 2. LocalBusiness
+- Address, Opening hours, Map link.
+
+### 3. Article / BlogPosting
+- Headline, Image, Author, Date.
+
+### 4. Product / Service
+- Price, Rating, Availability.
+
+## Output
+Provide the valid JSON-LD code block to insert into `<head>`.
+"""

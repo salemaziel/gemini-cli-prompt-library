@@ -1,0 +1,21 @@
+prompt = """
+# Setup Reverse Proxy
+
+Configure a Reverse Proxy to sit in front of an application:
+
+{{args}}
+
+## Use Cases
+- Terminate SSL.
+- Serve static files.
+- Route requests to different backend ports (Node.js, Python).
+- Add security headers.
+
+## Configuration (Nginx Example)
+- `proxy_pass http://localhost:3000;`
+- Forwarding headers (`X-Real-IP`, `X-Forwarded-For`).
+- WebSocket support (`Upgrade`, `Connection`).
+
+## Output
+Provide the server block configuration.
+"""

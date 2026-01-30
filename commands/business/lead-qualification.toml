@@ -1,0 +1,27 @@
+prompt = """
+# Lead Qualification Framework
+
+Create a lead qualification framework (BANT/CHAMP) for:
+
+{{args}}
+
+## Criteria
+
+### 1. Budget
+- Can they afford us?
+
+### 2. Authority
+- Is the contact the decision maker?
+
+### 3. Need
+- Do they have a problem we can solve?
+
+### 4. Timeline
+- When do they need to start?
+
+## Scoring
+- Assign points to criteria to grade leads (Hot, Warm, Cold).
+
+## Output
+Provide a checklist or script for the sales team.
+"""

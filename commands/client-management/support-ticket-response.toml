@@ -1,0 +1,31 @@
+prompt = """
+# Support Ticket Response
+
+Draft a response to the following support ticket:
+
+{{args}}
+
+## Response Structure
+
+### 1. Empathy & Acknowledgement
+- Thank the user for reporting.
+- Acknowledge the frustration (if applicable).
+- Restate the issue to ensure understanding.
+
+### 2. Diagnosis/Explanation
+- **If fixed:** Explain what went wrong and what was done to fix it.
+- **If investigating:** Explain steps being taken and expected timeline.
+- **If user error:** Gently explain the correct process, pointing to documentation.
+- **If feature request:** Acknowledge value, explain backlog process/workaround.
+
+### 3. Action Items / Solution
+- Step-by-step instructions for the user (if they need to do something).
+- Links to relevant documentation/knowledge base.
+
+### 4. Confirmation
+- Ask if this resolves their issue.
+- "Is there anything else I can help with?"
+
+## Tone
+- Helpful, patient, and clear. Avoid overly technical jargon unless the user is technical.
+"""

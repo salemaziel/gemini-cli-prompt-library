@@ -1,0 +1,28 @@
+prompt = """
+# Website Recovery Guide
+
+Provide a step-by-step guide to recover a down website:
+
+{{args}}
+
+## Triage Steps
+
+### 1. Verification
+- Is it down for everyone? (Use `downforeveryoneorjustme`).
+- Check Status Pages (Cloud Provider, CDN, 3rd party APIs).
+
+### 2. Diagnosis
+- **DNS:** Is the domain resolving?
+- **Network:** Can you ping/ssh the server?
+- **Web Server:** Is Nginx/Apache running? (`systemctl status nginx`).
+- **Application:** Check logs (`journalctl`, app logs).
+- **Database:** Is DB accepting connections?
+
+### 3. Resolution Actions
+- Restart Services.
+- Reboot Server (Last resort).
+- Rollback recent changes.
+
+## Output
+Provide a checklist for troubleshooting and restoring service.
+"""

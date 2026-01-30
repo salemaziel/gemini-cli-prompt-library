@@ -1,0 +1,28 @@
+prompt = """
+# Reduce Server Costs
+
+Analyze and propose a strategy to reduce infrastructure costs for:
+
+{{args}}
+
+## Cost Saving Levers
+
+### 1. Rightsizing
+- Analyze CPU/RAM utilization.
+- Downsize over-provisioned instances.
+
+### 2. Purchase Models
+- **Reserved Instances / Savings Plans:** Commit to 1-3 years for discounts.
+- **Spot Instances:** For fault-tolerant background workloads.
+
+### 3. Storage Optimization
+- Delete unattached EBS volumes / Snapshots.
+- Lifecycle policies for S3 (Move to Glacier/Infrequent Access).
+
+### 4. Architecture Changes
+- Move to Serverless (Lambda) for low-traffic tasks.
+- Use CDN to offload egress bandwidth.
+
+## Output
+Provide a cost-benefit analysis and specific action items.
+"""

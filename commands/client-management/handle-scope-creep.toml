@@ -1,0 +1,26 @@
+prompt = """
+# Handling Scope Creep
+
+Draft a communication to address the following scope creep request:
+
+{{args}}
+
+## Strategy
+1.  **Reference the Original Scope:** Gently point back to the agreed-upon SOW (Statement of Work) or contract.
+2.  **Validate the Idea:** Acknowledge that the new request is a good idea (if it is), but clarify it is *new*.
+3.  **Explain the Impact:** Detail how this change affects:
+    *   Timeline (will it cause delays?)
+    *   Budget (will it cost more?)
+    *   Focus (will it distract from core MVP?)
+4.  **Offer Options:**
+    *   **Option A:** Add it now via a Change Order (additional cost + time).
+    *   **Option B:** Defer it to Phase 2 (post-launch).
+    *   **Option C:** Swap it with an existing feature of equal size (maintain budget/timeline).
+
+## Draft Email/Message
+- **Tone:** Collaborative partner, not "contract lawyer".
+- **Goal:** Protect the project's health (budget/timeline) while making the client feel heard.
+
+## Output
+Provide a script or email draft following the strategy above.
+"""

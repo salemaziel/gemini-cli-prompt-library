@@ -1,0 +1,25 @@
+prompt = """
+# Technical SEO Audit
+
+Perform a technical SEO audit checklist for:
+
+{{args}}
+
+## Audit Points
+
+### 1. Crawlability & Indexability
+- `robots.txt` blocking important resources?
+- `noindex` tags on wrong pages?
+- Sitemap validity.
+
+### 2. Architecture
+- URL structure (clean vs parameterized).
+- Internal linking structure (orphan pages).
+
+### 3. Performance (Core Web Vitals)
+- Mobile-friendliness.
+- HTTPS configuration (Mixed content).
+
+## Output
+Provide a report format with findings and remediation steps.
+"""

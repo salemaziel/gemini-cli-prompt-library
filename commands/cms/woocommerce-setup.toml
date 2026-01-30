@@ -1,0 +1,27 @@
+prompt = """
+# WooCommerce Setup
+
+Guide the setup and configuration of a WooCommerce store:
+
+{{args}}
+
+## Configuration Checklist
+
+### 1. General
+- Currency, Location, Selling countries.
+
+### 2. Products
+- Simple, Variable (Size/Color), Virtual/Downloadable.
+- Stock management settings.
+
+### 3. Shipping & Tax
+- Zones and Classes.
+- Automated tax calculation vs Manual rates.
+
+### 4. Payments
+- Stripe, PayPal, Direct Bank Transfer.
+- Sandbox testing.
+
+## Output
+Provide specific configuration advice or code for custom snippets (`functions.php`).
+"""

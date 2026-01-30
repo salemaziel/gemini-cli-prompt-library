@@ -1,0 +1,25 @@
+prompt = """
+# Conversion Tracking Setup
+
+Create a plan to track conversions for:
+
+{{args}}
+
+## Requirements
+
+### 1. Define Macro & Micro Conversions
+- **Macro:** Purchase, Sign Up, Lead Form Submission.
+- **Micro:** Newsletter signup, Video view, Add to Cart, PDF download.
+
+### 2. Implementation Technicals
+- **Platform:** GA4, GTM (Google Tag Manager), Facebook Pixel, Plausible, Mixpanel.
+- **Trigger Logic:** "Page View" vs "Click Event" vs "Element Visibility".
+- **Data Layer:** What variables need to be pushed (Transaction ID, Value, Currency)?
+
+### 3. Verification
+- How to test using Debug View or Tag Assistant.
+- Checking for duplicate events.
+
+## Output
+Provide a tagging plan (event names, triggers, parameters) and implementation instructions.
+"""

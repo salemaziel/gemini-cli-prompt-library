@@ -1,0 +1,24 @@
+prompt = """
+# State Management Strategy
+
+Design the state management approach for:
+
+{{args}}
+
+## Strategy
+
+### 1. Local vs Global
+- **Local:** `useState` / `data()`. Used for UI state (modals, inputs).
+- **Global:** Redux, Context, Pinia. Used for User data, Theme, Cart.
+
+### 2. Server State
+- React Query / SWR / TanStack Query.
+- Caching API responses, handling loading/error states.
+
+### 3. Architecture
+- Define the Store structure (Slices/Modules).
+- Actions/Mutations definition.
+
+## Output
+Provide the store setup code and example of connecting a component.
+"""

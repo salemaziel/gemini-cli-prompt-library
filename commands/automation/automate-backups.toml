@@ -1,0 +1,26 @@
+prompt = """
+# Automate Backups
+
+Create an automated backup script for:
+
+{{args}}
+
+## Script Logic
+
+### 1. Dump Data
+- `pg_dump`, `mysqldump`, `tar` for files.
+- Compress output (gzip).
+
+### 2. Upload
+- Upload to Cloud Storage (AWS S3, Google Cloud Storage, Backblaze B2).
+- Use CLI tools (`aws s3 cp`, `rclone`).
+
+### 3. Rotation
+- Delete backups older than X days (Lifecycle policy or script logic).
+
+### 4. Notification
+- Alert on failure (curl to webhook).
+
+## Output
+Provide the Bash or Python script.
+"""

@@ -1,0 +1,31 @@
+prompt = """
+# Backup Restoration Guide
+
+Create a detailed guide for restoring from backups for:
+
+{{args}}
+
+## Restoration Steps
+
+### 1. Locate Backup
+- Identify the correct snapshot/file based on timestamp.
+- Download from cold storage if necessary.
+
+### 2. Prepare Environment
+- Provision a **fresh** instance/database (Don't overwrite production until verified!).
+
+### 3. Restore Process
+- **Database:** `pg_restore`, `mysql < dump.sql`.
+- **Files:** `tar -xvf`, `aws s3 sync`.
+
+### 4. Verification
+- Check row counts.
+- Integrity check (Checksums).
+- Smoke test the application against restored data.
+
+### 5. Switchover
+- Update DNS or Connection strings to point to restored instance.
+
+## Output
+Provide a runbook with commands.
+"""

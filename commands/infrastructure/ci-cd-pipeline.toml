@@ -1,0 +1,30 @@
+prompt = """
+# CI/CD Pipeline Configuration
+
+Design or write a CI/CD pipeline configuration for:
+
+{{args}}
+
+## Requirements
+
+### 1. Pipeline Stages
+- **Build:** Compile code, build docker images, etc.
+- **Test:** Unit tests, integration tests, linting, security scans.
+- **Deploy (Staging):** Deploy to staging environment.
+- **Test (E2E):** End-to-end tests against staging.
+- **Deploy (Production):** Manual approval or automated deployment.
+
+### 2. Platform Specifics
+- Specify the platform (GitHub Actions, GitLab CI, CircleCI, Jenkins).
+- Use correct syntax/YAML structure for that platform.
+
+### 3. Optimization
+- Caching strategies (dependencies, build artifacts).
+- Parallel execution where possible.
+
+### 4. Secrets Management
+- How environment variables and keys are injected.
+
+## Output
+Provide the complete YAML configuration file(s) and a brief explanation of the workflow.
+"""

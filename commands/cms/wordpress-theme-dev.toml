@@ -1,0 +1,24 @@
+prompt = """
+# WordPress Theme Development
+
+Create a plan/code for a WordPress Theme component/feature:
+
+{{args}}
+
+## Development Standards
+
+### 1. Template Hierarchy
+- Understand which file handles which request (`single.php`, `archive.php`, `front-page.php`).
+
+### 2. Best Practices
+- **Localization:** Use `__()` and `_e()` functions.
+- **Security:** Escape outputs (`esc_html`, `esc_url`) and sanitize inputs (`sanitize_text_field`).
+- **Enqueuing:** Use `wp_enqueue_scripts` for CSS/JS.
+
+### 3. Functionality
+- Support `add_theme_support` (Post thumbnails, Menus, Logo).
+- Customizer API or Block Editor styles (`theme.json`).
+
+## Output
+Provide the PHP code or file structure guidance.
+"""

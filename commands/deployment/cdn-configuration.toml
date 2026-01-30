@@ -1,0 +1,22 @@
+prompt = """
+# CDN Configuration (Deployment)
+
+Configure a CDN for a new deployment:
+
+{{args}}
+
+## Configuration
+
+### 1. Origin Setup
+- Point CDN to S3 Bucket or Load Balancer.
+
+### 2. CNAME Setup
+- Create `cdn.example.com` or route root domain through CDN (CNAME Flattening).
+
+### 3. Behaviors
+- Route `/api/*` to Origin (No Cache).
+- Route `/*.jpg` to Edge Cache.
+
+## Output
+Provide the specific configuration settings.
+"""

@@ -1,0 +1,45 @@
+prompt = """
+# Client Onboarding Checklist & Communication
+
+Create a comprehensive onboarding plan for a new client:
+
+{{args}}
+
+## Components Required
+
+### 1. Welcome Communication
+- Warm, professional welcome email
+- Introduction of team members
+- clear "Next Steps" section
+- Link to onboarding portal/documents
+
+### 2. Administrative Setup
+- Contract execution verification
+- Invoicing/billing setup
+- Access to project management tools (Jira, Trello, etc.)
+- Repository/Codebase access
+- Communication channel setup (Slack, Discord, Email)
+
+### 3. Information Gathering
+- Project requirements confirmation
+- Brand assets collection (Logo, Fonts, Colors)
+- Technical credentials (Server, DNS, API keys)
+- Stakeholder contact list
+
+### 4. Kickoff Meeting Agenda
+- Introductions
+- Project goals and success metrics
+- Scope review
+- Timeline and milestones
+- Communication protocols
+- Q&A session
+
+### 5. Client Education
+- How to use our tools
+- How to provide feedback
+- Support process explanation
+- Response time expectations (SLAs)
+
+## Output Format
+Provide the output as a structured document with email templates, checklists, and agenda items ready to be used.
+"""

@@ -1,0 +1,29 @@
+prompt = """
+# Web Scraping Script
+
+Create a script to scrape data from:
+
+{{args}}
+
+## Requirements
+
+### 1. Target Identification
+- URL(s) to scrape.
+- CSS Selectors / XPaths for the data (Title, Price, Image, Description).
+
+### 2. Technical Stack
+- **Python:** BeautifulSoup, Scrapy, Selenium, Playwright.
+- **Node.js:** Puppeteer, Cheerio, Playwright.
+
+### 3. Resilience
+- **Rate Limiting:** `sleep` between requests.
+- **User-Agent Rotation:** Avoid basic blocking.
+- **Error Handling:** Retries on 404/500 or timeout.
+- **Proxies:** Support for proxy rotation if needed.
+
+### 4. Output
+- Save to JSON, CSV, or Database.
+
+## Output
+Provide the complete script code.
+"""

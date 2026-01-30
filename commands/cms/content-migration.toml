@@ -1,0 +1,30 @@
+prompt = """
+# Content Migration Plan
+
+Create a plan to migrate content from Source A to Destination B:
+
+{{args}}
+
+## Migration Steps
+
+### 1. Audit
+- Inventory all content types (Posts, Pages, Products, Custom fields).
+- Map Author and Category/Tag taxonomies.
+
+### 2. Export
+- **Standard:** XML / CSV export.
+- **Direct DB:** SQL dump (risky if schemas differ).
+- **API:** Fetch and transform JSON.
+
+### 3. Transformation
+- Rewrite image paths.
+- Map old IDs to new IDs.
+- Clean up messy HTML/Shortcodes.
+
+### 4. Import
+- Use import tools (WP All Import, Custom Script).
+- Validate data integrity.
+
+## Output
+Provide a migration script concept or step-by-step procedure.
+"""

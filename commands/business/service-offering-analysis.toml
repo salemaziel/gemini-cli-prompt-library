@@ -1,0 +1,25 @@
+prompt = """
+# Service Offering Analysis
+
+Analyze and refine the service offering for:
+
+{{args}}
+
+## Analysis
+
+### 1. Market Fit
+- Is there demand? Who is buying?
+
+### 2. Profitability
+- High margin vs Low margin services.
+- Scalability (Productized service vs Custom consulting).
+
+### 3. Differentiation
+- What makes this unique? (Niche focus, Speed, Quality).
+
+### 4. Positioning
+- How is it described on the landing page?
+
+## Output
+Provide recommendations to bundle, unbundle, or pivot the offering.
+"""

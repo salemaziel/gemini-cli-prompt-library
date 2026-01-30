@@ -1,0 +1,36 @@
+prompt = """
+# Create Training Materials
+
+Create an outline and content for training materials on:
+
+{{args}}
+
+## Content Types
+
+### 1. User Guide / Manual
+- **Target Audience:** End users / Administrators.
+- **Format:** Step-by-step written instructions with screenshot placeholders.
+- **Structure:**
+    - Introduction
+    - Getting Started
+    - Core Features (How-to)
+    - Common Troubleshooting
+    - FAQ
+
+### 2. Video Script Outline
+- **Intro:** Hook, what will be learned.
+- **Demonstration:** Key steps to show.
+- **Narration:** Clear, concise script.
+- **Outro:** Summary and next steps.
+
+### 3. Cheat Sheet / Quick Reference
+- One-page summary of shortcuts, key workflows, or critical definitions.
+
+## Requirements
+- Break down complex processes into simple, numbered steps.
+- Use simple language (avoid jargon).
+- Focus on "jobs to be done" (e.g., "How to create a report" vs " The Report Generator Interface").
+
+## Output
+Generate the structure and key content for the requested training topic.
+"""

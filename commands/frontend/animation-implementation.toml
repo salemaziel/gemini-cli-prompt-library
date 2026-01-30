@@ -1,0 +1,24 @@
+prompt = """
+# Animation Implementation
+
+Create a CSS/JS animation for:
+
+{{args}}
+
+## Animation Details
+
+### 1. Trigger
+- On Load, On Scroll, On Hover, On Click.
+
+### 2. Type
+- **Transitions:** Smooth property changes (opacity, transform).
+- **Keyframes:** Complex multi-stage animations.
+- **Physics:** Spring-based (Framer Motion / React Spring).
+
+### 3. Performance
+- Animate only `transform` and `opacity` to avoid repaints.
+- Use `will-change` sparingly.
+
+## Output
+Provide the CSS/JS code to implement the animation.
+"""

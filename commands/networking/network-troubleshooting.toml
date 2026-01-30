@@ -1,0 +1,28 @@
+prompt = """
+# Network Troubleshooting
+
+Troubleshoot network connectivity issues:
+
+{{args}}
+
+## Tools & commands
+
+### 1. Connectivity
+- `ping <target>`: Is it reachable?
+- `traceroute <target>`: Where is the path breaking?
+
+### 2. DNS
+- `dig <domain> +short`: Is it resolving correctly?
+- `nslookup <domain>`.
+
+### 3. Ports
+- `telnet <ip> <port>`: Is the port open?
+- `nc -zv <ip> <port>` (Netcat).
+
+### 4. Traffic
+- `tcpdump`: Capture packets.
+- `netstat -tulpn`: Listen ports.
+
+## Output
+Provide a diagnostic checklist and command examples.
+"""

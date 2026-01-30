@@ -1,0 +1,30 @@
+prompt = """
+# Pre-Launch Checklist
+
+Generate a Go-Live / Pre-Launch checklist for:
+
+{{args}}
+
+## Categories
+
+### 1. Functional
+- All critical flows (Checkout, Login) tested.
+- Cross-browser testing completed.
+
+### 2. SEO & Analytics
+- `robots.txt` allows indexing (Remove `disallow: /`).
+- Analytics tags firing.
+- Favicon works.
+
+### 3. Security
+- SSL working.
+- Debug mode disabled.
+- Secrets secured.
+
+### 4. Performance
+- Assets minified.
+- Caching enabled.
+
+## Output
+Provide a comprehensive itemized list.
+"""

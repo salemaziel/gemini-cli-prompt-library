@@ -1,0 +1,30 @@
+prompt = """
+# Caching Strategy
+
+Design a multi-layer caching strategy for:
+
+{{args}}
+
+## Layers
+
+### 1. Browser Caching
+- `Cache-Control` headers for static assets (Year-long cache + Versioning).
+- Service Worker caching (PWA).
+
+### 2. CDN Edge Caching
+- Cache HTML for public pages.
+- Dynamic content caching techniques.
+
+### 3. Application Caching (Redis/Memcached)
+- **Object Cache:** User sessions, Expensive DB queries.
+- **Page Cache:** Rendered HTML fragments.
+
+### 4. Database Caching
+- Query cache / Buffer pool.
+
+## Invalidation
+- How to clear the cache when data changes? (Time-based vs Event-based).
+
+## Output
+Provide the architecture diagram description and configuration snippets.
+"""

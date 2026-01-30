@@ -1,0 +1,32 @@
+prompt = """
+# Server Provisioning Guide
+
+Create a guide/script to provision a new server for:
+
+{{args}}
+
+## Steps
+
+### 1. Initial Access & Security
+- SSH Key setup (disable password auth).
+- Create sudo user.
+- Basic Firewall (UFW/iptables) - allow SSH, HTTP, HTTPS only.
+- Fail2Ban setup.
+
+### 2. Software Installation
+- System updates (`apt update && apt upgrade`).
+- Install dependencies (Runtime, Database, Web Server).
+
+### 3. Configuration
+- Configure Timezone/NTP.
+- Optimize Kernel parameters (sysctl) if high load expected.
+- Log rotation setup.
+
+### 4. Application Deployment
+- Directory structure setup.
+- Git clone / Artifact download.
+- Service setup (Systemd unit file).
+
+## Output
+Provide a shell script (bash) or a detailed step-by-step markdown guide.
+"""
