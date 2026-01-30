@@ -19,7 +19,7 @@ Write an Ansible playbook for the following task/configuration:
 
 ### 3. Security
 - Use `ansible-vault` for secrets (mention usage).
-- strict file permissions.
+- Strict file permissions.
 
 ## Output
 Provide the YAML code for the playbook and any necessary variable definitions.
