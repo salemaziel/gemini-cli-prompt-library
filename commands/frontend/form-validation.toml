@@ -1,0 +1,25 @@
+prompt = """
+# Form Validation
+
+Implement form validation logic for:
+
+{{args}}
+
+## Requirements
+
+### 1. Schema Definition
+- Use a library (Zod, Yup, Joi) to define rules.
+- Types: Email, Password complexity, Required fields, Number ranges.
+
+### 2. UX Behavior
+- **Real-time:** Validate on Blur or Change?
+- **Error Messages:** Clear, inline error text red.
+- **Submit:** Disable button or show error on click?
+
+### 3. Handling
+- `react-hook-form` / `VeeValidate`.
+- Handling async validation (e.g., username taken).
+
+## Output
+Provide the validation schema and the form component code.
+"""

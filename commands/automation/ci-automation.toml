@@ -1,0 +1,25 @@
+prompt = """
+# CI Automation Scripts
+
+Create automation scripts for the CI environment to handle:
+
+{{args}}
+
+## Tasks
+
+### 1. Quality Checks
+- Linting (ESLint, Pylint).
+- Formatting Check (Prettier).
+- Security Audit (`npm audit`, `trivy`).
+
+### 2. Versioning
+- Semantic Release (auto-increment version based on commits).
+- Generate Changelog.
+
+### 3. Notification
+- Post build status to Slack.
+- Comment on PR with test coverage results.
+
+## Output
+Provide the shell scripts or CI configuration (YAML) steps.
+"""

@@ -1,0 +1,25 @@
+prompt = """
+# Client Feedback Response
+
+Draft a professional response to the following client feedback:
+
+{{args}}
+
+## Analysis & Strategy
+
+1.  **Acknowledge & Validate:** Start by thanking the client and acknowledging their points specifically.
+2.  **Categorize Feedback:**
+    *   **Actionable/Agreed:** Items we will fix/change.
+    *   **Clarification Needed:** Items where we need more info.
+    *   **Pushback (with Rationale):** Items where we disagree based on expertise/scope (handle delicately).
+3.  **Proposed Action Plan:**
+    *   List specific steps we will take.
+    *   Provide a timeline for these changes.
+4.  **Tone Check:**
+    *   If feedback is positive: Be appreciative but professional.
+    *   If feedback is negative: Be empathetic, non-defensive, and solution-oriented.
+    *   If feedback is vague: Ask specific guiding questions.
+
+## Output Format
+Draft the email response using the structure above.
+"""

@@ -1,0 +1,26 @@
+prompt = """
+# CSS Architecture
+
+Design the CSS architecture for:
+
+{{args}}
+
+## Approach
+
+### 1. Methodology
+- **BEM:** Block Element Modifier (`.card__title--large`).
+- **Utility-First:** Tailwind CSS.
+- **CSS-in-JS:** Styled Components, Emotion.
+
+### 2. Structure
+- Variables/Tokens (Colors, Spacing, Typography).
+- Base reset.
+- Component layers.
+
+### 3. Scalability
+- How to handle theming (Dark mode).
+- Avoiding namespace collisions.
+
+## Output
+Provide the folder structure and example code snippets showing the methodology.
+"""

@@ -1,0 +1,27 @@
+prompt = """
+# Go-Live Procedure (Runbook)
+
+Create a minute-by-minute Go-Live Runbook for:
+
+{{args}}
+
+## Runbook Structure
+
+### 1. Pre-Flight (T-Minus 1 Hour)
+- Team check-in.
+- Verify backups.
+
+### 2. Execution (T-Zero)
+- Enable maintenance mode (if needed).
+- Deploy code / DB migrations.
+- Flush caches.
+- Disable maintenance mode.
+
+### 3. Post-Flight (T-Plus 1 Hour)
+- Smoke tests.
+- Monitor error logs.
+- Sign-off.
+
+## Output
+Provide the detailed timeline schedule.
+"""

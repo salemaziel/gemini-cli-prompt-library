@@ -1,0 +1,24 @@
+prompt = """
+# Profitability Analysis
+
+Analyze the profitability of:
+
+{{args}}
+
+## Metrics
+
+### 1. Gross Margin
+- (Revenue - COGS) / Revenue.
+
+### 2. Customer Lifetime Value (LTV)
+- Average revenue per customer over relationship.
+
+### 3. Customer Acquisition Cost (CAC)
+- Marketing/Sales spend / New Customers.
+
+### 4. LTV:CAC Ratio
+- Goal is > 3:1.
+
+## Output
+Provide a breakdown of the economics and suggestions to improve margins.
+"""

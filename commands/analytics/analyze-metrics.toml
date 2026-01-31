@@ -1,0 +1,30 @@
+prompt = """
+# Analyze Metrics
+
+Perform a deep-dive analysis on the following data points/metrics:
+
+{{args}}
+
+## Analysis Framework
+
+### 1. Context
+- Is the number good or bad compared to benchmarks?
+- Is it a trend or a spike/drop?
+- Seasonality factors?
+
+### 2. Segmentation (The "Why")
+- Break down by **Device** (Mobile vs Desktop).
+- Break down by **Channel** (Organic vs Paid).
+- Break down by **User Type** (New vs Returning).
+- Break down by **Landing Page**.
+
+### 3. Hypothesis Generation
+- "Mobile conversion is low because the checkout button is below the fold."
+- "Traffic spike is due to the viral blog post on Tuesday."
+
+### 4. Actionable Next Steps
+- What should we do based on this analysis? (Fix, Optimize, Kill, Scale).
+
+## Output
+Provide a detailed analysis finding based on the input data/scenario provided.
+"""

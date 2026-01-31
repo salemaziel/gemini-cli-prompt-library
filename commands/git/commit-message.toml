@@ -1,0 +1,32 @@
+prompt = """
+# Generate Commit Message
+
+Generate a conventional commit message for the following changes:
+
+{{args}}
+
+## Format (Conventional Commits)
+`<type>(<scope>): <subject>`
+
+`<body>`
+
+`<footer>`
+
+### Types
+- **feat:** A new feature.
+- **fix:** A bug fix.
+- **docs:** Documentation only changes.
+- **style:** Changes that do not affect the meaning of the code (white-space, formatting, etc).
+- **refactor:** A code change that neither fixes a bug nor adds a feature.
+- **perf:** A code change that improves performance.
+- **test:** Adding missing tests or correcting existing tests.
+- **chore:** Changes to the build process or auxiliary tools and libraries.
+
+## Requirements
+- Subject line must be imperative ("Add feature" not "Added feature").
+- Max 72 chars for subject line.
+- Body should explain "what" and "why" (not "how").
+
+## Output
+Provide the formatted commit message.
+"""

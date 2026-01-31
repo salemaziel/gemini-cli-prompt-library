@@ -1,0 +1,27 @@
+prompt = """
+# Secure WordPress
+
+Apply security best practices to a WordPress installation:
+
+{{args}}
+
+## Security Checklist
+
+### 1. Core Config
+- Change default admin username (not 'admin').
+- Use strong passwords.
+- Update Salt Keys in `wp-config.php`.
+
+### 2. Hardening
+- Disable XML-RPC (if not used).
+- Disable File Editing in Dashboard (`DISALLOW_FILE_EDIT`).
+- Limit Login Attempts.
+
+### 3. File Permissions
+- Directories: 755.
+- Files: 644.
+- `wp-config.php`: 600 or 640.
+
+## Output
+Provide the `.htaccess` rules or `wp-config.php` snippets.
+"""

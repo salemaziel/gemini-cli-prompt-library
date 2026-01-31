@@ -1,0 +1,28 @@
+prompt = """
+# DNS Migration Plan
+
+Create a safe DNS migration plan for:
+
+{{args}}
+
+## Steps
+
+### 1. Preparation
+- Lower TTL (Time To Live) to 300s (5 mins) 48 hours in advance.
+- Export current zone file.
+
+### 2. Setup New Provider
+- Import records to new DNS provider (Cloudflare, Route53).
+- Verify records match exactly.
+
+### 3. Cutover
+- Change Nameservers at the Registrar level.
+- Wait for propagation.
+
+### 4. Verification
+- Use `dig` to verify different regions are seeing the new nameservers.
+- Increase TTL back to standard (1 hour / 24 hours) after stability.
+
+## Output
+Provide a timeline and checklist.
+"""

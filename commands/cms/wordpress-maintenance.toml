@@ -1,0 +1,28 @@
+prompt = """
+# WordPress Maintenance Plan
+
+Create a maintenance schedule for a WordPress site:
+
+{{args}}
+
+## Tasks
+
+### 1. Updates
+- Core, Plugins, Themes.
+- Staging test before Production update.
+
+### 2. Security
+- Malware scan (Wordfence/Sucuri).
+- User audit (Remove old admins).
+- Check error logs.
+
+### 3. Performance
+- Database optimization (clean transients/revisions).
+- Check broken links.
+
+### 4. Backups
+- Verify backup integrity (Test restore).
+
+## Output
+Provide a monthly/weekly checklist document.
+"""

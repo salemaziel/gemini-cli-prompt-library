@@ -1,0 +1,28 @@
+prompt = """
+# Container Orchestration Setup
+
+Design a container orchestration strategy for:
+
+{{args}}
+
+## Strategy Selection
+- **Docker Compose:** For single-node or simple deployments.
+- **Kubernetes (K8s):** For scalable, complex, multi-node clusters.
+- **Docker Swarm:** For lightweight clustering.
+
+## Implementation Details
+### If Kubernetes:
+- **Manifests:** Deployment, Service, Ingress, ConfigMap, Secret.
+- **Tools:** Helm charts, Kustomize.
+- **Ingress Controller:** Nginx, Traefik.
+- **Storage:** PVC/PV definitions.
+
+### If Docker Compose:
+- **Services:** Define app, db, redis, etc.
+- **Networks:** Internal vs External.
+- **Volumes:** Persistent data.
+- **Restart Policies.**
+
+## Output
+Provide the necessary configuration files (YAML) and deployment instructions.
+"""

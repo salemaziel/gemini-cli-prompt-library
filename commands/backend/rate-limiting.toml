@@ -1,0 +1,29 @@
+prompt = """
+# Rate Limiting Implementation
+
+Implement rate limiting for:
+
+{{args}}
+
+## Strategy
+
+### 1. Scope
+- **Global:** Protect server from DDoS.
+- **Per User/IP:** Fair usage policy.
+- **Per Endpoint:** Strict limits on `/login` or expensive APIs.
+
+### 2. Algorithm
+- **Fixed Window:** Simple, but has edge cases.
+- **Sliding Window:** Smoother, strictly enforces rate.
+- **Token Bucket:** Allows bursts.
+
+### 3. Storage
+- In-memory (single instance) vs Redis (distributed).
+
+### 4. Response
+- HTTP 429 Too Many Requests.
+- Headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `Retry-After`.
+
+## Output
+Provide the middleware code or configuration (e.g., Nginx, rate-limiter-flexible).
+"""

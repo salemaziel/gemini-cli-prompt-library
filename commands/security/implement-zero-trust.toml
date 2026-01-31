@@ -1,0 +1,26 @@
+prompt = """
+# Implement Zero Trust Access
+
+Implement a Zero Trust Network Access (ZTNA) solution for:
+
+{{args}}
+
+## Implementation Steps
+
+### 1. Identity Provider (IdP)
+- Connect to Google Workspace, Okta, or Azure AD.
+
+### 2. Access Proxy
+- Setup Cloudflare Access, Pomerium, or Google IAP.
+- Remove public IP access to the internal service.
+
+### 3. Policies
+- Define who can access what.
+- Example: "Only 'Engineering' group can access 'Grafana' from 'Corporate Device'".
+
+### 4. Client Connectivity
+- Agent-based (WARP, Twingate) vs Clientless (Browser-based).
+
+## Output
+Provide a configuration guide or policy definition structure.
+"""

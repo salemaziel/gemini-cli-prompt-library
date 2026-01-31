@@ -1,0 +1,27 @@
+prompt = """
+# Penetration Test Preparation
+
+Prepare the environment and team for an upcoming Penetration Test:
+
+{{args}}
+
+## Preparation Checklist
+
+### 1. Scope Definition
+- What IPs/Domains are in scope?
+- What is explicitly OUT of scope? (Don't DDoS the cloud provider!).
+
+### 2. Environment
+- Staging vs Production? (Staging is safer, but Prod is real).
+- Allowlisting: Whitelist the Pentester's IPs in WAF/Firewall.
+
+### 3. Accounts
+- Create test accounts with different roles (Admin, User, Viewer).
+- Provide documentation/API specs to testers.
+
+### 4. Backup
+- Ensure a fresh backup exists before testing begins.
+
+## Output
+Provide a scoping document template or pre-flight checklist.
+"""

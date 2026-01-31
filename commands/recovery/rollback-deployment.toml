@@ -1,0 +1,28 @@
+prompt = """
+# Rollback Deployment Strategy
+
+Create a strategy and steps to rollback a failed deployment for:
+
+{{args}}
+
+## Strategies
+
+### 1. Blue/Green or Canary (Ideal)
+- Simply switch traffic routing back to the "Green" (old) environment.
+- Zero downtime.
+
+### 2. Container Revert
+- `kubectl rollout undo deployment/my-app`.
+- Deploy previous Docker tag.
+
+### 3. Git Revert
+- `git revert <commit-hash>`.
+- Push to main (triggers CI/CD to deploy old code).
+
+### 4. Database Considerations
+- **Backward Compatibility:** Code usually rolls back, but DB migrations often don't.
+- Ensure DB changes are additive where possible.
+
+## Output
+Provide the specific commands to revert the application state.
+"""

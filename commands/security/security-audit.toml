@@ -1,0 +1,28 @@
+prompt = """
+# Security Audit Checklist
+
+Conduct a general security audit for:
+
+{{args}}
+
+## Audit Areas
+
+### 1. Access Control
+- Are permissions least-privilege?
+- Are offboarded employees revoked?
+
+### 2. Data Protection
+- Is database encrypted at rest?
+- Is PII handled correctly?
+
+### 3. Network Security
+- Are ports exposed unnecessarily?
+- Are SSL certificates valid?
+
+### 4. Code Security
+- Are dependencies updated?
+- Are secrets kept out of git?
+
+## Output
+Provide a comprehensive audit report template.
+"""

@@ -1,0 +1,28 @@
+prompt = """
+# Setup Monitoring & Alerting
+
+Design a monitoring stack and alerting policy for:
+
+{{args}}
+
+## Stack Selection
+- **Metrics Collection:** Prometheus, InfluxDB, Datadog.
+- **Visualization:** Grafana.
+- **Logging:** ELK, Loki, CloudWatch.
+- **Uptime:** Uptime Kuma, Pingdom.
+
+## Key Metrics to Watch (The "USE" or "RED" Methods)
+- **Utilization:** CPU, RAM, Disk I/O.
+- **Saturation:** Load averages, queue lengths.
+- **Errors:** HTTP 5xx rates, exception logs.
+- **Rate/Throughput:** Requests per second.
+- **Latency:** Response times (p95, p99).
+
+## Alerting Rules
+- Define thresholds for Warning vs. Critical.
+- Notification channels (Slack, PagerDuty, Email).
+- Avoid "alert fatigue" (actionable alerts only).
+
+## Output
+Provide configuration snippets (Prometheus rules, Grafana dashboard JSON concepts) and a strategy document.
+"""

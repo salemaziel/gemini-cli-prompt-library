@@ -1,0 +1,29 @@
+prompt = """
+# Create Analytics Dashboard
+
+Design an analytics dashboard layout for:
+
+{{args}}
+
+## Dashboard Structure
+
+### 1. Audience / User Persona
+- Who is this for? (CEO, Marketing Manager, Developer).
+- What questions do they need answered immediately?
+
+### 2. Key Performance Indicators (KPIs)
+- Select 3-5 high-level metrics (e.g., MRR, Churn Rate, Daily Active Users).
+- Display as big number cards at the top.
+
+### 3. Charts & Visualizations
+- **Trends:** Line charts for traffic/sales over time.
+- **Composition:** Pie/Bar charts for device type, acquisition channel.
+- **Tables:** Top landing pages, top referral sources.
+
+### 4. Filters
+- Date range (Last 7 days, 30 days, YTD).
+- User segment (New vs Returning, Mobile vs Desktop).
+
+## Output
+Describe the layout, specific charts to build, and the data sources required.
+"""

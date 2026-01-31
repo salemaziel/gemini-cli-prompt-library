@@ -1,0 +1,24 @@
+prompt = """
+# Accessibility (a11y) Fixes
+
+Analyze and provide accessibility fixes for:
+
+{{args}}
+
+## Audit Criteria (WCAG 2.1 AA)
+
+### 1. Semantics
+- Use correct HTML5 tags (`<button>` not `<div>`, `<nav>`, `<main>`).
+- Heading hierarchy (h1 -> h2 -> h3).
+
+### 2. Interactive Elements
+- **Keyboard Navigation:** Ensure element is focusable (`tabindex`) and has visible focus state.
+- **ARIA Labels:** Add `aria-label` or `aria-labelledby` if text is not visible.
+
+### 3. Visuals
+- **Color Contrast:** Text vs Background ratio > 4.5:1.
+- **Alt Text:** Descriptive alt tags for images.
+
+## Output
+Provide the corrected HTML/JSX code with explanations for the a11y improvements.
+"""

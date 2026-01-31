@@ -1,0 +1,34 @@
+prompt = """
+# Disaster Recovery (DR) Plan
+
+Create a Disaster Recovery Plan for the following system/scenario:
+
+{{args}}
+
+## Plan Structure
+
+### 1. Risk Assessment
+- Potential disaster scenarios (Server failure, Data corruption, DDoS, Region outage).
+- Likelihood and Impact analysis.
+
+### 2. Recovery Objectives
+- **RTO (Recovery Time Objective):** Maximum acceptable downtime.
+- **RPO (Recovery Point Objective):** Maximum acceptable data loss.
+
+### 3. Recovery Procedures
+- **Immediate Response:** Who to contact, how to declare a disaster.
+- **Failover Steps:** Automated or manual steps to switch to backup systems.
+- **Data Restoration:** Process for restoring databases and file systems.
+- **Infrastructure Recreation:** Scripts/steps to rebuild environment if needed (IaC).
+
+### 4. Communication Plan
+- Internal stakeholders notification.
+- Customer/Public notification templates.
+
+### 5. Testing & Maintenance
+- Schedule for DR drills.
+- Process for updating the plan.
+
+## Output
+Generate a structured DR plan document.
+"""

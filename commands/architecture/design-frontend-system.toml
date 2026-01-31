@@ -1,0 +1,30 @@
+prompt = """
+# Design Frontend System Architecture
+
+Design the high-level frontend architecture for:
+
+{{args}}
+
+## Architectural Decisions
+
+### 1. Repository Structure
+- **Monorepo:** Turborepo/Nx (Good for sharing code).
+- **Polyrepo:** Separate repos (Good for independent teams).
+
+### 2. Application Strategy
+- **SPA (Single Page App):** React/Vue (Rich interactivity).
+- **SSR (Server Side Rendering):** Next.js/Nuxt (SEO, Initial load).
+- **SSG (Static Site Generation):** Gatsby/Astro (Content heavy).
+- **Micro-frontends:** Module Federation (Complex, independent deployment).
+
+### 3. Shared Libraries
+- Design System / UI Kit.
+- Utility libraries.
+
+### 4. Deployment
+- Vercel/Netlify vs Docker/K8s.
+- CDN strategy.
+
+## Output
+Provide an architectural diagram description and reasoning for choices.
+"""

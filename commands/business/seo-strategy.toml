@@ -1,0 +1,26 @@
+prompt = """
+# SEO Strategy (Business Focus)
+
+Develop a high-level SEO strategy aligned with business goals for:
+
+{{args}}
+
+## Components
+
+### 1. Goals
+- Brand Awareness (Traffic) vs Lead Gen (Conversion).
+
+### 2. Target Audience (Keywords)
+- Transactional keywords ("Buy X", "Best X Agency") vs Informational ("How to X").
+
+### 3. Content Strategy
+- Blog posts, Landing pages, Whitepapers.
+
+### 4. Success Metrics
+- Organic Traffic growth.
+- Keyword Rankings.
+- Attribution (Leads from Organic).
+
+## Output
+Provide a strategic roadmap.
+"""

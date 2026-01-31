@@ -1,0 +1,32 @@
+prompt = """
+# Git Workflow Guide
+
+Define the daily Git workflow for the team:
+
+{{args}}
+
+## Workflow Steps
+
+### 1. Starting Work
+- `git pull origin main`: Get latest changes.
+- `git checkout -b feat/my-feature`: Create new branch.
+
+### 2. Development
+- Frequent, atomic commits.
+- `git push origin feat/my-feature`.
+
+### 3. Review Process
+- Open Pull Request (PR).
+- Code Review feedback loops.
+- CI checks pass.
+
+### 4. Merging
+- Squash and Merge (typical).
+- Delete branch after merge.
+
+### 5. Hotfixes
+- Process for urgent production bugs.
+
+## Output
+Provide a step-by-step guide for developers.
+"""

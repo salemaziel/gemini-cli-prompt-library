@@ -1,0 +1,27 @@
+prompt = """
+# Build GraphQL API
+
+Design a GraphQL API schema and resolvers for:
+
+{{args}}
+
+## Structure
+
+### 1. Schema Definition (SDL)
+- **Types:** Define entities (User, Post, Comment).
+- **Queries:** Read operations (`getUser`, `listPosts`).
+- **Mutations:** Write operations (`createUser`, `updatePost`).
+- **Inputs:** Reusable input types for mutations.
+
+### 2. Resolvers
+- Efficient data fetching.
+- **N+1 Problem:** Use DataLoaders to batch requests.
+
+### 3. Best Practices
+- Pagination (Cursor-based vs Offset).
+- Error handling in GraphQL.
+- Authorization (Field-level vs Resolver-level).
+
+## Output
+Provide the Schema (SDL) and example Resolver code.
+"""

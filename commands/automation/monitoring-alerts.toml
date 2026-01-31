@@ -1,0 +1,26 @@
+prompt = """
+# Monitoring Alerts Configuration
+
+Configure automated alerts for:
+
+{{args}}
+
+## Alert Rules
+
+### 1. System Metrics
+- High CPU/RAM usage (>90% for 5 mins).
+- Disk space low (<10% free).
+
+### 2. Application Logic
+- Failed Login attempts spike.
+- Zero orders in last hour (business panic).
+- 5xx Error rate spike.
+
+### 3. Channels
+- Slack/Discord Webhook.
+- Email.
+- SMS/PagerDuty (Criticals only).
+
+## Output
+Provide the alert configuration logic or JSON (Prometheus Alertmanager, Datadog Monitor).
+"""

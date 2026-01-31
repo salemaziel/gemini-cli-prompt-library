@@ -1,0 +1,28 @@
+prompt = """
+# Incident Response Policy
+
+Draft an Incident Response Policy document for:
+
+{{args}}
+
+## Policy Sections
+
+### 1. Roles & Responsibilities
+- Incident Commander.
+- Scribe.
+- Communications Lead.
+
+### 2. Severity Levels
+- **SEV-1:** Critical (Data breach, Site down).
+- **SEV-2:** Major (Feature broken).
+- **SEV-3:** Minor (Glitch).
+
+### 3. Process
+- Detection -> Analysis -> Containment -> Eradication -> Recovery -> Post-Incident.
+
+### 4. SLA (Service Level Agreement)
+- Response time targets per severity.
+
+## Output
+Provide a formal policy document.
+"""

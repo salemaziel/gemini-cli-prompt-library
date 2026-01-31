@@ -1,0 +1,26 @@
+prompt = """
+# Pricing Strategy
+
+Develop a pricing strategy for:
+
+{{args}}
+
+## Models
+
+### 1. Cost-Plus
+- Calculate costs + Desired Margin.
+
+### 2. Value-Based (Recommended)
+- Price based on the value/ROI provided to the client.
+- "This saves you $100k/year, so we charge $10k."
+
+### 3. Competitor-Based
+- Price relative to market alternatives.
+
+### 4. Structure
+- One-time fee vs Recurring (Retainer/SaaS).
+- Tiered pricing.
+
+## Output
+Provide a pricing recommendation and justification.
+"""

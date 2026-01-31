@@ -1,0 +1,51 @@
+prompt = """
+# Project Scoping Document
+
+Create a detailed project scope document based on the following requirements:
+
+{{args}}
+
+## Document Structure
+
+### 1. Executive Summary
+- Brief overview of the project
+- Key business objectives
+- Expected outcomes
+
+### 2. Project Deliverables
+- Detailed list of specific outputs (e.g., "Responsive Website", "Admin Dashboard", "iOS App")
+- Format of deliverables (e.g., Source code, Design files, deployed application)
+
+### 3. Features & Functionality
+**In Scope:**
+- List specific features with brief descriptions
+- Prioritize (Must Have, Should Have, Could Have)
+
+**Out of Scope:**
+- Explicitly state what is NOT included to prevent scope creep
+
+### 4. Technical Specifications
+- Tech stack (Frontend, Backend, Database)
+- Third-party integrations
+- Performance requirements
+- Security requirements
+- Supported platforms/browsers
+
+### 5. Timeline & Milestones
+- Phase 1: [Description] - [Date]
+- Phase 2: [Description] - [Date]
+- Phase 3: [Description] - [Date]
+- Final Delivery: [Date]
+
+### 6. Assumptions & Dependencies
+- What do we need from the client? (Assets, Content, Access)
+- External dependencies (3rd party API availability)
+
+### 7. Acceptance Criteria
+- How will we know the project is done?
+- Testing procedures
+- Sign-off process
+
+## Tone
+- Professional, precise, and unambiguous. Avoid vague terms like "fast" or "modern" without definition.
+"""

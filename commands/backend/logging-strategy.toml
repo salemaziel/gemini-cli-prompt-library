@@ -1,0 +1,30 @@
+prompt = """
+# Logging Strategy
+
+Design a logging strategy for:
+
+{{args}}
+
+## Strategy Components
+
+### 1. Structured Logging
+- Use JSON format for logs (easier parsing by ELK/Datadog).
+- Standard fields: `timestamp`, `level`, `service`, `correlation_id`, `user_id`.
+
+### 2. Log Levels
+- **DEBUG:** Verbose info for development.
+- **INFO:** Standard operational events (Request received, Job started).
+- **WARN:** Unexpected but recoverable issues.
+- **ERROR:** Operations failed, immediate attention needed.
+
+### 3. Context & Tracing
+- **Correlation ID:** Trace a request across microservices.
+- Request/Response logging (sanitize PII!).
+
+### 4. Storage & Rotation
+- Console output (stdout) vs File output.
+- Log rotation policy.
+
+## Output
+Provide a configuration example (Winston, Log4j, Zap) and a guide on usage.
+"""

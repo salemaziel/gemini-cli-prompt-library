@@ -1,0 +1,26 @@
+prompt = """
+# Zero Downtime Deployment Strategy
+
+Design a zero-downtime deployment strategy for:
+
+{{args}}
+
+## Methods
+
+### 1. Rolling Update
+- Replace instances one by one.
+- Requires backward compatibility.
+
+### 2. Blue/Green
+- Spin up parallel environment (Green).
+- Switch router/LB to Green.
+- Kill Blue if stable.
+
+### 3. Canary
+- Send 5% traffic to new version.
+- Monitor error rates.
+- Ramp up to 100%.
+
+## Output
+Provide the architecture logic or CI/CD pipeline steps.
+"""

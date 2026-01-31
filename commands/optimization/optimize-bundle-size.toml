@@ -1,0 +1,28 @@
+prompt = """
+# Optimize Bundle Size
+
+Analyze and provide a strategy to reduce the JavaScript/CSS bundle size for:
+
+{{args}}
+
+## Strategies
+
+### 1. Analysis
+- **Bundle Analyzer:** Visualizing the output (webpack-bundle-analyzer).
+- Identify large dependencies (lodash, moment.js).
+
+### 2. Code Splitting
+- **Route-based:** Load chunks only when navigating to a route.
+- **Component-based:** Lazy load heavy components (Modals, Charts).
+
+### 3. Tree Shaking
+- Remove unused exports.
+- Verify side-effects in `package.json`.
+
+### 4. Dependency Management
+- Swap heavy libs for lighter alternatives (moment -> date-fns).
+- Import only needed submodules (`import map from 'lodash/map'`).
+
+## Output
+Provide a step-by-step optimization guide and code examples for lazy loading.
+"""

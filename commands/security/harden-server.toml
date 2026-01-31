@@ -1,0 +1,26 @@
+prompt = """
+# Harden Server
+
+Apply security hardening measures to a Linux server:
+
+{{args}}
+
+## Hardening Steps
+
+### 1. SSH Hardening
+- Change default port (optional, but reduces noise).
+- Disable Root login (`PermitRootLogin no`).
+- Disable Password Auth (`PasswordAuthentication no`).
+
+### 2. Network
+- Configure Firewall (UFW/iptables). Default deny incoming.
+- Install Fail2Ban.
+
+### 3. System
+- Automatic Security Updates (`unattended-upgrades`).
+- Remove unused packages/services.
+- Secure Shared Memory.
+
+## Output
+Provide the commands or script to apply these settings.
+"""

@@ -1,0 +1,26 @@
+prompt = """
+# Keyword Research
+
+Perform keyword research for:
+
+{{args}}
+
+## Research Criteria
+
+### 1. Metrics
+- **Search Volume:** Monthly searches.
+- **Keyword Difficulty (KD):** Competition level.
+- **Cost Per Click (CPC):** Commercial intent indicator.
+
+### 2. Intent Classification
+- **Informational:** "How to clean shoes" (Blog content).
+- **Navigational:** "Nike Store" (Home page).
+- **Transactional:** "Buy running shoes" (Product page).
+- **Commercial Investigation:** "Best running shoes 2024" (Review/Comparison).
+
+### 3. Long-Tail
+- Identify question-based keywords ("People also ask").
+
+## Output
+Provide a list of target keywords grouped by intent and topic.
+"""

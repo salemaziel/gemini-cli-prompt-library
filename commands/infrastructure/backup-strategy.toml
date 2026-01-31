@@ -1,0 +1,35 @@
+prompt = """
+# Backup Strategy
+
+Develop a comprehensive backup strategy for:
+
+{{args}}
+
+## Components
+
+### 1. What to Backup
+- Databases (SQL dumps, WAL logs).
+- User uploads/Media files.
+- Configuration files.
+- Application code (Repo usually suffices, but consider build artifacts).
+
+### 2. Frequency & Retention
+- How often? (Real-time, Hourly, Daily).
+- Retention policy (Keep dailies for 7 days, weeklies for 4 weeks, monthlies for 1 year).
+
+### 3. Storage Location
+- **3-2-1 Rule:** 3 copies, 2 different media, 1 offsite.
+- Encryption at rest.
+- Access control.
+
+### 4. Restoration Process
+- Step-by-step guide to restore from backup.
+- Time estimate for restoration.
+
+### 5. Automation & Monitoring
+- Tools to use (bash scripts, AWS Backup, Restic, Borg).
+- Alerts on failure.
+
+## Output
+Create a policy document and valid configuration/script snippets for the chosen backup tools.
+"""

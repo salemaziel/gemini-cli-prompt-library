@@ -1,0 +1,26 @@
+prompt = """
+# Content Optimization (On-Page SEO)
+
+Optimize the following content for SEO:
+
+{{args}}
+
+## Optimization Checklist
+
+### 1. Keyword Placement
+- Title Tag (Front-loaded).
+- H1 Heading.
+- First 100 words.
+- URL slug.
+
+### 2. User Experience
+- Readability (Short paragraphs).
+- Formatting (Bullet points, Bold text).
+- Media (Images with Alt text).
+
+### 3. Internal Linking
+- Link to related authority pages on the domain.
+
+## Output
+Provide the optimized HTML/Markdown or suggestions for improvement.
+"""

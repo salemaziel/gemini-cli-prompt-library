@@ -1,0 +1,25 @@
+prompt = """
+# Generate Release Notes
+
+Generate release notes for the following version/commits:
+
+{{args}}
+
+## Structure
+
+### 1. Header
+- Version Number (Semantic Versioning: v1.0.0).
+- Release Date.
+
+### 2. Sections
+- 🚀 **New Features:** exciting additions.
+- 🐛 **Bug Fixes:** what's broken is now fixed.
+- 🛠 **Improvements:** performance, refactoring, tech debt.
+- 💔 **Breaking Changes:** critical warnings for upgrade.
+
+### 3. Credits
+- Acknowledge contributors (especially external ones).
+
+## Output
+Provide the release notes in Markdown format.
+"""

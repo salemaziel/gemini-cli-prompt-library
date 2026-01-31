@@ -1,0 +1,30 @@
+prompt = """
+# Resolve Merge Conflict
+
+Provide a step-by-step guide to resolve the following merge conflict:
+
+{{args}}
+
+## Steps
+
+### 1. Understand the Conflict
+- Which files are conflicting?
+- What is `HEAD` (Current change) vs `Incoming Change`?
+
+### 2. Resolution Strategy
+- **Accept Current:** Keep your changes.
+- **Accept Incoming:** Overwrite with their changes.
+- **Accept Both:** Combine them manually.
+
+### 3. Execution
+- Edit the file to remove markers (`<<<<<<<`, `=======`, `>>>>>>>`).
+- Ensure the code logic remains valid.
+
+### 4. Verification
+- Run tests!
+- `git add <file>`
+- `git commit` (no message usually needed, auto-generated).
+
+## Output
+Provide specific commands and advice based on the conflict details provided.
+"""

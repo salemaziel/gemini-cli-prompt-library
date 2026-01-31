@@ -1,0 +1,28 @@
+prompt = """
+# Background Job System
+
+Design a background job processing system for:
+
+{{args}}
+
+## System Architecture
+
+### 1. Technology Choice
+- **Queue:** Redis, RabbitMQ, SQS, Postgres (SKIP LOCKED).
+- **Library:** BullMQ, Sidekiq, Celery, Agenda.
+
+### 2. Job Definition
+- Define the task (e.g., SendEmail, ProcessImage, GenerateReport).
+- Data payload structure.
+
+### 3. Reliability
+- **Retries:** Exponential backoff strategy for failed jobs.
+- **Dead Letter Queue (DLQ):** Where failed jobs go after max retries.
+- **Concurrency:** How many jobs to process at once?
+
+### 4. Scheduling
+- Recurring jobs (Cron).
+
+## Output
+Provide the setup code for the worker and the queue producer.
+"""

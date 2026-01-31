@@ -1,0 +1,25 @@
+prompt = """
+# Ghost Theme Development
+
+Create a plan/code for a Ghost CMS Theme:
+
+{{args}}
+
+## Components
+
+### 1. Structure
+- `package.json`: Theme definition.
+- `index.hbs`: Default template.
+- `post.hbs`: Single post template.
+- `page.hbs`: Static page template.
+
+### 2. Handlebars (HBS)
+- Usage of `{{#foreach posts}}` loop.
+- Ghost helpers `{{content}}`, `{{title}}`, `{{img_url}}`.
+
+### 3. Assets
+- CSS/JS injection via `{{asset "css/screen.css"}}`.
+
+## Output
+Provide the HBS code and directory structure.
+"""

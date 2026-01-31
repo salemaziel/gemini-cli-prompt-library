@@ -1,0 +1,22 @@
+prompt = """
+# Configure Firewall
+
+Generate firewall rules and configuration for:
+
+{{args}}
+
+## Context
+- **Tool:** UFW, iptables, nftables, AWS Security Groups, or Cloud Firewall.
+- **Service:** Web Server, Database, Custom App.
+
+## Rules Strategy
+- **Default Policy:** Deny Incoming, Allow Outgoing.
+- **Allow Specific Ports:**
+    - SSH (22) - Ideally restricted to specific IPs.
+    - HTTP/HTTPS (80/443).
+    - Database (3306/5432) - Restricted to App Server IP only.
+- **Rate Limiting:** Protect SSH or Login endpoints.
+
+## Output
+Provide the specific commands to apply these rules or the configuration block (Terraform/YAML).
+"""

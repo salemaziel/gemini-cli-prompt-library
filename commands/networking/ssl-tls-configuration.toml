@@ -1,0 +1,25 @@
+prompt = """
+# SSL/TLS Configuration (Networking)
+
+Generate and configure SSL/TLS certificates:
+
+{{args}}
+
+## Tasks
+
+### 1. Certificate Generation
+- **Let's Encrypt (Certbot):** Free, automated.
+- **Self-Signed:** For internal testing (`openssl`).
+- **CSR Generation:** For purchasing commercial certs.
+
+### 2. Installation
+- Configure Nginx/Apache to use the `.crt` and `.key` files.
+- Setup auto-renewal (`cron`).
+
+### 3. Verification
+- Check expiration date.
+- Verify chain of trust.
+
+## Output
+Provide the specific OpenSSL or Certbot commands.
+"""

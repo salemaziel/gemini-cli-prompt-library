@@ -1,0 +1,29 @@
+prompt = """
+# Optimize Images
+
+Create a strategy for image optimization for:
+
+{{args}}
+
+## Techniques
+
+### 1. Format Selection
+- Use **WebP** or **AVIF** for better compression than JPEG/PNG.
+- SVG for icons and logos.
+
+### 2. Sizing & Responsive Images
+- Use `srcset` and `sizes` attributes.
+- Don't serve a 4000px wide image for a mobile thumbnail.
+
+### 3. Compression
+- Lossy vs Lossless compression.
+- Tools: ImageMagick, Sharp, TinyPNG.
+
+### 4. Loading Behavior
+- **Lazy Loading:** `loading="lazy"` for below-the-fold images.
+- **Blur-up:** Low quality placeholder while loading.
+- **Dimensions:** Explicit width/height to prevent layout shift.
+
+## Output
+Provide code examples (HTML/CSS) and build tool configuration.
+"""

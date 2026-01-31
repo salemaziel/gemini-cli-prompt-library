@@ -1,0 +1,29 @@
+prompt = """
+# Design Zero Trust Architecture
+
+Design a Zero Trust Network Architecture for:
+
+{{args}}
+
+## Principles ("Never Trust, Always Verify")
+
+### 1. Identity
+- Strong MFA (YubiKey, WebAuthn).
+- SSO (Single Sign-On).
+- Identity Aware Proxy (IAP) - Access based on user identity, not IP.
+
+### 2. Device Trust
+- Endpoint management (MDM).
+- Device health checks before access.
+
+### 3. Network
+- Micro-segmentation.
+- mTLS (Mutual TLS) between services.
+- No VPN (Access resources directly via secure proxy).
+
+### 4. Least Privilege
+- Just-in-Time (JIT) access.
+
+## Output
+Provide a security architecture plan.
+"""

@@ -1,0 +1,35 @@
+prompt = """
+# Analytics Performance Report
+
+Generate a template or draft for a [Weekly/Monthly/Quarterly] performance report:
+
+{{args}}
+
+## Report Structure
+
+### 1. Executive Summary
+- "TL;DR" of performance.
+- Key wins and major issues.
+
+### 2. Traffic Overview
+- Total Sessions/Users (vs previous period).
+- Top Acquisition Channels (Organic, Paid, Social, Direct).
+
+### 3. Engagement Metrics
+- Bounce Rate / Engagement Rate.
+- Average Session Duration.
+- Pages per Session.
+
+### 4. Conversion Analysis
+- Goal Completions.
+- Conversion Rate (CVR).
+- Revenue (if applicable).
+- Drop-off points in the funnel.
+
+### 5. Insights & Recommendations
+- "Traffic from LinkedIn is up 20%, let's increase posting there."
+- "Checkout page has high exit rate, investigate load time."
+
+## Output
+Provide a structured report template with placeholders for data and analysis.
+"""

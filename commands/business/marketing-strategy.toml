@@ -1,0 +1,26 @@
+prompt = """
+# Marketing Strategy
+
+Develop a comprehensive marketing strategy for:
+
+{{args}}
+
+## Strategy Elements
+
+### 1. Target Persona
+- Demographics, Psychographics, Pain points.
+
+### 2. Channels
+- **Inbound:** SEO, Content, Social Media.
+- **Outbound:** Cold Email, Ads (PPC/Social).
+
+### 3. Messaging
+- Core Value Proposition.
+- Taglines.
+
+### 4. Budget & Allocation
+- Estimated spend per channel.
+
+## Output
+Provide a marketing plan document.
+"""

@@ -1,0 +1,23 @@
+prompt = """
+# SSL Setup (Deployment)
+
+Configure SSL for the production environment:
+
+{{args}}
+
+## Steps
+
+### 1. Provisioning
+- Request certificate via ACM (AWS), Let's Encrypt, or Buy one.
+
+### 2. Installation
+- Attach to Load Balancer / CDN (Preferred).
+- OR Install on web server (Nginx/Apache).
+
+### 3. Verification
+- Test with SSL Labs (aim for A+).
+- Check mixed content warnings.
+
+## Output
+Provide the configuration commands/steps.
+"""

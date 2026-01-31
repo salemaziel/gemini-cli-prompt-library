@@ -1,0 +1,26 @@
+prompt = """
+# Load Balancer Setup
+
+Configure a Load Balancer (LB) for high availability:
+
+{{args}}
+
+## Configuration
+
+### 1. Upstream Servers
+- Define the backend pool (IPs/Hostnames).
+
+### 2. Balancing Algorithm
+- **Round Robin:** Sequential.
+- **Least Connections:** Send to least busy server.
+- **IP Hash:** Sticky sessions.
+
+### 3. Health Checks
+- How does the LB know a server is down? (TCP check, HTTP 200 check).
+
+### 4. SSL Termination
+- Decrypt HTTPS at the LB level to offload CPU from web servers.
+
+## Output
+Provide the Nginx upstream block or HAProxy config.
+"""

@@ -1,0 +1,34 @@
+prompt = """
+# Post-Mortem Analysis (RCA)
+
+Create a Post-Mortem / Root Cause Analysis report for:
+
+{{args}}
+
+## Report Structure
+
+### 1. Summary
+- Incident Duration.
+- Impact (Customers affected, Revenue lost).
+
+### 2. Timeline
+- [10:00 UTC] Alert fired.
+- [10:05 UTC] Engineer acknowledged.
+- [10:15 UTC] Fix applied.
+- [10:20 UTC] System stable.
+
+### 3. Root Cause (5 Whys)
+- Why did the system fail? (The DB CPU spiked).
+- Why did CPU spike? (Bad query).
+- Why was bad query pushed? (Review missed it).
+- Why did review miss it? (No query performance CI check).
+
+### 4. Resolution
+- Immediate fix applied.
+
+### 5. Action Items
+- Preventative measures (Add CI check, Add rate limiting).
+
+## Output
+Provide the filled report template.
+"""

@@ -1,0 +1,38 @@
+prompt = """
+# Client Discovery Questions
+
+Generate a list of discovery questions for the following project type/client:
+
+{{args}}
+
+## Categories
+
+### 1. Business Context
+- What is the primary business goal of this project?
+- Who is the target audience?
+- Who are the main competitors?
+- What is the unique value proposition?
+
+### 2. Project Scope & Requirements
+- What features are absolute "must-haves"?
+- What are the "nice-to-haves"?
+- Are there existing systems we need to integrate with?
+- Do you have existing brand guidelines/assets?
+
+### 3. Technical Constraints
+- Do you have preference for specific technologies?
+- Are there specific hosting/infrastructure requirements?
+- What are the security/compliance requirements (GDPR, HIPAA)?
+
+### 4. Timeline & Budget
+- What is the ideal launch date? Is it driven by a specific event?
+- What is the budget range?
+- How will decisions be made? Who is the primary stakeholder?
+
+### 5. Success Metrics
+- How will you measure the success of this project? (Sales, Leads, Traffic, Efficiency)
+- What does "done" look like to you?
+
+## Output Format
+Provide a categorized list of open-ended questions designed to elicit detailed, useful answers.
+"""

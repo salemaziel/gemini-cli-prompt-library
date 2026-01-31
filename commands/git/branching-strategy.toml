@@ -1,0 +1,28 @@
+prompt = """
+# Branching Strategy
+
+Design a branching strategy for:
+
+{{args}}
+
+## Strategies
+
+### 1. Git Flow
+- **Branches:** `main`, `develop`, `feature/*`, `release/*`, `hotfix/*`.
+- **Best for:** Traditional release cycles, multiple versions supported.
+
+### 2. GitHub Flow / Trunk-Based Development
+- **Branches:** `main`, `feature/*`.
+- **Best for:** Continuous Deployment (CD), fast iteration, single production version.
+
+### 3. GitLab Flow
+- Environmental branches (`production`, `pre-prod`).
+
+## Guidelines
+- Naming conventions (`feat/user-login`, `bugfix/header-issue`).
+- Protection rules (Require PR, Require status checks).
+- Merging strategy (Squash vs Merge Commit vs Rebase).
+
+## Output
+Provide a policy document outlining the chosen strategy.
+"""

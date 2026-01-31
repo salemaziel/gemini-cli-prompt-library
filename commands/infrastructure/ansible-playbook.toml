@@ -1,0 +1,26 @@
+prompt = """
+# Ansible Playbook Generator
+
+Write an Ansible playbook for the following task/configuration:
+
+{{args}}
+
+## Requirements
+
+### 1. Structure
+- **Hosts:** Target inventory group.
+- **Variables:** Define necessary vars (or use `vars_files`).
+- **Roles:** Suggest role separation if complex.
+
+### 2. Tasks
+- Ensure idempotency (checking state before running commands).
+- Use built-in modules (apt, yum, copy, template, service) over `shell`/`command` where possible.
+- Handle handlers (restarting services on config change).
+
+### 3. Security
+- Use `ansible-vault` for secrets (mention usage).
+- Strict file permissions.
+
+## Output
+Provide the YAML code for the playbook and any necessary variable definitions.
+"""

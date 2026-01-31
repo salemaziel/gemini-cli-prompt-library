@@ -1,0 +1,26 @@
+prompt = """
+# CMS Selection Guide
+
+Analyze requirements and recommend a CMS:
+
+{{args}}
+
+## Options
+
+### 1. Traditional (Monolithic)
+- **WordPress:** Huge ecosystem, easy for non-techies.
+- **Ghost:** Focused on publishing/newsletters.
+
+### 2. Headless
+- **Strapi:** Self-hosted, customizable.
+- **Contentful/Sanity:** SaaS, structured content, developer-focused.
+
+### 3. Comparison Criteria
+- Developer Experience (API, Tech stack).
+- Editor Experience (UI, Preview mode).
+- Cost (Hosting vs License).
+- Scalability.
+
+## Output
+Provide a recommendation with pros and cons.
+"""

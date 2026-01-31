@@ -1,0 +1,32 @@
+prompt = """
+# Security Breach Response
+
+Create an immediate response plan for a security breach:
+
+{{args}}
+
+## Incident Response Steps (SANS Framework)
+
+### 1. Identification
+- Verify the breach.
+- Determine scope (What data? Which systems?).
+
+### 2. Containment (Stop the bleeding)
+- Isolate affected systems (Take offline).
+- Block malicious IPs.
+- Rotate ALL credentials (API keys, DB passwords, SSH keys).
+
+### 3. Eradication
+- Remove malware/backdoors.
+- Patch the vulnerability.
+
+### 4. Recovery
+- Restore from clean backups.
+- Monitor closely for re-entry.
+
+### 5. Lessons Learned
+- RCA.
+
+## Output
+Provide a checklist for the Incident Commander.
+"""

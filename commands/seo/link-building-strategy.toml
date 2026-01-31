@@ -1,0 +1,24 @@
+prompt = """
+# Link Building Strategy
+
+Develop a link building strategy for:
+
+{{args}}
+
+## Tactics
+
+### 1. Content-Led
+- **Skyscraper Technique:** Create better content than top ranking pages and outreach.
+- **Digital PR:** Data studies, industry reports.
+
+### 2. Relationship-Based
+- Guest Posting on relevant niche blogs.
+- Podcast appearances.
+
+### 3. Quick Wins
+- Unlinked Brand Mentions.
+- Broken Link Building.
+
+## Output
+Provide a customized plan with target outreach list types.
+"""

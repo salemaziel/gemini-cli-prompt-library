@@ -1,0 +1,24 @@
+prompt = """
+# Optimize Core Web Vitals
+
+Analyze and fix Core Web Vitals issues for:
+
+{{args}}
+
+## Metrics
+
+### 1. Largest Contentful Paint (LCP)
+- **Goal:** < 2.5s.
+- **Fixes:** Optimize server time (TTFB), defer non-critical CSS/JS, optimize the LCP resource (image/text block).
+
+### 2. Interaction to Next Paint (INP)
+- **Goal:** < 200ms.
+- **Fixes:** Break up long tasks, yield to main thread, optimize event listeners.
+
+### 3. Cumulative Layout Shift (CLS)
+- **Goal:** < 0.1.
+- **Fixes:** Set dimensions on images/iframes, avoid inserting content above existing content, font loading strategies (`font-display: swap`).
+
+## Output
+Provide specific code changes to address the identified bottlenecks.
+"""

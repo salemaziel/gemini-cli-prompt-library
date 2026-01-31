@@ -1,0 +1,27 @@
+prompt = """
+# Improve Lighthouse Score
+
+Provide a remediation plan to improve the Google Lighthouse score for:
+
+{{args}}
+
+## Areas of Focus
+
+### 1. Performance
+- **First Contentful Paint (FCP):** Server response time, render-blocking resources.
+- **Largest Contentful Paint (LCP):** Optimize the main hero image/text.
+- **Cumulative Layout Shift (CLS):** Reserve space for images/ads.
+- **Total Blocking Time (TBT):** Reduce JS execution time.
+
+### 2. Accessibility
+- Alt text, Color contrast, ARIA labels, Semantic HTML.
+
+### 3. Best Practices
+- HTTPS, No console errors, Correct aspect ratios.
+
+### 4. SEO
+- Meta tags, legible font sizes, tap targets.
+
+## Output
+Provide a prioritized list of technical fixes.
+"""

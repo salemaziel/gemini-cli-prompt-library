@@ -1,0 +1,25 @@
+prompt = """
+# Workflow Automation
+
+Design an automated workflow for the following process:
+
+{{args}}
+
+## Workflow Steps
+
+### 1. Trigger
+- Webhook, New Email, Form Submission, Time Schedule.
+
+### 2. Actions
+- Format data.
+- Conditional logic (If X then Y).
+- API calls to external services (CRM, Slack, Google Sheets).
+
+### 3. Tooling
+- **No-Code:** Zapier, Make (Integromat).
+- **Self-Hosted:** n8n.
+- **Code:** AWS Lambda, Cloud Functions.
+
+## Output
+Describe the step-by-step logic or provide the n8n JSON export / Lambda code.
+"""
